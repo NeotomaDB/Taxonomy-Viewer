@@ -1,11 +1,11 @@
-import { applyAngleCulling, applySemanticZoomLabels } from './src/labelCulling.js?v=20260622-node-clearance-3';
+import { applyAngleCulling, applySemanticZoomLabels } from './src/labelCulling.js?v=20260728-svg-find-halo-1';
 import { setupFocusInfo } from './src/searchFocus.js';
 import { normalizeRows, pathsToTree, attachSynonymMetadata } from './src/data.js';
 import { createPopup } from './src/popup.js';
 import { highlightPath } from './src/highlight.js';
 import { enrichTreeWithPaths, reorderTreeForGrouping, computeLeafOrder } from './src/grouping.js';
 import { groupUncertainLeaves } from './src/groupUncertain.js';
-import { setupSearch } from './src/search.js';
+import { setupSearch } from './src/search.js?v=20260728-major-search-context-1';
 import { initSynonyms, getSynonymInfo, isSynonymsReady } from './src/synonyms.js';
 import { setHighlightedPath, clearHighlightedPath } from './src/viewSwitch.js';
 import { setupHover } from './src/hover.js';
@@ -46,6 +46,10 @@ async function renderMammalTree({
     console.warn('renderMammalTree: rows is empty.');
     return;
   }
+
+  d3.select(selector)
+    .classed('focus-path-mode', false)
+    .style('overflow', 'visible');
 
   function resolveResponsiveSize(requestedSize) {
     if (Number.isFinite(requestedSize) && requestedSize > 0) return requestedSize;
@@ -867,6 +871,9 @@ async function renderMammalTree({
     searchPathOnly: usesFocusViewSearch,
     deferLocalResultsRendering: usesFocusViewSearch,
     autoFocusMatchThreshold: autoFocusManyMatchesThreshold,
+    // The Major Groups overview is a map of the whole taxonomy. Searching
+    // there should highlight a route without erasing the surrounding map.
+    preserveNonMatchContext: isInitialView,
     onSearchResults: () => {
       if (usesFocusViewSearch && typeof window !== 'undefined' && window.activateFocusView) {
         window.activateFocusView();

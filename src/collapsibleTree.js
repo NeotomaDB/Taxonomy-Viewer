@@ -1,5 +1,5 @@
 import { setupFocusInfo } from './searchFocus.js';
-import { setupSearch } from './search.js';
+import { setupSearch } from './search.js?v=20260728-major-search-context-1';
 import { highlightPath } from './highlight.js';
 import { setHighlightedPath } from './viewSwitch.js';
 import { attachSynonymMetadata } from './data.js';
@@ -28,6 +28,7 @@ export async function renderCollapsibleTree({
     dx = 25,               // Vertical node spacing
     dy = null,             // Horizontal level spacing (null = auto-calculate)
     hideRoot = false,      // Layout-only root for a forest of disconnected trees
+    fitToViewport = false, // Fit a filtered horizontal path between its label gutters
 } = {}) {
     if (!rows || !rows.length) {
         console.warn('renderCollapsibleTree: rows is empty.');
@@ -160,8 +161,34 @@ export async function renderCollapsibleTree({
         ? 32
         : Math.max(String(rootName || '').length * 7 + 24, _dy * 0.6);
 
+    const longestTerminalLabel = hierarchyRoot.descendants()
+        .filter(node => !node.children || node.children.length === 0)
+        .reduce(
+            (longest, node) => Math.max(
+                longest,
+                String(node.data?.name || '').length,
+            ),
+            0,
+        );
+    const rightLabelGutter = Math.max(
+        180,
+        Math.min(340, longestTerminalLabel * 7 + 32),
+    );
+
+    // Preserve readable type and full generation spacing in Focus View.
+    // Longer paths live in a contained horizontal viewport instead of being
+    // compressed until their labels become illegible.
+    if (fitToViewport) {
+        width = Math.max(
+            width,
+            Math.ceil(leftMargin + hierarchyRoot.height * _dy + rightLabelGutter),
+        );
+    }
+
     // Create SVG — overflow:visible so labels outside the SVG box are shown
+    d3.select(selector).classed('focus-path-mode', fitToViewport);
     const svg = d3.select(selector).append('svg')
+        .classed('focus-path-tree', fitToViewport)
         .attr('width', width)
         .attr('height', height)
         .style('font', '12px "Figtree", sans-serif')
@@ -169,7 +196,7 @@ export async function renderCollapsibleTree({
         .style('overflow', 'visible');    // <-- prevents label clipping
 
     // Also allow the #chart container to show overflow
-    d3.select(selector).style('overflow', 'visible');
+    d3.select(selector).style('overflow', fitToViewport ? null : 'visible');
 
     // Inner <g> that zoom/pan transforms are applied to
     const gMain = svg.append('g');
@@ -221,23 +248,34 @@ export async function renderCollapsibleTree({
 
         // Only centre the view on the very first render
         if (!initialised) {
-            const centerY = height / 2 - (topNode.x + bottomNode.x) / 2;
-
             // Calculate max horizontal position of the nodes
             let maxNodeY = 0;
             nodes.forEach(node => {
                 if (displayY(node) > maxNodeY) maxNodeY = displayY(node);
             });
 
-            // Align the rightmost nodes with the right edge of the white box, padding 160px for names
-            let translateX = width - maxNodeY - 180;
-
-            // Fallback so small trees don't get stuck to the far right if they easily fit
-            if (translateX > leftMargin) {
+            let initialScale = 1;
+            let translateX;
+            if (initialQuery || fitToViewport) {
+                // Search paths must keep both their root and terminal labels
+                // inside the viewport. Fit the searchable tree between fixed
+                // label gutters instead of pushing its root off the left edge.
+                const availableTreeWidth = Math.max(1, width - leftMargin - rightLabelGutter);
+                initialScale = Math.max(0.1, Math.min(1, availableTreeWidth / Math.max(1, maxNodeY)));
                 translateX = leftMargin;
+            } else {
+                // Align the rightmost nodes with the right edge of the white box.
+                translateX = width - maxNodeY - 180;
+                // Small trees should not get stuck to the far right.
+                if (translateX > leftMargin) translateX = leftMargin;
             }
 
-            svg.call(zoom.transform, d3.zoomIdentity.translate(translateX, centerY));
+            const centerY = height / 2 -
+                (((topNode.x + bottomNode.x) / 2) * initialScale);
+            svg.call(
+                zoom.transform,
+                d3.zoomIdentity.translate(translateX, centerY).scale(initialScale)
+            );
             initialised = true;
         }
 
@@ -294,17 +332,26 @@ export async function renderCollapsibleTree({
             .attr('dy', '0.31em')
             .attr('x', d => d._children ? -8 : 8)
             .attr('text-anchor', d => d._children ? 'end' : 'start')
-            .text(d => d.data.name)
-            .clone(true).lower()
-            .attr('class', 'node-label label-halo')
-            .attr('stroke-linejoin', 'round')
-            .attr('stroke-width', 3)
-            .attr('stroke', 'white');
+            // Keep labels as one unstroked text element. Chromium corrupts its
+            // native find-in-page highlight when searchable SVG text has a
+            // stroke; index.css supplies a text-shadow halo instead.
+            .text(d => d.data.name);
 
-        node.merge(nodeEnter).transition(transition)
-            .attr('transform', d => `translate(${displayY(d)},${d.x})`)
-            .attr('fill-opacity', 1)
-            .attr('stroke-opacity', 1);
+        const positionedNodes = node.merge(nodeEnter);
+        if (fitToViewport) {
+            // Focus View is rebuilt and searched immediately. Position its
+            // nodes synchronously so the search refresh cannot interrupt the
+            // enter transition and leave every label stacked at the origin.
+            positionedNodes
+                .attr('transform', d => `translate(${displayY(d)},${d.x})`)
+                .attr('fill-opacity', 1)
+                .attr('stroke-opacity', 1);
+        } else {
+            positionedNodes.transition(transition)
+                .attr('transform', d => `translate(${displayY(d)},${d.x})`)
+                .attr('fill-opacity', 1)
+                .attr('stroke-opacity', 1);
+        }
 
         node.exit().transition(transition).remove()
             .attr('transform', d => `translate(${displayY(source)},${source.x})`)
@@ -321,8 +368,12 @@ export async function renderCollapsibleTree({
                 return diagonal({ source: o, target: o });
             });
 
-        link.merge(linkEnter).transition(transition)
-            .attr('d', diagonal);
+        const positionedLinks = link.merge(linkEnter);
+        if (fitToViewport) {
+            positionedLinks.attr('d', diagonal);
+        } else {
+            positionedLinks.transition(transition).attr('d', diagonal);
+        }
 
         link.exit().transition(transition).remove()
             .attr('d', d => {
@@ -348,6 +399,19 @@ export async function renderCollapsibleTree({
              ${targetY},${d.target.x}`;
     }
 
+    function findNodeInAll(node, targetId) {
+        if (String(node.data.id) === String(targetId) ||
+            String(node.data.taxonid) === String(targetId)) {
+            return node;
+        }
+        const kids = node.children || node._children || [];
+        for (const child of kids) {
+            const found = findNodeInAll(child, targetId);
+            if (found) return found;
+        }
+        return null;
+    }
+
     let i = 0;
 
     // Setup info panel BEFORE running update() so node click bindings don't trigger ReferenceError on "info"
@@ -370,7 +434,8 @@ export async function renderCollapsibleTree({
         initialQuery,
         autoRunSearch,
         keepResultsListOnSelect: false,  // click a result → show details + synonym + Back button
-        hideAncestorLabelsOnSelect: true,
+        // Keep every taxon name on the selected root-to-leaf path visible.
+        hideAncestorLabelsOnSelect: false,
         disableGoToTree: true,           // we're already in a tree; navigateToNode is irrelevant here
         taxagroupid: taxagroupid || rows?.[0]?.taxagroupid || null,
         onSearchClear: () => { },
@@ -379,20 +444,7 @@ export async function renderCollapsibleTree({
     // Restore focus node from URL state if requested
     window.addEventListener('RestoreFocusNode', (e) => {
         const focusId = Number(e.detail.id);
-        
-        // Custom recursive finder that checks both visible (children) and hidden (_children) nodes
-        function findNodeInAll(node, targetId) {
-            if (Number(node.data.id) === targetId || Number(node.data.taxonid) === targetId) return node;
-            const kids = node.children || node._children;
-            if (kids) {
-                for (let child of kids) {
-                    const found = findNodeInAll(child, targetId);
-                    if (found) return found;
-                }
-            }
-            return null;
-        }
-        
+
         const targetNode = findNodeInAll(hierarchyRoot, focusId);
         
         if (targetNode) {

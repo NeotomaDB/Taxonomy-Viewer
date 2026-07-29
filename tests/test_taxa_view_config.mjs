@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   SEARCH_COLLAPSIBLE_MATCH_THRESHOLD,
+  getFocusViewSpacing,
   getRadialOverviewDepth,
   getRadialSemanticLabelConfig,
   shouldAutoFocusCollapsibleSearch,
@@ -30,4 +31,26 @@ test('auto-switches many-match searches only for standard radial biological grou
   assert.equal(shouldAutoFocusCollapsibleSearch('INS'), false);
   assert.equal(shouldAutoFocusCollapsibleSearch('CHO'), false);
   assert.equal(shouldAutoFocusCollapsibleSearch('BIM'), false);
+});
+
+test('gives horizontal Focus View paths adaptive, bounded spacing', () => {
+  assert.deepEqual(getFocusViewSpacing([]), { dx: 44, dy: 180 });
+  assert.deepEqual(
+    getFocusViewSpacing([
+      { names_root_to_leaf: ['Algae', 'Eukaryota', 'Pediastrum'] },
+    ]),
+    { dx: 44, dy: 180 },
+  );
+  assert.deepEqual(
+    getFocusViewSpacing([
+      {
+        names_root_to_leaf: [
+          'A deliberately very long internal taxonomic label',
+          'Child',
+          'Terminal',
+        ],
+      },
+    ]),
+    { dx: 44, dy: 260 },
+  );
 });

@@ -60,18 +60,19 @@ text.highlight {
 }
 
 /* ── Search-active overlay ─────────────────────────────────────────────────
-   When a search is running, hide everything not on a match path.
+   When a focused-tree search is running, hide everything not on a match path.
+   Major Groups adds .search-context-preserved so its overview stays intact.
    .match-path      = node is on the path from root to a search result
    .match-path-link = link connects two match-path nodes (shown in gray)
    .search-active   = applied to the SVG while a search is active
    ──────────────────────────────────────────────────────────────────────── */
-.search-active g.node:not(.match-path) {
+.search-active:not(.search-context-preserved) g.node:not(.match-path) {
   opacity: 0;
   pointer-events: none;
 }
 
 /* Force-hide label text for non-match nodes (overrides culling display:block) */
-.search-active g.node:not(.match-path) text {
+.search-active:not(.search-context-preserved) g.node:not(.match-path) text {
   display: none !important;
 }
 
@@ -93,7 +94,7 @@ text.highlight {
 }
 
 /* Hide all links that are not highlighted and not on any match path */
-.search-active path:not(.highlight):not(.highlight-synonym):not(.highlight-q1):not(.highlight-q2):not(.match-path-link) {
+.search-active:not(.search-context-preserved) path:not(.highlight):not(.highlight-synonym):not(.highlight-q1):not(.highlight-q2):not(.match-path-link) {
   opacity: 0;
 }
 
@@ -107,6 +108,26 @@ text.highlight {
   font-size: 11px;
   font-family: "Figtree", sans-serif;
   font-optical-sizing: auto;
+}
+
+/*
+ * Chromium's native find-in-page renderer corrupts highlighted substrings
+ * inside stroked SVG text. Keep searchable labels completely unstroked and
+ * retain their white separation from links with a compositor-safe shadow.
+ */
+#chart svg text:not(.toggle) {
+  paint-order: normal !important;
+  stroke: none !important;
+  stroke-width: 0 !important;
+  text-shadow:
+    -1px -1px 0 #fff,
+    0 -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 0 0 #fff,
+    1px 0 0 #fff,
+    -1px 1px 0 #fff,
+    0 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 /* Root center label at tree origin */
@@ -1748,6 +1769,22 @@ body[data-app-view="about"] #right-panel {
   display: block;
 }
 
+#chart svg.focus-path-tree text.node-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#chart.focus-path-mode {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+#chart.focus-path-mode svg.focus-path-tree {
+  max-width: none;
+}
+
 .submit-ticket-button {
   position: absolute;
   top: 16px;
@@ -2606,6 +2643,38 @@ body[data-app-view="about"] #right-panel {
 
 #info div {
   line-height: 1.5;
+}
+
+/*
+ * Keep taxon names and their external-database badges inside the results card.
+ * The badge group may contain many non-wrapping links, so both flex levels need
+ * to wrap and surrender their intrinsic width to the panel.
+ */
+.taxon-path-terminal {
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  margin-left: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+
+.taxon-path-terminal-name {
+  min-width: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.external-links-container {
+  display: flex;
+  flex: 1 1 180px;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 /* ── Compare Panel ───────────────────────────────────────────────────────── */

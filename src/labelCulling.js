@@ -235,10 +235,12 @@ export function applySemanticZoomLabels(root, getNodeSel, options = {}) {
         .style('display', visible ? 'block' : 'none')
         .style('visibility', visible ? 'visible' : null)
         .style('opacity', visible ? 1 : null)
-        .style('paint-order', visible ? 'stroke fill' : null)
-        .style('stroke', visible ? '#fff' : null)
-        .style('stroke-width', visible ? `${2.5 / k}px` : null)
-        .style('stroke-linejoin', visible ? 'round' : null);
+        // SVG strokes conflict with Chromium's native find-in-page highlight.
+        // CSS provides an unstroked text-shadow halo for visible labels.
+        .style('paint-order', null)
+        .style('stroke', null)
+        .style('stroke-width', null)
+        .style('stroke-linejoin', null);
 
       if (visible) {
         acceptedRects.push(bestAttempt.rect);

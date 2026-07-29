@@ -50,6 +50,7 @@ export function setupSearch({
   deferLocalResultsRendering = false,
   autoFocusMatchThreshold = null,
   hideAncestorLabelsOnSelect = false,
+  preserveNonMatchContext = false,
   onSearchResults = null, // called after matches are resolved
   onAutoFocusManyMatches = null,
   setSearchRenderPreference = null,
@@ -95,7 +96,10 @@ export function setupSearch({
   // Enter / exit search-active overlay mode.
   // search-active: dim non-matching nodes + links via CSS.
   function setSearchActive(active) {
-    if (svg) svg.classed('search-active', active);
+    if (!svg) return;
+    svg
+      .classed('search-active', active)
+      .classed('search-context-preserved', active && preserveNonMatchContext);
   }
 
   // Mark nodes that lie on at least one match path with .match-path so the
@@ -231,7 +235,8 @@ export function setupSearch({
     labels.style('paint-order', null)
           .style('stroke', null)
           .style('stroke-width', null)
-          .style('stroke-linejoin', null);
+          .style('stroke-linejoin', null)
+          .style('text-shadow', null);
     isCompareMode = false; compareMatchGroupIds = new Map();
     compareQ1Label = ''; compareQ2Label = '';
     compareQ1Matches = []; compareQ2Matches = [];
@@ -325,13 +330,6 @@ export function setupSearch({
       labels.classed('highlight-q1', d => compareMatchGroupIds.get(d.data.id) === 1);
       labels.classed('highlight-q2', d => compareMatchGroupIds.get(d.data.id) === 2);
       
-      // Defeat CSS caching by enforcing the white stroke halo directly inline for comparison texts
-      labels.filter(d => compareMatchGroupIds.has(d.data.id))
-            .style('paint-order', 'stroke fill')
-            .style('stroke', 'white')
-            .style('stroke-width', '3.5px')
-            .style('stroke-linejoin', 'round');
-
       if (svg) svg.classed('compare-mode', true);
       setSearchActive(true);
       return;
@@ -418,13 +416,6 @@ export function setupSearch({
       .sort((a, b) => b.depth - a.depth)
       .raise();
     
-    // Fallback inline styling to guarantee text halo only on focused leaf
-    labels.filter(n => n === d)
-          .style('paint-order', 'stroke fill')
-          .style('stroke', 'white')
-          .style('stroke-width', '3.5px')
-          .style('stroke-linejoin', 'round');
-
     setSearchActive(true);
     setHighlightedPath(d);
     if (info) info.show(d, { history });
@@ -624,9 +615,9 @@ export function setupSearch({
     const pathHtml = names.map((n, idx) => {
       if (idx === names.length - 1) {
         // The last child element gets the external links placeholder to its right
-        return `<div style="margin-left:12px; display:flex; align-items:center;">
-                  <span style="font-weight:600;">${n}</span>
-                  <div id="ext-links-container" style="display:flex; gap:4px; margin-left:8px; height:20px; align-items:center;"></div>
+        return `<div class="taxon-path-terminal">
+                  <span class="taxon-path-terminal-name">${n}</span>
+                  <div id="ext-links-container" class="external-links-container"></div>
                 </div>`;
       }
       return `<div style="margin-left:12px;">${n}</div>`;

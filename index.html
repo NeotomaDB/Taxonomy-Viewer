@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neotoma Taxonomy Visualizer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.css">
-    <link rel="stylesheet" href="index.css?v=20260723-issues-dropdown-only">
+    <link rel="stylesheet" href="index.css?v=20260728-focus-horizontal-1">
     <link rel="stylesheet" href="src/onboarding/onboarding.css?v=20260713-figtree">
 </head>
 
@@ -335,7 +335,7 @@
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.js.iife.js"></script>
     <script src="src/taxon-group-select.js"></script>
-    <script type="module" src="taxon_group_viz.js?v=20260622-node-clearance-3"></script>
+    <script type="module" src="taxon_group_viz.js?v=20260728-focus-horizontal-1"></script>
     <script type="module">
         import {
             getURLNavigationState,
@@ -345,7 +345,7 @@
             resetURLHistory,
             updateURLState
         } from './src/urlhash.js';
-        import { FORCE_LIST_TREE_GROUPS, EXPAND_ALL_COLLAPSIBLE, FOCUS_VIEW_GROUPS, getTreeViewSpacing, NON_BIO_GROUPS } from './src/taxaViewConfig.js?v=20260722-taxonomy-forest-1';
+        import { FORCE_LIST_TREE_GROUPS, EXPAND_ALL_COLLAPSIBLE, FOCUS_VIEW_GROUPS, getFocusViewSpacing, getTreeViewSpacing, NON_BIO_GROUPS } from './src/taxaViewConfig.js?v=20260728-focus-horizontal-1';
         import { initViewSwitch, resetViewState, activateFocusView, setFocusViewRenderOptions } from './src/viewSwitch.js';
         import { updateAnomalyBar } from './src/anomaly_bar.js?v=20260723-issues-dropdown-only';
         import { buildSynonymRelationships, updateSynonymBar } from './src/synonym_bar.js?v=20260724-steward-surfaces-1';
@@ -931,6 +931,37 @@
         let orphanTreeNodes = [];
         let currentTreeType = 'main'; // 'main' or 'orphan'
 
+        async function renderHorizontalFocusTree({
+            rows,
+            rootId,
+            rootName,
+            allRowsForSynonyms,
+            taxagroupid = null,
+        }) {
+            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260728-focus-horizontal-1');
+            const spacing = getFocusViewSpacing(rows);
+            const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
+            const rootIsRecorded = rows.some((row) =>
+                (row.ids_root_to_leaf || []).some((id) => String(id) === String(rootId))
+            );
+
+            await renderCollapsibleTree({
+                rows,
+                allRowsForSynonyms,
+                rootId,
+                rootName,
+                anchorIds,
+                expandAll: true,
+                initialQuery: currentQuery,
+                autoRunSearch: !!currentQuery,
+                taxagroupid: taxagroupid || rows[0]?.taxagroupid || null,
+                dx: spacing.dx,
+                dy: spacing.dy,
+                hideRoot: !rootIsRecorded,
+                fitToViewport: true,
+            });
+        }
+
         // Load initial 4-level view
         async function loadInitialView(treeType = 'main') {
             isInitialView = true;
@@ -1022,10 +1053,19 @@
             // Store nodesToRender in a variable accessible to the render function
             const initialNodesToRender = nodesToRender;
             initViewSwitch(
-                async (rows, rootId, rootName, allRowsForSynonyms) => {
+                async (rows, rootId, rootName, allRowsForSynonyms, renderOptions = {}) => {
                     d3.select('#chart').selectAll('*').remove();
-                    // For Focus View, we may have filtered rows, so rebuild nodes if needed
-                    // But for initial view restoration, use the stored nodes
+                    if (renderOptions.isFocusView) {
+                        await renderHorizontalFocusTree({
+                            rows,
+                            rootId,
+                            rootName,
+                            allRowsForSynonyms,
+                        });
+                        return;
+                    }
+
+                    // Whole View restores the stored radial overview nodes.
                     await window.renderMammalTree({
                         rows: rows,
                         allRowsForSynonyms: allRowsForSynonyms,
@@ -1104,8 +1144,19 @@
 
             // Initialize view switch
             initViewSwitch(
-                async (rows, rootId, rootName, allRowsForSynonyms) => {
+                async (rows, rootId, rootName, allRowsForSynonyms, renderOptions = {}) => {
                     d3.select('#chart').selectAll('*').remove();
+                    if (renderOptions.isFocusView) {
+                        await renderHorizontalFocusTree({
+                            rows,
+                            rootId,
+                            rootName,
+                            allRowsForSynonyms,
+                            taxagroupid,
+                        });
+                        return;
+                    }
+
                     await window.renderMammalTree({
                         rows: rows,
                         allRowsForSynonyms: allRowsForSynonyms,
@@ -1184,8 +1235,19 @@
                     resetViewState();
 
                     initViewSwitch(
-                        async (rows, rootId, rootName, allRowsForSynonyms) => {
+                        async (rows, rootId, rootName, allRowsForSynonyms, renderOptions = {}) => {
                             d3.select('#chart').selectAll('*').remove();
+                            if (renderOptions.isFocusView) {
+                                await renderHorizontalFocusTree({
+                                    rows,
+                                    rootId,
+                                    rootName,
+                                    allRowsForSynonyms,
+                                    taxagroupid: currentTaxagroupid,
+                                });
+                                return;
+                            }
+
                             await window.renderMammalTree({
                                 rows: rows,
                                 allRowsForSynonyms: allRowsForSynonyms,
@@ -1610,11 +1672,22 @@
             initViewSwitch(
                 async (rows, rootId, rootName, allRowsForSynonyms, renderOptions = {}) => {
                     d3.select('#chart').selectAll('*').remove();
+                    if (renderOptions.isFocusView) {
+                        await renderHorizontalFocusTree({
+                            rows,
+                            rootId,
+                            rootName,
+                            allRowsForSynonyms,
+                            taxagroupid,
+                        });
+                        return;
+                    }
+
                     const forceCollapsible = !!renderOptions.forceCollapsible;
                     const isFilteredSearchView = rows !== filteredRows;
                     const shouldUseSearchCollapsible = forceCollapsible || (FOCUS_VIEW_GROUPS.has(taxagroupid) && isFilteredSearchView);
                     if (shouldUseCollapsible || shouldUseSearchCollapsible) {
-                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260722-taxonomy-forest-1');
+                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260728-focus-horizontal-1');
                         const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
                         await renderCollapsibleTree({
                             rows: rows,
@@ -1654,7 +1727,7 @@
             // Use collapsible tree for small datasets (< 50 nodes) OR forced groups
             if (shouldUseCollapsible) {
                 console.log('Using collapsible tree view');
-                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260722-taxonomy-forest-1');
+                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260728-focus-horizontal-1');
                 await renderCollapsibleTree({
                     rows: filteredRows,
                     allRowsForSynonyms: allRowsForGroup,

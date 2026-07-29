@@ -48,9 +48,9 @@ export function setupFocusInfo(nodeSelection, getCurrentRotate = () => 0, highli
     const pathHtml = names.map((n, idx) => {
       if (idx === names.length - 1) {
         // The last child element gets the external links placeholder to its right
-        return `<div style="margin-left:12px; display:flex; align-items:center;">
-                  <span style="font-weight:600;">${n}</span>
-                  <div id="ext-links-container" style="display:flex; gap:4px; margin-left:8px; height:20px; align-items:center;"></div>
+        return `<div class="taxon-path-terminal">
+                  <span class="taxon-path-terminal-name">${n}</span>
+                  <div id="ext-links-container" class="external-links-container"></div>
                 </div>`;
       }
       return `<div style="margin-left:12px;">${n}</div>`;

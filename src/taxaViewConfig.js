@@ -112,3 +112,27 @@ export function getTreeViewSpacing(taxagroupid) {
     }
     return { dx: 25, dy: null };
 }
+
+// Focus View uses a left-to-right tree. Estimate enough room for the longest
+// internal label so adjacent generations remain visually distinct, while
+// keeping very long names from making the path impractically wide.
+export function getFocusViewSpacing(rows = []) {
+    let longestInternalLabel = 0;
+
+    rows.forEach((row) => {
+        const names = Array.isArray(row?.names_root_to_leaf)
+            ? row.names_root_to_leaf
+            : [];
+        names.slice(0, -1).forEach((name) => {
+            longestInternalLabel = Math.max(
+                longestInternalLabel,
+                String(name || '').trim().length,
+            );
+        });
+    });
+
+    return {
+        dx: 44,
+        dy: Math.max(180, Math.min(260, Math.ceil(longestInternalLabel * 7 + 36))),
+    };
+}
