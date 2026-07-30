@@ -268,23 +268,28 @@ export function startOnboardingTour({ resetState = false } = {}) {
   activeTour.drive();
 }
 
-export function initOnboarding() {
+export function initOnboarding({ onStart } = {}) {
   bindTourDropdownPositioning();
+
+  const startTour = (options = {}) => {
+    onStart?.();
+    startOnboardingTour(options);
+  };
 
   const restartButton = document.getElementById('takeTourBtn');
   restartButton?.addEventListener('click', (event) => {
     event.stopPropagation();
     document.getElementById('viewNav')?.classList.remove('open');
     document.getElementById('viewNavTrigger')?.setAttribute('aria-expanded', 'false');
-    startOnboardingTour({ resetState: true });
+    startTour({ resetState: true });
   });
 
   window.NeotomaOnboarding = {
-    start: () => startOnboardingTour({ resetState: true }),
+    start: () => startTour({ resetState: true }),
     reset: resetFirstTourState,
   };
 
   if (shouldAutoStartFirstTour()) {
-    window.setTimeout(() => startOnboardingTour(), AUTO_START_DELAY_MS);
+    window.setTimeout(() => startTour(), AUTO_START_DELAY_MS);
   }
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neotoma Taxonomy Visualizer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.css">
-    <link rel="stylesheet" href="index.css?v=20260728-focus-horizontal-1">
+    <link rel="stylesheet" href="index.css?v=20260730-feedback-dialog-1">
     <link rel="stylesheet" href="src/onboarding/onboarding.css?v=20260713-figtree">
 </head>
 
@@ -38,10 +38,6 @@
                     </div>
                 </div>
             </div>
-            <button class="submit-ticket-button" type="button" disabled
-                aria-label="Submit a ticket, coming soon" title="Ticket submission coming soon">
-                Submit a ticket
-            </button>
             <div id="chart"></div>
             <div id="color-legend" class="visualizer-legend" aria-label="Visualizer legend">
                 <button id="legendToggle" class="legend-toggle" type="button" aria-label="Collapse legend"
@@ -249,6 +245,12 @@
                                 <div><strong>Compare two taxa.</strong><p>Enter two exact taxon names separated by a
                                     comma, such as <code>cf. Bison latifrons, cf. Bison alaskensis</code>.</p></div>
                             </li>
+                            <li>
+                                <span class="about-step-number">8</span>
+                                <div><strong>Review the Data.</strong><p>Open Data Steward View to track recent
+                                    changes, synonym relationship, and potential taxonomic issues together in one
+                                    place.</p></div>
+                            </li>
                         </ol>
                         <figure class="about-guide-figure">
                             <img src="assets/taxonomy-visualizer-guide.svg"
@@ -258,6 +260,33 @@
                                 Start exploring the taxonomy <span aria-hidden="true">→</span>
                             </button>
                         </figure>
+                    </div>
+                </section>
+
+                <section class="about-section about-feedback" aria-labelledby="feedback-title">
+                    <div class="about-section-heading">
+                        <h3 id="feedback-title">Help us improve the visualizer.</h3>
+                    </div>
+                    <div class="about-feedback-grid">
+                        <div class="about-feedback-copy">
+                            <p>If something on the website does not display or work as expected, an interaction is
+                                confusing or difficult to use, or you have an idea for a new feature, please share
+                                your feedback with the development team.</p>
+                            <button id="openFeedbackDialog" class="about-feedback-button" type="button">
+                                Share Your Feedback <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                        <aside class="taxonomy-feedback-note" aria-labelledby="taxonomy-feedback-title">
+                            <h4 id="taxonomy-feedback-title">Found an issue with the classification?</h4>
+                            <p>If a taxon appears in the wrong place, or a parent–child link looks incorrect, please
+                                contact a Neotoma Data Steward.</p>
+                            <div class="taxonomy-feedback-links">
+                                <a href="https://www.neotomadb.org/data/contribute-data" target="_blank"
+                                    rel="noopener noreferrer">Find a Neotoma Data Steward <span aria-hidden="true">↗</span></a>
+                                <a href="https://www.neotomadb.org/data/constituent-databases" target="_blank"
+                                    rel="noopener noreferrer">Constituent Databases <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </aside>
                     </div>
                 </section>
 
@@ -330,6 +359,75 @@
                     </div>
                 </section>
             </main>
+            <dialog id="feedbackDialog" class="feedback-dialog" aria-labelledby="feedback-dialog-title"
+                aria-describedby="feedback-dialog-description">
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="feedback-dialog-header">
+                        <div>
+                            <h2 id="feedback-dialog-title">Share Your Feedback</h2>
+                        </div>
+                        <button id="closeFeedbackDialog" class="feedback-dialog-close" type="button"
+                            aria-label="Close feedback form">×</button>
+                    </div>
+                    <p id="feedback-dialog-description" class="feedback-dialog-description">Tell us about a problem
+                        with the site, something that is confusing or does not display correctly, or an idea that
+                        could improve how the visualizer fits into your workflow. For taxonomic placement issues,
+                        please contact a <a href="https://www.neotomadb.org/data/contribute-data" target="_blank"
+                            rel="noopener noreferrer">Neotoma Data Steward</a>.</p>
+
+                    <div class="feedback-field">
+                        <label for="feedbackType">What would you like to tell us?</label>
+                        <select id="feedbackType" name="feedbackType" required autofocus>
+                            <option value="" selected disabled>Select an option</option>
+                            <option value="Something is not working">Something is not working</option>
+                            <option value="Something is confusing or difficult to use">Something is confusing or difficult to use</option>
+                            <option value="Feature or improvement request">Feature or improvement request</option>
+                            <option value="Other product feedback">Other product feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="feedback-field">
+                        <label for="feedbackArea">Where did this happen? <span>(optional)</span></label>
+                        <input id="feedbackArea" name="feedbackArea" type="text" maxlength="160"
+                            placeholder="e.g., Search results, Focus View, or About page">
+                    </div>
+
+                    <div class="feedback-field">
+                        <label for="feedbackDescription">Describe the issue or suggestion</label>
+                        <textarea id="feedbackDescription" name="feedbackDescription" rows="6" maxlength="2400"
+                            placeholder="What happened, what did you expect, or what would you like to see?" required></textarea>
+                    </div>
+
+                    <div class="feedback-field">
+                        <label for="feedbackScreenshot">Screenshot or photo <span>(optional)</span></label>
+                        <input id="feedbackScreenshot" name="feedbackScreenshot" type="file" accept="image/*">
+                        <p class="feedback-file-help">The selected image cannot be attached automatically. When your
+                            email application opens, please attach it before sending.</p>
+                    </div>
+
+                    <div class="feedback-contact-grid">
+                        <div class="feedback-field">
+                            <label for="feedbackName">Your name <span>(optional)</span></label>
+                            <input id="feedbackName" name="feedbackName" type="text" maxlength="120"
+                                autocomplete="name" placeholder="Name">
+                        </div>
+                        <div class="feedback-field">
+                            <label for="feedbackEmail">Your email <span>(optional)</span></label>
+                            <input id="feedbackEmail" name="feedbackEmail" type="email" maxlength="160"
+                                autocomplete="email" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <p class="feedback-email-note">Creating the email will open your default email application. You
+                        can review the message before sending it to the development team.</p>
+                    <div class="feedback-dialog-actions">
+                        <button id="cancelFeedbackDialog" class="feedback-cancel-button" type="button">Cancel</button>
+                        <button class="feedback-submit-button" type="submit">
+                            Create email <span aria-hidden="true">↗</span>
+                        </button>
+                    </div>
+                </form>
+            </dialog>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
@@ -350,7 +448,7 @@
         import { updateAnomalyBar } from './src/anomaly_bar.js?v=20260723-issues-dropdown-only';
         import { buildSynonymRelationships, updateSynonymBar } from './src/synonym_bar.js?v=20260724-steward-surfaces-1';
         import { updateSummaryPanel } from './src/summaryPanel.js';
-        import { initOnboarding } from './src/onboarding/onboarding.js?v=20260622-2';
+        import { initOnboarding } from './src/onboarding/onboarding.js?v=20260730-about-tour-1';
         import { resolveGroupAnomalyRows } from './src/groupAnomalyRows.js';
         import { getSynonymInfo, initSynonyms, isInvalidId } from './src/synonyms.js';
         import { expandCompactTaxonPaths } from './src/data.js';
@@ -598,12 +696,66 @@
             });
         }
 
+        function initFeedbackDialog() {
+            const dialog = document.getElementById('feedbackDialog');
+            const form = document.getElementById('feedbackForm');
+            const openButton = document.getElementById('openFeedbackDialog');
+            const closeButtons = [
+                document.getElementById('closeFeedbackDialog'),
+                document.getElementById('cancelFeedbackDialog'),
+            ].filter(Boolean);
+
+            if (!dialog || !form || !openButton) return;
+
+            const closeDialog = () => {
+                if (dialog.open) dialog.close();
+            };
+
+            openButton.addEventListener('click', () => dialog.showModal());
+            closeButtons.forEach(button => button.addEventListener('click', closeDialog));
+
+            dialog.addEventListener('click', event => {
+                if (event.target === dialog) closeDialog();
+            });
+
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                if (!form.reportValidity()) return;
+
+                const formData = new FormData(form);
+                const screenshot = document.getElementById('feedbackScreenshot')?.files?.[0];
+                const today = new Date();
+                const feedbackDate = [
+                    today.getFullYear(),
+                    String(today.getMonth() + 1).padStart(2, '0'),
+                    String(today.getDate()).padStart(2, '0'),
+                ].join('-');
+                const subject = `Taxonomy Visualizer Feature Request_${feedbackDate}`;
+                const body = [
+                    `Feedback type: ${formData.get('feedbackType')}`,
+                    `Area of the visualizer: ${formData.get('feedbackArea') || 'Not provided'}`,
+                    `Name: ${formData.get('feedbackName') || 'Not provided'}`,
+                    `Reply-to email: ${formData.get('feedbackEmail') || 'Not provided'}`,
+                    `Screenshot or photo: ${screenshot ? `${screenshot.name} (please attach before sending)` : 'Not provided'}`,
+                    `Page: ${window.location.href}`,
+                    '',
+                    'Description:',
+                    formData.get('feedbackDescription'),
+                ].join('\n');
+                const mailto = `mailto:yanbing.chen@wisc.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+                window.location.href = mailto;
+                closeDialog();
+            });
+        }
+
         initViewNav();
         initDraggableVisualizerControls();
         initCollapsibleLegend();
         initCollapsibleVisualizerControls();
         initLayerNoteClose();
-        initOnboarding();
+        initFeedbackDialog();
+        initOnboarding({ onStart: () => setAppView('explorer') });
         setAppView(getInitialAppView(), true);
 
         function getRowsForGroup(taxagroupid) {
