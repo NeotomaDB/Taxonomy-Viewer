@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neotoma Taxonomy Visualizer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.css">
-    <link rel="stylesheet" href="index.css?v=20260730-feedback-dialog-1">
+    <link rel="stylesheet" href="index.css?v=20260805-feedback-file-control-1">
     <link rel="stylesheet" href="src/onboarding/onboarding.css?v=20260713-figtree">
 </head>
 
@@ -400,7 +400,14 @@
 
                     <div class="feedback-field">
                         <label for="feedbackScreenshot">Screenshot or photo <span>(optional)</span></label>
-                        <input id="feedbackScreenshot" name="feedbackScreenshot" type="file" accept="image/*">
+                        <div class="feedback-file-control">
+                            <input id="feedbackScreenshot" name="feedbackScreenshot" type="file" accept="image/*"
+                                hidden>
+                            <button id="chooseFeedbackScreenshot" class="feedback-file-button" type="button"
+                                aria-describedby="feedbackScreenshotName">Choose file</button>
+                            <span id="feedbackScreenshotName" class="feedback-file-name" aria-live="polite">No file
+                                selected</span>
+                        </div>
                         <p class="feedback-file-help">The selected image cannot be attached automatically. When your
                             email application opens, please attach it before sending.</p>
                     </div>
@@ -700,6 +707,9 @@
             const dialog = document.getElementById('feedbackDialog');
             const form = document.getElementById('feedbackForm');
             const openButton = document.getElementById('openFeedbackDialog');
+            const screenshotInput = document.getElementById('feedbackScreenshot');
+            const screenshotButton = document.getElementById('chooseFeedbackScreenshot');
+            const screenshotName = document.getElementById('feedbackScreenshotName');
             const closeButtons = [
                 document.getElementById('closeFeedbackDialog'),
                 document.getElementById('cancelFeedbackDialog'),
@@ -713,6 +723,12 @@
 
             openButton.addEventListener('click', () => dialog.showModal());
             closeButtons.forEach(button => button.addEventListener('click', closeDialog));
+            screenshotButton?.addEventListener('click', () => screenshotInput?.click());
+            screenshotInput?.addEventListener('change', () => {
+                if (screenshotName) {
+                    screenshotName.textContent = screenshotInput.files?.[0]?.name || 'No file selected';
+                }
+            });
 
             dialog.addEventListener('click', event => {
                 if (event.target === dialog) closeDialog();

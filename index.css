@@ -1965,14 +1965,25 @@ body[data-app-view="about"] #right-panel {
   outline: none;
 }
 
-.feedback-field input[type="file"] {
+.feedback-file-control {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  box-sizing: border-box;
   padding: 6px;
   color: #657169;
   background: #f9fbf9;
-  font-size: 12px;
+  border: 1.5px solid #cfd8d1;
+  border-radius: 9px;
 }
 
-.feedback-field input[type="file"]::file-selector-button {
+.feedback-file-control:focus-within {
+  border-color: #4e8057;
+  box-shadow: 0 0 0 3px rgba(78, 128, 87, 0.14);
+}
+
+.feedback-file-button {
+  flex: 0 0 auto;
   margin-right: 10px;
   padding: 7px 11px;
   color: #31533a;
@@ -1983,6 +1994,25 @@ body[data-app-view="about"] #right-panel {
   font-size: 12px;
   font-weight: 800;
   cursor: pointer;
+}
+
+.feedback-file-button:hover {
+  background: #e3efe5;
+  border-color: #bcd1bf;
+}
+
+.feedback-file-button:focus-visible {
+  outline: 2px solid #4e8057;
+  outline-offset: 2px;
+}
+
+.feedback-file-name {
+  min-width: 0;
+  overflow: hidden;
+  color: #657169;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .feedback-file-help {
