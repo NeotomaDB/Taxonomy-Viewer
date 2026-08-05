@@ -9,6 +9,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Deploy data commits created by the taxonomy refresh workflow. Pushes made
+  # with GITHUB_TOKEN do not trigger another push workflow or Pages build.
+  workflow_run:
+    workflows: ["Refresh Taxonomy Data"]
+    types: [completed]
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -24,10 +30,15 @@ concurrency:
 jobs:
   # Build job
   build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # A workflow_run event points at the refresh workflow's starting
+          # commit; the generated data commit is the latest commit on main.
+          ref: main
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
