@@ -1572,10 +1572,23 @@ body[data-app-view="about"] #right-panel {
   gap: 8px;
 }
 
-.about-community-social-links a {
+.about-community-social-links a,
+.about-community-social-links .about-social-placeholder {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.about-community-social-links .about-social-placeholder {
+  color: #607a66;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.about-social-coming-soon {
+  color: #7e9182;
+  font-size: 11px;
+  font-style: italic;
 }
 
 .about-social-logo {
