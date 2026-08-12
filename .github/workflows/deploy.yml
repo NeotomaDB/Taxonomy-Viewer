@@ -1,0 +1,94 @@
+name: Deploy Taxonomy Viewer
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Commits made with GITHUB_TOKEN do not start another push workflow. Listening
+  # for the weekly refresh ensures its newly committed data is still deployed.
+  workflow_run:
+    workflows: ["Refresh Taxonomy Data"]
+    types: [completed]
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-2
+  S3_BUCKET: apps.neotomadb.org
+  S3_PREFIX: taxonomy-viewer
+  CLOUDFRONT_ALIAS: apps.neotomadb.org
+
+concurrency:
+  group: deploy-taxonomy-viewer
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          # For workflow_run events, main contains the taxonomy data committed
+          # near the end of the completed refresh workflow.
+          ref: main
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Sync site to S3
+        run: bash push_s3.sh
+
+      - name: Find CloudFront distribution
+        id: cloudfront
+        shell: bash
+        run: |
+          DIST_ID=$(aws cloudfront list-distributions \
+            --query "DistributionList.Items[?Aliases.Items[?@=='${{ env.CLOUDFRONT_ALIAS }}']].Id" \
+            --output text)
+
+          if [ -z "$DIST_ID" ] || [ "$DIST_ID" = "None" ]; then
+            echo "Could not find CloudFront distribution for ${{ env.CLOUDFRONT_ALIAS }}" >&2
+            exit 1
+          fi
+
+          echo "distribution_id=$DIST_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Invalidate Taxonomy Viewer cache
+        id: invalidation
+        shell: bash
+        run: |
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id "${{ steps.cloudfront.outputs.distribution_id }}" \
+            --paths "/${{ env.S3_PREFIX }}/*" \
+            --query "Invalidation.Id" \
+            --output text)
+
+          echo "invalidation_id=$INVALIDATION_ID" >> "$GITHUB_OUTPUT"
+
+          aws cloudfront wait invalidation-completed \
+            --distribution-id "${{ steps.cloudfront.outputs.distribution_id }}" \
+            --id "$INVALIDATION_ID"
+
+      - name: Verify public deployment
+        shell: bash
+        run: |
+          URL="https://${{ env.CLOUDFRONT_ALIAS }}/${{ env.S3_PREFIX }}/index.html"
+          HTTP_CODE=$(curl --retry 5 --retry-delay 5 -sS -o /dev/null -w '%{http_code}' "$URL")
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "Deployment verification failed: $URL returned HTTP $HTTP_CODE" >&2
+            exit 1
+          fi
+
+          echo "Deployment successful: https://${{ env.CLOUDFRONT_ALIAS }}/${{ env.S3_PREFIX }}/"
