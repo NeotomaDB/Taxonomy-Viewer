@@ -159,6 +159,134 @@ body {
   margin: 0;
 }
 
+#app-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.96) 0 120px, rgba(255, 255, 255, 0) 330px),
+    #e8f5e9;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.app-loading-card {
+  width: min(360px, calc(100vw - 48px));
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.app-loading-mark {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  margin-bottom: 20px;
+}
+
+.app-loading-mark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(67, 160, 71, 0.16);
+  border-top-color: #43a047;
+  border-radius: 50%;
+  animation: app-loading-spin 0.9s linear infinite;
+}
+
+.app-loading-mark span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #43a047;
+  box-shadow: 0 3px 10px rgba(46, 125, 50, 0.2);
+}
+
+.app-loading-mark span:nth-child(1) {
+  left: 12px;
+  top: 33px;
+}
+
+.app-loading-mark span:nth-child(2) {
+  left: 32px;
+  top: 15px;
+}
+
+.app-loading-mark span:nth-child(3) {
+  right: 10px;
+  bottom: 13px;
+}
+
+.app-loading-title {
+  margin: 0;
+  color: #245c2b;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.app-loading-detail {
+  margin: 8px 0 0;
+  color: #5f6f63;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.app-loading-retry {
+  margin-top: 18px;
+  padding: 9px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #43a047;
+  color: #fff;
+  font: 700 14px/1 "Figtree", system-ui, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.2);
+}
+
+.app-loading-retry:hover,
+.app-loading-retry:focus-visible {
+  background: #2e7d32;
+  outline: 3px solid rgba(67, 160, 71, 0.22);
+  outline-offset: 3px;
+}
+
+body.app-load-error .app-loading-mark::before {
+  animation: none;
+  border-color: #d9e8dc;
+}
+
+body.app-load-error .app-loading-mark span {
+  background: #91a595;
+}
+
+#layout {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.22s ease;
+}
+
+@keyframes app-loading-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #app-loading,
+  #layout {
+    transition: none;
+  }
+
+  .app-loading-mark::before {
+    animation: none;
+  }
+}
+
 #title-section {
   position: relative;
   display: flex;
