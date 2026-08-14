@@ -43,9 +43,6 @@ async function fetchExternalData() {
   return fetchPromise;
 }
 
-// Kickoff fetch in background immediately so it's ready when user clicks
-fetchExternalData();
-
 export async function fetchAndRenderExternalLinks(taxonId, containerElement, currentClickIdRef) {
   if (!containerElement || !taxonId) return;
 

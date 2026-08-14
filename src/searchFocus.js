@@ -180,7 +180,7 @@ export function setupFocusInfo(nodeSelection, getCurrentRotate = () => 0, highli
     const currentNodeSelection = liveNodeSelection();
     if (currentNodeSelection) {
       // Remove any existing focus styling
-      currentNodeSelection.select('text')
+      currentNodeSelection.select('text:not(.toggle):not(.label-halo)')
         .classed('focused-text', false)
         .classed('path-context-label', false);
 
@@ -220,7 +220,7 @@ export function setupFocusInfo(nodeSelection, getCurrentRotate = () => 0, highli
     // Remove focus styling from dendrogram
     const currentNodeSelection = liveNodeSelection();
     if (currentNodeSelection) {
-      currentNodeSelection.select('text:not(.label-halo)')
+      currentNodeSelection.select('text:not(.toggle):not(.label-halo)')
         .classed('focused-text', false)
         .classed('path-context-label', false)
         .style('fill', null);

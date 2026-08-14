@@ -1,6 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
+test('Data Steward explanation is the final tour stop', async () => {
+  const moduleUrl = new URL('../src/onboarding/steps.js', import.meta.url);
+  moduleUrl.searchParams.set('test', Date.now());
+  const { FIRST_TIME_TOUR_STEPS } = await import(moduleUrl.href);
+  const finalStep = FIRST_TIME_TOUR_STEPS.at(-1);
+
+  assert.equal(FIRST_TIME_TOUR_STEPS.length, 8);
+  assert.equal(finalStep.popover.title, 'Data Steward View');
+  assert.match(finalStep.popover.description, /recent taxonomy changes/i);
+  assert.match(finalStep.popover.description, /resolved synonym relationships/i);
+  assert.match(finalStep.popover.description, /potential taxonomic issues/i);
+});
+
 test('starting the tour runs its view transition callback', async () => {
   const handlers = new Map();
   const storage = new Map();

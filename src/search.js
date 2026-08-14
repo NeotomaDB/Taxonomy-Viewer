@@ -16,6 +16,7 @@ import {
   getAllSynonymNames,
   isInvalidId,
   getSynonymInfo,
+  initSynonyms,
   isSynonymsReady,
 } from './synonyms.js';
 import { setHighlightedPath, clearHighlightedPath, setMatchIds } from './viewSwitch.js';
@@ -30,6 +31,17 @@ import {
   buildTaxonAutocompleteCandidates,
   getTaxonAutocompleteSuggestions,
 } from './taxonAutocomplete.js';
+import { DENSE_SEARCH_RESULT_THRESHOLD } from './taxaViewConfig.js?v=20260815-dense-search-1';
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>'"]/g, character => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;',
+  }[character]));
+}
 
 export function setupSearch({
   root,
@@ -58,16 +70,47 @@ export function setupSearch({
   disableGoToTree = false, // when true, hide "Go to Tree" buttons in results list
   taxagroupid = null,      // current taxon group id — used to show external links (e.g. AlgaeBase for DIA)
 }) {
-  function getAllNodes(n) {
+  function getAllNodes(n, visited = new Set()) {
+    if (!n || visited.has(n)) return [];
+    visited.add(n);
     const arr = [n];
-    if (n.children) n.children.forEach(c => arr.push(...getAllNodes(c)));
-    if (n._children) n._children.forEach(c => arr.push(...getAllNodes(c)));
+    if (n.children) n.children.forEach(c => arr.push(...getAllNodes(c, visited)));
+    if (n._children) n._children.forEach(c => arr.push(...getAllNodes(c, visited)));
     return arr;
+  }
+
+  function attachLoadedSynonymsToSearchTree() {
+    if (!isSynonymsReady()) return;
+    const reverseMap = new Map();
+    getAllNodes(root).forEach(node => {
+      const info = getSynonymInfo(node.data.id);
+      if (!info || String(info.validId) !== String(node.data.id) || !info.synonyms?.length) return;
+      node.data.synonymMetadata = {
+        validId: info.validId,
+        validName: info.validName,
+        synonyms: info.synonyms,
+      };
+      info.synonyms.forEach(synonym => {
+        reverseMap.set(synonym.invalid_id, node.data.id);
+        reverseMap.set(synonym.invalid_name.toLowerCase(), node.data.id);
+      });
+    });
+    window.__invalidIdToCanonicalId = reverseMap;
+  }
+
+  if (isSynonymsReady()) {
+    attachLoadedSynonymsToSearchTree();
+  } else {
+    window.addEventListener('taxonomy-synonyms-ready', () => {
+      attachLoadedSynonymsToSearchTree();
+      window.__refreshCurrentTaxonDetail?.();
+    }, { once: true });
   }
 
   const idToNode = new Map();
   getAllNodes(root).forEach(n => idToNode.set(n.data.id, n));
   let currentMatches = [];
+  let currentLinkedMatches = [];
   let currentMatchIndex = -1;
   let currentResultsQuery = '';
   let isShowingDetails = false; // Track if we're showing details of a single result
@@ -210,6 +253,7 @@ export function setupSearch({
     }
 
     currentMatches = [];
+    currentLinkedMatches = [];
     currentMatchIndex = -1;
     currentResultsQuery = '';
     isShowingDetails = false;
@@ -421,12 +465,40 @@ export function setupSearch({
     if (info) info.show(d, { history });
   }
 
+  async function openLinkedTaxonMatch(match, triggerElement) {
+    if (!match || typeof window.loadTreeForGroup !== 'function') return;
+    if (triggerElement) {
+      triggerElement.disabled = true;
+      triggerElement.classList.add('is-loading');
+      triggerElement.setAttribute('aria-label', `Opening ${match.taxonname} in ${match.groupName}`);
+    }
+
+    const query = match.taxonname;
+    const activeInput = document.getElementById('searchInput');
+    if (activeInput) activeInput.value = query;
+    closeAutocomplete();
+
+    await window.loadTreeForGroup(match.taxagroupid);
+
+    const nextInput = document.getElementById('searchInput');
+    const nextButton = document.getElementById('searchBtn');
+    if (!nextInput || !nextButton) return;
+    nextInput.value = query;
+    nextInput.dispatchEvent(new Event('input', { bubbles: true }));
+    window.__suppressSearchHistory = true;
+    try {
+      nextButton.click();
+    } finally {
+      window.__suppressSearchHistory = false;
+    }
+  }
+
   function showSearchResultsList() {
     // Show the list of all search results
     isShowingDetails = false;
     clearSelectedDetailRefresh();
     const panel = document.getElementById('info');
-    if (!panel || currentMatches.length === 0) return;
+    if (!panel || (currentMatches.length === 0 && currentLinkedMatches.length === 0)) return;
 
     highlightAllMatches(currentMatches);
 
@@ -467,18 +539,63 @@ export function setupSearch({
         </button>
       ` : '';
 
+      const activeTaxagroupid = document.getElementById('taxagroupSelect')?.value || taxagroupid;
+      const groupBadge = currentLinkedMatches.length > 0 && activeTaxagroupid
+        ? `<span class="search-result-group-badge">${activeTaxagroupid === 'VPL' ? 'Vascular plants' : 'Plants undiff.'}</span>`
+        : '';
+
       return `<div style="cursor:pointer;padding:6px 0;border-bottom:1px solid #e5e7eb;" data-index="${idx}" class="search-result-item">
         <div style="display:flex;flex-direction:column;gap:2px;">
-          <div>${path}</div>
+          <div class="search-result-heading"><span>${path}</span>${groupBadge}</div>
           ${synonymBadge ? `<div style="font-size:12px;">${synonymBadge}</div>` : ''}
           ${goToTreeBtn}
         </div>
       </div>`;
     }).join('');
 
+    const linkedGroupName = currentLinkedMatches[0]?.groupName || '';
+    const linkedMatchList = currentLinkedMatches.map((match, index) => {
+      const path = match.pathNames.map(escapeHtml).join(' / ');
+      return `
+        <button class="linked-search-result" type="button" data-linked-index="${index}">
+          <span class="linked-search-result-main">
+            <span class="linked-search-result-name">${escapeHtml(match.taxonname)}</span>
+            <span class="linked-search-result-path">${path}</span>
+          </span>
+          <span class="search-result-group-badge search-result-group-badge--linked">${escapeHtml(match.groupName)}</span>
+          <span class="linked-search-result-arrow" aria-hidden="true">↗</span>
+        </button>
+      `;
+    }).join('');
+
+    const linkedSection = currentLinkedMatches.length > 0 ? `
+      <section class="linked-search-section" aria-label="Results in ${escapeHtml(linkedGroupName)}">
+        <div class="linked-search-section-title">
+          Also found in ${escapeHtml(linkedGroupName)}
+          <span>${currentLinkedMatches.length}</span>
+        </div>
+        <div class="linked-search-section-note">Select a result to switch groups automatically.</div>
+        <div class="linked-search-results">${linkedMatchList}</div>
+      </section>
+    ` : '';
+
+    const currentSection = currentMatches.length > 0 ? `
+      <div class="current-group-search-results">${matchList}</div>
+    ` : `
+      <div class="linked-search-current-empty">No matches in the current group.</div>
+    `;
+
+    const totalResults = currentMatches.length + currentLinkedMatches.length;
+    const denseSearchNote = currentMatches.length > DENSE_SEARCH_RESULT_THRESHOLD ? `
+      <div class="dense-search-note" role="note">
+        Large result set: branches start collapsed for readability. Select a branch in the tree to expand it.
+      </div>
+    ` : '';
+
     panel.innerHTML = `
-      <div style="font-weight:600;margin-bottom:6px;">Search Results (${currentMatches.length} matched paths)</div>
-      <div style="max-height:300px;overflow-y:auto;">${matchList}</div>
+      <div style="font-weight:600;margin-bottom:6px;">Search Results (${totalResults})</div>
+      ${denseSearchNote}
+      <div class="paired-group-search-results">${currentSection}${linkedSection}</div>
     `;
     panel.style.display = 'block';
 
@@ -556,6 +673,18 @@ export function setupSearch({
           const taxagroupid = nodeData.taxagroupid || 'MAM';
           window.navigateToNode(nodeData.id, nodeData.name, taxagroupid);
         }
+      });
+    });
+
+    panel.querySelectorAll('.linked-search-result').forEach((button) => {
+      button.addEventListener('click', () => {
+        const match = currentLinkedMatches[Number(button.dataset.linkedIndex)];
+        openLinkedTaxonMatch(match, button).catch((error) => {
+          console.error('Failed to open linked taxon-group result:', error);
+          button.disabled = false;
+          button.classList.remove('is-loading');
+          button.setAttribute('aria-label', `View ${match?.taxonname || 'result'} in ${match?.groupName || 'related group'}`);
+        });
       });
     });
   }
@@ -1112,9 +1241,28 @@ export function setupSearch({
     if (info) info.clear();
     if (!q) { resetSearchState(); return; }
 
+    // Synonyms are intentionally excluded from the initial-render critical
+    // path. A confirmed search waits for them here so synonym queries never
+    // produce a false "No matches" result.
+    if (!isSynonymsReady()) {
+      const panel = document.getElementById('info');
+      if (panel) {
+        panel.innerHTML = `
+          <div class="inline-loading-state" role="status" aria-live="polite">
+            <span class="inline-loading-spinner" aria-hidden="true"></span>
+            Preparing synonym-aware search…
+          </div>
+        `;
+        panel.style.display = 'block';
+      }
+      await initSynonyms();
+    }
+    attachLoadedSynonymsToSearchTree();
+
     // ── Comparison mode: comma-separated two queries ────────────────────────
     const parts = splitSearchQuery(q);
     if (parts.length >= 2) {
+      currentLinkedMatches = [];
       const r1 = findMatchesForTerm(parts[0]);
       const r2 = findMatchesForTerm(parts[1]);
 
@@ -1281,6 +1429,13 @@ export function setupSearch({
     }
 
     currentMatches = matches;
+    const activeTaxagroupid = document.getElementById('taxagroupSelect')?.value || taxagroupid;
+    currentLinkedMatches = typeof window.findLinkedTaxonMatches === 'function'
+      ? window.findLinkedTaxonMatches({
+          currentTaxagroupid: activeTaxagroupid,
+          query: singleQuery,
+        })
+      : [];
     currentMatchIndex = -1;
 
     // Set match IDs for Focus View
@@ -1338,7 +1493,7 @@ export function setupSearch({
       return;
     }
 
-    if (matches.length === 0) {
+    if (matches.length === 0 && currentLinkedMatches.length === 0) {
       if (info) {
         const panel = document.getElementById('info');
         if (panel) {
@@ -1354,6 +1509,12 @@ export function setupSearch({
       }
       highlightAllMatches([]);
       clearHighlightedPath();
+    } else if (currentLinkedMatches.length > 0) {
+      currentMatchIndex = keepResultsListOnSelect ? -1 : 0;
+      if (matches.length > 0 && searchPathOnly) {
+        focusNode(matches[0]);
+      }
+      showSearchResultsList();
     } else if (matches.length === 1) {
       // Single match - focus directly and show details
       isShowingDetails = true;
@@ -1383,21 +1544,28 @@ export function setupSearch({
   }
 
   if (searchBtn) {
-    searchBtn.addEventListener('click', () => {
+    searchBtn.__taxonSearchCleanup?.();
+    const onSearchClick = () => {
       runSearch({ recordHistory: !window.__suppressSearchHistory });
-    });
+    };
+    searchBtn.addEventListener('click', onSearchClick);
+    searchBtn.__taxonSearchCleanup = () => searchBtn.removeEventListener('click', onSearchClick);
   }
   if (clearSearchBtn) {
-    clearSearchBtn.addEventListener('click', () => {
+    clearSearchBtn.__taxonSearchCleanup?.();
+    const onClearSearchClick = () => {
       if (!searchInput) return;
       searchInput.value = '';
       closeAutocomplete();
       resetSearchState({ history: 'push' });
       searchInput.focus({ preventScroll: true });
-    });
+    };
+    clearSearchBtn.addEventListener('click', onClearSearchClick);
+    clearSearchBtn.__taxonSearchCleanup = () => clearSearchBtn.removeEventListener('click', onClearSearchClick);
   }
   if (searchInput) {
     searchInput.__taxonAutocompleteCleanup?.();
+    searchInput.__taxonSearchBehaviorCleanup?.();
     const searchSection = searchInput.closest('.search-section');
     if (searchSection) {
       autocompleteList = document.createElement('div');
@@ -1450,7 +1618,7 @@ export function setupSearch({
       searchInput.value = initialQuery;
     }
     syncClearSearchControl();
-    searchInput.addEventListener('keydown', (e) => {
+    const onSearchNavigationKeyDown = (e) => {
       if (e.key === 'Enter') {
         runSearch({ recordHistory: true });
       } else if (e.key === 'ArrowDown' && currentMatches.length > 0) {
@@ -1474,18 +1642,33 @@ export function setupSearch({
           focusNode(selectedNode, { history: 'none' });
         }
       }
-    });
+    };
+    searchInput.addEventListener('keydown', onSearchNavigationKeyDown);
     // Clear results when input is cleared
-    searchInput.addEventListener('input', (e) => {
+    const onSearchInputReset = (e) => {
       if (!e.target.value.trim()) {
         resetSearchState();
       }
-    });
+    };
+    searchInput.addEventListener('input', onSearchInputReset);
+    searchInput.__taxonSearchBehaviorCleanup = () => {
+      searchInput.removeEventListener('keydown', onSearchNavigationKeyDown);
+      searchInput.removeEventListener('input', onSearchInputReset);
+    };
   }
 
   if (autoRunSearch) {
     runSearch();
   }
 
-  return { resetSearchState, runSearch };
+  return {
+    resetSearchState,
+    runSearch,
+    // Collapsible trees add/remove live SVG nodes after a branch toggle.
+    // Reapply the active query to those fresh selections so CSS does not hide
+    // successfully expanded descendants as if they were unrelated context.
+    refreshSearchVisibility: () => {
+      if (currentMatches.length > 0) highlightAllMatches(currentMatches);
+    },
+  };
 }

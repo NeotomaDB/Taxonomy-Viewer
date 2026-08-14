@@ -7,7 +7,7 @@ export const FIRST_TIME_TOUR_STEPS = [
     popover: {
       title: 'Welcome',
       description:
-        'This tour introduces the main ways to explore Neotoma taxonomy: browse the hierarchy, search taxa, inspect results, check synonyms, and compare two taxa.',
+        'This tour introduces the main ways to explore Neotoma taxonomy: browse the hierarchy, search taxa, inspect results, check synonyms, compare two taxa, and review data stewardship signals.',
       side: 'bottom',
       align: 'center',
     },
@@ -70,6 +70,16 @@ export const FIRST_TIME_TOUR_STEPS = [
         'Use a comma to compare two exact taxa, for example <strong>cf. Bison latifrons, cf. Bison alaskensis</strong>. If either side matches multiple taxa, choose the exact taxon first before comparing.',
       side: 'right',
       align: 'center',
+    },
+  },
+  {
+    element: target('#appViewIndicator', '#stage'),
+    popover: {
+      title: 'Data Steward View',
+      description:
+        'Data Steward View brings curation signals into one workspace. Use it to review <strong>recent taxonomy changes</strong>, inspect <strong>resolved synonym relationships</strong>, and identify <strong>potential taxonomic issues</strong>. Select a taxon as usual to see stewardship-focused details, and use the view menu to return to Explorer View at any time.',
+      side: 'top',
+      align: 'end',
     },
   },
 ];

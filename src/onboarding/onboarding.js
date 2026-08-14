@@ -1,4 +1,4 @@
-import { FIRST_TIME_TOUR_STEPS } from './steps.js';
+import { FIRST_TIME_TOUR_STEPS } from './steps.js?v=20260815-data-steward-tour-1';
 import {
   markFirstTourCompleted,
   markFirstTourSkipped,
@@ -11,6 +11,7 @@ const CLICK_TAXON_STEP_INDEX = 1;
 const TWO_LEVEL_STEP_INDEX = 2;
 const SEARCH_STEP_INDEX = 5;
 const COMPARE_STEP_INDEX = 6;
+const DATA_STEWARD_STEP_INDEX = 7;
 const COMPLETION_RESET_DELAY_MS = 80;
 const OVERLAY_GUARD_EVENTS = ['pointerdown', 'mousedown', 'pointerup', 'mouseup', 'click'];
 
@@ -104,6 +105,11 @@ function clearSearchQuery() {
   searchInput.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
+function setApplicationView(view) {
+  if (document.body?.dataset?.appView === view) return;
+  document.querySelector(`.view-nav-option[data-app-view="${view}"]`)?.click();
+}
+
 function runSearchQueryForStep(query, stepIndex, delay = 700) {
   const searchInput = document.getElementById('searchInput');
   if (searchInput) {
@@ -118,6 +124,10 @@ function runSearchQueryForStep(query, stepIndex, delay = 700) {
 
 function prepareStepDemoState(activeIndex) {
   clearPendingStepState();
+
+  if (activeIndex !== DATA_STEWARD_STEP_INDEX) {
+    setApplicationView('explorer');
+  }
 
   if (activeIndex === TWO_LEVEL_STEP_INDEX) {
     setTaxonType('bio');
@@ -137,6 +147,12 @@ function prepareStepDemoState(activeIndex) {
     setTaxonType('bio');
     setTaxonGroup('MAM');
     runSearchQueryForStep('cf. Bison latifrons, cf. Bison alaskensis', COMPARE_STEP_INDEX);
+    return;
+  }
+
+  if (activeIndex === DATA_STEWARD_STEP_INDEX) {
+    document.getElementById('clearSearchBtn')?.click();
+    setApplicationView('steward');
   }
 }
 
@@ -182,7 +198,9 @@ function syncStepContext(activeIndex) {
   document.body.classList.toggle('onboarding-click-taxon-step', activeIndex === CLICK_TAXON_STEP_INDEX);
 
   const isTwoLevelStep = activeIndex === TWO_LEVEL_STEP_INDEX;
+  const isDataStewardStep = activeIndex === DATA_STEWARD_STEP_INDEX;
   document.body.classList.toggle('onboarding-two-level-step', isTwoLevelStep);
+  document.body.classList.toggle('onboarding-data-steward-step', isDataStewardStep);
   if (isTwoLevelStep) {
     openTaxonGroupDropdown();
     window.requestAnimationFrame(updateTourDropdownPosition);
@@ -190,6 +208,7 @@ function syncStepContext(activeIndex) {
     closeTaxonGroupDropdown();
   }
   setSecondaryTourHighlight('#stage', isTwoLevelStep);
+  setSecondaryTourHighlight('#right-panel', isDataStewardStep);
 }
 
 function createTour() {
@@ -268,7 +287,7 @@ export function startOnboardingTour({ resetState = false } = {}) {
   activeTour.drive();
 }
 
-export function initOnboarding({ onStart } = {}) {
+export function initOnboarding({ onStart, autoStart = true, bindRestartButton = true } = {}) {
   bindTourDropdownPositioning();
 
   const startTour = (options = {}) => {
@@ -276,20 +295,22 @@ export function initOnboarding({ onStart } = {}) {
     startOnboardingTour(options);
   };
 
-  const restartButton = document.getElementById('takeTourBtn');
-  restartButton?.addEventListener('click', (event) => {
-    event.stopPropagation();
-    document.getElementById('viewNav')?.classList.remove('open');
-    document.getElementById('viewNavTrigger')?.setAttribute('aria-expanded', 'false');
-    startTour({ resetState: true });
-  });
+  if (bindRestartButton) {
+    const restartButton = document.getElementById('takeTourBtn');
+    restartButton?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      document.getElementById('viewNav')?.classList.remove('open');
+      document.getElementById('viewNavTrigger')?.setAttribute('aria-expanded', 'false');
+      startTour({ resetState: true });
+    });
+  }
 
   window.NeotomaOnboarding = {
     start: () => startTour({ resetState: true }),
     reset: resetFirstTourState,
   };
 
-  if (shouldAutoStartFirstTour()) {
+  if (autoStart && shouldAutoStartFirstTour()) {
     window.setTimeout(() => startTour(), AUTO_START_DELAY_MS);
   }
 }

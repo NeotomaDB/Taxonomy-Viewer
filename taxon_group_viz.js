@@ -1,16 +1,17 @@
 import { applyAngleCulling, applySemanticZoomLabels } from './src/labelCulling.js?v=20260728-svg-find-halo-1';
-import { setupFocusInfo } from './src/searchFocus.js';
+import { setupFocusInfo } from './src/searchFocus.js?v=20260815-toggle-highlight-1';
 import { normalizeRows, pathsToTree, attachSynonymMetadata } from './src/data.js';
 import { createPopup } from './src/popup.js';
-import { highlightPath } from './src/highlight.js';
+import { highlightPath } from './src/highlight.js?v=20260815-toggle-highlight-1';
 import { enrichTreeWithPaths, reorderTreeForGrouping, computeLeafOrder } from './src/grouping.js';
 import { groupUncertainLeaves } from './src/groupUncertain.js';
-import { setupSearch } from './src/search.js?v=20260728-major-search-context-1';
+import { setupSearch } from './src/search.js?v=20260815-expand-refresh-1';
 import { initSynonyms, getSynonymInfo, isSynonymsReady } from './src/synonyms.js';
 import { setHighlightedPath, clearHighlightedPath } from './src/viewSwitch.js';
 import { setupHover } from './src/hover.js';
 import { EXPAND_ALL_RADIAL, FOCUS_VIEW_GROUPS, SEARCH_COLLAPSIBLE_MATCH_THRESHOLD, getRadialOverviewDepth, getRadialSemanticLabelConfig, isMajorGroupDisplayName, shouldAutoFocusCollapsibleSearch } from './src/taxaViewConfig.js?v=20260622-node-clearance-3';
 import { getURLState, pushURLState } from './src/urlhash.js';
+import { isRadialLabelOutward } from './src/radialLabelOrientation.js?v=20260815-sibling-orientation-2';
 // Data helpers now imported from ./src/data.js
 
 /**
@@ -69,9 +70,6 @@ async function renderMammalTree({
   }
 
   size = resolveResponsiveSize(size);
-
-  // Initialize synonym data for search functionality
-  await initSynonyms();
 
   // 1) Build hierarchy from path-list
   const normalizedRows = normalizeRows(rows);
@@ -626,13 +624,11 @@ async function renderMammalTree({
   // Recompute text orientation after rotation so labels don't appear upside-down
   function updateLabelOrientation() {
     const rotRad = (currentRotate * Math.PI) / 180;
-    const tau = Math.PI * 2;
-    function outward(d) { return ((d.x + rotRad) % tau + tau) % tau < Math.PI; }
     // Re-query live DOM so newly entered nodes (after expand) are included.
     gNodes.selectAll('g.node').select('text:not(.toggle)')
-      .attr('x', d => outward(d) ? 10 : -10)
-      .attr('text-anchor', d => outward(d) ? 'start' : 'end')
-      .attr('transform', d => outward(d) ? null : 'rotate(180)');
+      .attr('x', d => isRadialLabelOutward(d, rotRad) ? 10 : -10)
+      .attr('text-anchor', d => isRadialLabelOutward(d, rotRad) ? 'start' : 'end')
+      .attr('transform', d => isRadialLabelOutward(d, rotRad) ? null : 'rotate(180)');
   }
 
   // Initialize label orientation correctly

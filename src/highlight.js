@@ -4,7 +4,7 @@ export function highlightPath(linkSel, nodeSel, focusNode) {
   linkSel.each(function () {
     d3.select(this).classed('highlight', false);
   });
-  nodeSel.selectAll('text').each(function () {
+  nodeSel.selectAll('text:not(.toggle)').each(function () {
     d3.select(this).classed('highlight', false);
   });
 
@@ -19,6 +19,6 @@ export function highlightPath(linkSel, nodeSel, focusNode) {
   // Highlight and raise the entire node group (circle, text, toggle) to ensure it renders on top of everything else
   nodeSel.filter(n => A.has(n))
     .raise()
-    .selectAll('text')
+    .selectAll('text:not(.toggle)')
     .classed('highlight', true);
 }

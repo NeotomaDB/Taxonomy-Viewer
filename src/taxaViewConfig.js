@@ -40,6 +40,7 @@ export function getRadialOverviewDepth(taxagroupid) {
 export const FOCUS_VIEW_GROUPS = new Set(['INS', 'MAM', 'AVE', 'DIA', 'VPL']);
 
 export const SEARCH_COLLAPSIBLE_MATCH_THRESHOLD = 5;
+export const DENSE_SEARCH_RESULT_THRESHOLD = 40;
 
 // Group-specific semantic label rules for dense radial trees. Nodes and links
 // remain fully rendered; only label eligibility changes as users zoom.

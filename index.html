@@ -5,6 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neotoma Taxonomy Visualizer</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <script>
+        // Start first-view data immediately instead of waiting for all markup,
+        // scripts, and non-critical images to be discovered first.
+        const fetchInitialJson = (url) => fetch(url).then(response => {
+            if (!response.ok) throw new Error(`${url} returned HTTP ${response.status}`);
+            return response.json();
+        });
+        window.__taxonomyCoreDataPromise = Promise.all([
+            fetchInitialJson('data/taxon_paths_ids.json'),
+            fetchInitialJson('data/taxon_names.json'),
+            fetchInitialJson('data/taxagroup_names.json').catch(() => ({})),
+            fetchInitialJson('data/anchor_analysis.json').catch(() => ([])),
+        ]);
+        window.__d3Ready = new Promise((resolve, reject) => {
+            window.__resolveD3 = resolve;
+            window.__rejectD3 = reject;
+        });
+    </script>
     <style>
         /* Critical loading state: keep the unfinished application out of view even
            while the full stylesheet and visualization dependencies are loading. */
@@ -33,11 +52,7 @@
             pointer-events: none;
         }
     </style>
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.css"></noscript>
-    <link rel="stylesheet" href="index.css?v=20260813-initial-loading-1">
-    <link rel="stylesheet" href="src/onboarding/onboarding.css?v=20260713-figtree">
+    <link rel="stylesheet" href="index.css?v=20260815-expand-refresh-1">
 </head>
 
 <body class="app-loading" aria-busy="true">
@@ -112,6 +127,12 @@
             </div>
             <div id="popup"
                 style="position:absolute; left:-9999px; top:-9999px; background:#fff; border:1px solid #ddd; box-shadow:0 4px 12px rgba(0,0,0,0.15); border-radius:6px; padding:10px 12px; max-width:320px; z-index:1000;">
+            </div>
+            <div id="appViewIndicator" class="app-view-indicator" role="status" aria-live="polite"
+                aria-label="Current application view: Explorer View" data-view="explorer">
+                <span class="app-view-indicator-dot" aria-hidden="true"></span>
+                <span class="app-view-indicator-prefix">Current view</span>
+                <span class="app-view-indicator-label">Explorer View</span>
             </div>
             </div>
         </div>
@@ -217,7 +238,7 @@
             <main id="about-panel" class="about-panel" aria-labelledby="about-title" hidden>
                 <section class="about-hero">
                     <div class="about-identity">
-                        <img class="about-logo" src="assets/neotoma-logo.png" alt="Neotoma logo">
+                        <img class="about-logo" src="assets/neotoma-logo.png" alt="Neotoma logo" loading="lazy" fetchpriority="low">
                         <div>
                             <h2 id="about-title">See the structure behind the names.</h2>
                         </div>
@@ -294,7 +315,7 @@
                             </li>
                         </ol>
                         <figure class="about-guide-figure">
-                            <img src="assets/taxonomy-visualizer-guide.svg"
+                            <img src="assets/taxonomy-visualizer-guide.svg" loading="lazy" fetchpriority="low"
                                 alt="Illustration showing selection, search, and taxonomy-tree exploration in three steps">
                             <figcaption>Choose, search, then explore.</figcaption>
                             <button class="about-explorer-link" type="button" data-app-view="explorer">
@@ -380,17 +401,17 @@
                                 <p class="about-community-label">Stay connected</p>
                                 <div class="about-community-social-links">
                                     <a href="https://join.slack.com/t/neotomadb/shared_invite/zt-cvsv53ep-wjGeCTkq7IhP6eUNA9NxYQ"
-                                        target="_blank" rel="noopener noreferrer"><img class="about-social-logo" src="assets/slack-logo.svg" alt="Slack logo">NeotomaDB Slack</a>
+                                        target="_blank" rel="noopener noreferrer"><img class="about-social-logo" src="assets/slack-logo.svg" alt="Slack logo" loading="lazy" fetchpriority="low">NeotomaDB Slack</a>
                                     <a href="https://groups.google.com/d/forum/neotoma-updates" target="_blank"
-                                        rel="noopener noreferrer"><img class="about-social-logo" src="assets/google-groups-logo.png" alt="Google Groups logo">Neotoma Updates Listserve</a>
+                                        rel="noopener noreferrer"><img class="about-social-logo" src="assets/google-groups-logo.png" alt="Google Groups logo" loading="lazy" fetchpriority="low">Neotoma Updates Listserve</a>
                                     <a href="https://bsky.app/profile/neotomadb.bsky.social" class="about-social-placeholder" aria-disabled="true"><img
-                                        class="about-social-logo" src="assets/bluesky-logo.svg" alt="BlueSky logo">BlueSky </a>
+                                        class="about-social-logo" src="assets/bluesky-logo.svg" alt="BlueSky logo" loading="lazy" fetchpriority="low">BlueSky </a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="about-funding">
-                            <img class="about-funding-logo" src="assets/nsf-logo.png" alt="National Science Foundation logo">
+                            <img class="about-funding-logo" src="assets/nsf-logo.png" alt="National Science Foundation logo" loading="lazy" fetchpriority="low">
                             <div>
                                 <p class="about-funding-label">Funded by</p>
                                 <p class="about-funding-copy"><strong>National Science Foundation,</strong> Directorate for
@@ -478,10 +499,10 @@
             </dialog>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.js.iife.js"></script>
-    <script src="src/taxon-group-select.js"></script>
-    <script type="module" src="taxon_group_viz.js?v=20260728-focus-horizontal-1"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/d3@7"
+        onload="window.__resolveD3()" onerror="window.__rejectD3(new Error('Failed to load D3'))"></script>
+    <script defer src="src/taxon-group-select.js"></script>
+    <script type="module" src="taxon_group_viz.js?v=20260815-sibling-orientation-2"></script>
     <script type="module">
         import {
             getURLNavigationState,
@@ -491,18 +512,18 @@
             resetURLHistory,
             updateURLState
         } from './src/urlhash.js';
-        import { FORCE_LIST_TREE_GROUPS, EXPAND_ALL_COLLAPSIBLE, FOCUS_VIEW_GROUPS, getFocusViewSpacing, getTreeViewSpacing, NON_BIO_GROUPS } from './src/taxaViewConfig.js?v=20260728-focus-horizontal-1';
+        import { FORCE_LIST_TREE_GROUPS, EXPAND_ALL_COLLAPSIBLE, FOCUS_VIEW_GROUPS, DENSE_SEARCH_RESULT_THRESHOLD, getFocusViewSpacing, getTreeViewSpacing, NON_BIO_GROUPS } from './src/taxaViewConfig.js?v=20260815-dense-search-1';
         import { initViewSwitch, resetViewState, activateFocusView, setFocusViewRenderOptions } from './src/viewSwitch.js';
         import { updateAnomalyBar } from './src/anomaly_bar.js?v=20260723-issues-dropdown-only';
         import { buildSynonymRelationships, updateSynonymBar } from './src/synonym_bar.js?v=20260724-steward-surfaces-1';
         import { updateSummaryPanel } from './src/summaryPanel.js';
-        import { initOnboarding } from './src/onboarding/onboarding.js?v=20260730-about-tour-1';
         import { resolveGroupAnomalyRows } from './src/groupAnomalyRows.js';
         import { getSynonymInfo, initSynonyms, isInvalidId } from './src/synonyms.js';
         import { expandCompactTaxonPaths } from './src/data.js';
         import { resolveGroupTreeRows } from './src/groupTreeRows.js';
         import { buildInitialTrees, initialTreeNodesToRows } from './src/initialView.js';
         import { buildNavigationRows, sliceRowsFromNode } from './src/navigationRows.js';
+        import { createLinkedGroupSearch } from './src/linkedGroupSearch.js?v=20260815-plant-pair-search-1';
         import {
             buildTaxonomyIndexes,
             extractTaxaGroups,
@@ -514,6 +535,48 @@
 
         const APP_VIEWS = new Set(['explorer', 'about', 'steward']);
         let currentAppView = 'explorer';
+        let taxonomyChangeSummary = null;
+        let taxonomyChangeSummaryPromise = null;
+
+        function showStewardSummaryLoading() {
+            const panel = document.getElementById('summary-panel');
+            if (!panel || taxonomyChangeSummary) return;
+            panel.style.display = 'block';
+            panel.innerHTML = `
+                <div class="summary-loading-state" role="status" aria-live="polite">
+                    <span class="summary-loading-spinner" aria-hidden="true"></span>
+                    Loading recent taxonomy changes…
+                </div>
+            `;
+        }
+
+        function ensureTaxonomyChangeSummary() {
+            if (taxonomyChangeSummary) return Promise.resolve(taxonomyChangeSummary);
+            if (taxonomyChangeSummaryPromise) return taxonomyChangeSummaryPromise;
+
+            showStewardSummaryLoading();
+            taxonomyChangeSummaryPromise = fetch('data/taxa_changes.json', { cache: 'no-store' })
+                .then(response => {
+                    if (!response.ok) throw new Error(`Taxonomy changes returned HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then(summary => {
+                    taxonomyChangeSummary = summary;
+                    updateSummaryPanel(taxonomyChangeSummary, currentTaxagroupid, taxagroupNames);
+                    return summary;
+                })
+                .catch(error => {
+                    console.error('Failed to load recent taxonomy changes', error);
+                    const panel = document.getElementById('summary-panel');
+                    if (panel) {
+                        panel.style.display = 'block';
+                        panel.innerHTML = '<div class="summary-loading-state summary-loading-error">Recent taxonomy changes could not be loaded.</div>';
+                    }
+                    taxonomyChangeSummaryPromise = null;
+                    return null;
+                });
+            return taxonomyChangeSummaryPromise;
+        }
 
         function resetToMajorGroupsOnReload() {
             const navigationEntry = window.performance
@@ -550,6 +613,24 @@
 
             const aboutPanel = document.getElementById('about-panel');
             if (aboutPanel) aboutPanel.hidden = currentAppView !== 'about';
+
+            const viewIndicator = document.getElementById('appViewIndicator');
+            if (viewIndicator) {
+                const indicatorLabels = {
+                    explorer: 'Explorer View',
+                    steward: 'Data Steward View',
+                    about: 'About',
+                };
+                const indicatorLabel = indicatorLabels[currentAppView];
+                viewIndicator.dataset.view = currentAppView;
+                viewIndicator.setAttribute('aria-label', `Current application view: ${indicatorLabel}`);
+                const labelElement = viewIndicator.querySelector('.app-view-indicator-label');
+                if (labelElement) labelElement.textContent = indicatorLabel;
+            }
+
+            if (currentAppView === 'steward') {
+                ensureTaxonomyChangeSummary();
+            }
 
             const nav = document.getElementById('viewNav');
             const trigger = document.getElementById('viewNavTrigger');
@@ -814,7 +895,93 @@
         initFeedbackDialog();
         setAppView(getInitialAppView(), true);
 
+        let onboardingModulePromise = null;
         let onboardingInitialized = false;
+
+        function loadStylesheetOnce(href) {
+            const existing = document.querySelector(`link[data-lazy-stylesheet="${href}"]`);
+            if (existing) return Promise.resolve();
+            return new Promise((resolve, reject) => {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                link.dataset.lazyStylesheet = href;
+                link.onload = resolve;
+                link.onerror = reject;
+                document.head.appendChild(link);
+            });
+        }
+
+        function loadScriptOnce(src) {
+            const existing = document.querySelector(`script[data-lazy-script="${src}"]`);
+            if (existing) return existing.dataset.loaded === 'true'
+                ? Promise.resolve()
+                : new Promise((resolve, reject) => {
+                    existing.addEventListener('load', resolve, { once: true });
+                    existing.addEventListener('error', reject, { once: true });
+                });
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.dataset.lazyScript = src;
+                script.onload = () => {
+                    script.dataset.loaded = 'true';
+                    resolve();
+                };
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
+        function ensureOnboarding({ autoStart = false } = {}) {
+            if (onboardingModulePromise) return onboardingModulePromise;
+            onboardingModulePromise = Promise.all([
+                import('./src/onboarding/onboarding.js?v=20260815-data-steward-tour-1'),
+                loadStylesheetOnce('https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.css'),
+                loadStylesheetOnce('src/onboarding/onboarding.css?v=20260813-lazy-tour-1'),
+                loadScriptOnce('https://cdn.jsdelivr.net/npm/driver.js@1.3.5/dist/driver.js.iife.js'),
+            ]).then(([onboarding]) => {
+                if (!onboardingInitialized) {
+                    onboardingInitialized = true;
+                    onboarding.initOnboarding({
+                        onStart: () => setAppView('explorer'),
+                        autoStart,
+                        bindRestartButton: false,
+                    });
+                }
+                return onboarding;
+            }).catch(error => {
+                onboardingModulePromise = null;
+                throw error;
+            });
+            return onboardingModulePromise;
+        }
+
+        function shouldPrepareFirstTour() {
+            try {
+                return localStorage.getItem('neotoma:onboarding:firstTour:v1:completed') !== 'true'
+                    && localStorage.getItem('neotoma:onboarding:firstTour:v1:skipped') !== 'true';
+            } catch (_error) {
+                return true;
+            }
+        }
+
+        document.getElementById('takeTourBtn')?.addEventListener('click', async event => {
+            event.stopPropagation();
+            const button = event.currentTarget;
+            const originalText = button.textContent;
+            button.disabled = true;
+            button.textContent = 'Loading tour…';
+            try {
+                const onboarding = await ensureOnboarding({ autoStart: false });
+                onboarding.startOnboardingTour({ resetState: true });
+            } catch (error) {
+                console.error('Failed to load onboarding tour', error);
+            } finally {
+                button.disabled = false;
+                button.textContent = originalText;
+            }
+        });
 
         function revealLoadedApp() {
             document.body.classList.remove('app-loading', 'app-load-error');
@@ -829,9 +996,17 @@
                 }
             }, 260);
 
-            if (!onboardingInitialized) {
-                onboardingInitialized = true;
-                initOnboarding({ onStart: () => setAppView('explorer') });
+            // Optional capabilities start only after the primary tree is usable.
+            const runWhenIdle = window.requestIdleCallback
+                ? callback => window.requestIdleCallback(callback, { timeout: 1800 })
+                : callback => window.setTimeout(callback, 600);
+            runWhenIdle(() => initSynonyms().catch(error => {
+                console.error('Failed to prepare synonym search', error);
+            }));
+            if (shouldPrepareFirstTour()) {
+                runWhenIdle(() => ensureOnboarding({ autoStart: true }).catch(error => {
+                    console.error('Failed to prepare first-time tour', error);
+                }));
             }
 
             window.dispatchEvent(new CustomEvent('taxonomy-viewer-ready'));
@@ -886,7 +1061,6 @@
         let taxagroupNames = {}; // Store taxagroupid to full name mapping
         let anchorDataMap = new Map(); // Store taxagroupid to anchor info mapping
         let anchorIds = new Set(); // Store all anchor node IDs for styling
-        let taxonomyChangeSummary = null; // Steward-facing summary data
 
         // Groups with no unique real taxonomic anchor — use a synthetic root node.
         // sliceAfterName: find this name in the path; keep everything AFTER it.
@@ -957,16 +1131,9 @@
         // Load compact ID paths and name dictionaries in parallel.
         let allTaxaGroupsList = [];
         let pendingViewLoad = Promise.resolve();
-        Promise.all([
-            fetch("data/taxon_paths_ids.json").then(r => r.json()),
-            fetch("data/taxon_names.json").then(r => r.json()),
-            fetch("data/taxagroup_names.json").then(r => r.json()).catch(() => ({})),
-            fetch("data/anchor_analysis.json").then(r => r.json()).catch(() => ([])),
-            fetch("data/taxa_changes.json", { cache: "no-store" }).then(r => r.json()).catch(() => null)
-        ])
-            .then(([taxonData, taxonNames, namesMap, anchors, changeSummary]) => {
+        Promise.all([window.__taxonomyCoreDataPromise, window.__d3Ready])
+            .then(([[taxonData, taxonNames, namesMap, anchors]]) => {
                 taxagroupNames = namesMap;
-                taxonomyChangeSummary = changeSummary;
                 // Convert list of anchors to a map for easy lookup
                 anchorDataMap = new Map(anchors.map(a => [a.taxagroupid, a]));
                 // Extract all anchor IDs into a set for styling
@@ -987,8 +1154,11 @@
                 });
                 allRows = expandCompactTaxonPaths(taxonData, taxonNames);
                 taxonomyIndexes = buildTaxonomyIndexes(allRows);
-                updateSummaryPanel(taxonomyChangeSummary, currentTaxagroupid, taxagroupNames);
-
+                const linkedGroupSearch = createLinkedGroupSearch({
+                    getRowsForGroup: groupId => getRowsForGroup(groupId),
+                    getGroupName: groupId => taxagroupNames[groupId] || groupId,
+                });
+                window.findLinkedTaxonMatches = options => linkedGroupSearch.findMatches(options);
                 allTaxaGroupsList = extractTaxaGroups(allRows);
                 
                 // Read URL State
@@ -1198,9 +1368,10 @@
             allRowsForSynonyms,
             taxagroupid = null,
         }) {
-            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260728-focus-horizontal-1');
+            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260815-expand-refresh-2');
             const spacing = getFocusViewSpacing(rows);
             const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
+            const denseSearch = !!currentQuery && rows.length > DENSE_SEARCH_RESULT_THRESHOLD;
             const rootIsRecorded = rows.some((row) =>
                 (row.ids_root_to_leaf || []).some((id) => String(id) === String(rootId))
             );
@@ -1211,7 +1382,8 @@
                 rootId,
                 rootName,
                 anchorIds,
-                expandAll: true,
+                expandAll: !denseSearch,
+                denseSearch,
                 initialQuery: currentQuery,
                 autoRunSearch: !!currentQuery,
                 taxagroupid: taxagroupid || rows[0]?.taxagroupid || null,
@@ -1947,15 +2119,17 @@
                     const isFilteredSearchView = rows !== filteredRows;
                     const shouldUseSearchCollapsible = forceCollapsible || (FOCUS_VIEW_GROUPS.has(taxagroupid) && isFilteredSearchView);
                     if (shouldUseCollapsible || shouldUseSearchCollapsible) {
-                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260728-focus-horizontal-1');
+                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260815-expand-refresh-2');
                         const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
+                        const denseSearch = shouldUseSearchCollapsible && !!currentQuery && rows.length > DENSE_SEARCH_RESULT_THRESHOLD;
                         await renderCollapsibleTree({
                             rows: rows,
                             allRowsForSynonyms: allRowsForSynonyms,
                             rootId: rootId,
                             rootName: rootName,
                             anchorIds: anchorIds,
-                            expandAll: shouldUseSearchCollapsible ? true : EXPAND_ALL_COLLAPSIBLE.has(taxagroupid),
+                            expandAll: shouldUseSearchCollapsible ? !denseSearch : EXPAND_ALL_COLLAPSIBLE.has(taxagroupid),
+                            denseSearch,
                             initialQuery: currentQuery,
                             autoRunSearch: !!currentQuery,
                             taxagroupid: taxagroupid,
@@ -1987,7 +2161,7 @@
             // Use collapsible tree for small datasets (< 50 nodes) OR forced groups
             if (shouldUseCollapsible) {
                 console.log('Using collapsible tree view');
-                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260728-focus-horizontal-1');
+                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260815-expand-refresh-2');
                 await renderCollapsibleTree({
                     rows: filteredRows,
                     allRowsForSynonyms: allRowsForGroup,

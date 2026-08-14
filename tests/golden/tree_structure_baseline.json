@@ -243,15 +243,15 @@
       "records_sha256": "f3b8e928ad7be02f1be8416a6b5cab633be4f9d8f132687f8ebbb7b2822d191b"
     },
     "DIA": {
-      "input_row_count": 8516,
+      "input_row_count": 8639,
       "root_id": 5396,
       "root_name": "Bacillariophyta",
-      "node_count": 8516,
-      "edge_count": 8515,
-      "leaf_count": 7740,
-      "max_depth": 6,
-      "structure_sha256": "b361146d45d539209bf74da9666c3b13e7b022225011dabc13ea825874990a15",
-      "records_sha256": "475e52ffb6cf0ec9aab4a058e76de0c0bad2acc9e6a9fc75f713911ee485d59c"
+      "node_count": 8639,
+      "edge_count": 8638,
+      "leaf_count": 7852,
+      "max_depth": 9,
+      "structure_sha256": "15e5bbfa706d0c12c9407fbd8c49c2d7d2afab225be61365af6d8619ad6d0132",
+      "records_sha256": "b7aa5eeef1069a50003ef72523e579e5b4ecac8954b6731995aeab8ca35f1757"
     },
     "DIN": {
       "input_row_count": 425,
@@ -353,15 +353,15 @@
       "records_sha256": "987abfa57417012c4201d2a4e77eb0d3235e5a70c6cce19c9edc607c7f8005e7"
     },
     "INS": {
-      "input_row_count": 15495,
+      "input_row_count": 15470,
       "root_id": 0,
       "root_name": "Root",
-      "node_count": 15512,
-      "edge_count": 15511,
-      "leaf_count": 11665,
+      "node_count": 15487,
+      "edge_count": 15486,
+      "leaf_count": 11645,
       "max_depth": 15,
-      "structure_sha256": "0713860ad06d4bc29e57e1d7302bce0bc92999b7f51c5d9b75e8690f1d04252c",
-      "records_sha256": "fa07419ff2218ff879a81d432d34ef310770ccf5e51b85d3b23143cfc901df49"
+      "structure_sha256": "290df821d0f9d6be83d94a1a09c5185534e03ac602f30e5b2bcce0b643152365",
+      "records_sha256": "4d53857a06ddf13d9ea11990293d2787c2411b01cdbd462a59f80946ac926cad"
     },
     "ISO": {
       "input_row_count": 14,
@@ -441,15 +441,15 @@
       "records_sha256": "26becf0189b38e5c837b6a50ab1cc224918f8622858c13f2f1a969e391c13e72"
     },
     "OST": {
-      "input_row_count": 933,
+      "input_row_count": 934,
       "root_id": 13914,
       "root_name": "Ostracoda",
-      "node_count": 933,
-      "edge_count": 932,
-      "leaf_count": 740,
+      "node_count": 934,
+      "edge_count": 933,
+      "leaf_count": 741,
       "max_depth": 8,
-      "structure_sha256": "5b3a9ab4e07d07dc028c262ef49e47d2c3bbd76c69d45f23fc96bcbe5b435ca4",
-      "records_sha256": "c86df3a01e6442677b6e552f52d3abcf2adb3125af2c776b3c08f863448aa9cd"
+      "structure_sha256": "aa08ef23f487917e3c6ebffa1b088bd316821c4034c02597956b6aaf5f020653",
+      "records_sha256": "3cde30e0e9f8d6bd5fa942ff22ee2a5d175d994a7226f3ade32a99b39f7f58a6"
     },
     "PHT": {
       "input_row_count": 14,
@@ -595,15 +595,15 @@
       "records_sha256": "1aad52bae2722682910eb081f0016f4a79149af60b949200cc403537bac59b0c"
     },
     "VPL": {
-      "input_row_count": 19275,
+      "input_row_count": 19284,
       "root_id": -2003,
       "root_name": "Vascular plants",
-      "node_count": 19278,
-      "edge_count": 19277,
-      "leaf_count": 15533,
+      "node_count": 19287,
+      "edge_count": 19286,
+      "leaf_count": 15542,
       "max_depth": 19,
-      "structure_sha256": "5a0d0a9210ed09ff8cf52764779700e46c093b21b2af418aa3c2d5841472d33e",
-      "records_sha256": "f31871c7a4af88d025688e84d67f63e352a5c2ad9ef1bcb2d2a72fbef4d41dd8"
+      "structure_sha256": "9d617b5a298aa497554301143587f575e60fbc2084e3e6b85c957d8f689f6416",
+      "records_sha256": "c6a59dcca6d41119325a71249221cf777e371c1c2ce29a41a55baffcf2ed033d"
     },
     "WCH": {
       "input_row_count": 62,

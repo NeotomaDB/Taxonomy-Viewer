@@ -14,6 +14,7 @@ class SynonymManager {
     // Metadata
     this.validIdToInfo = new Map(); // Stores complete info for each valid taxon
     this.isLoaded = false;
+    this.loadPromise = null;
   }
   
   /**
@@ -21,9 +22,12 @@ class SynonymManager {
    */
   async load() {
     if (this.isLoaded) return;
+    if (this.loadPromise) return this.loadPromise;
     
-    try {
+    this.loadPromise = (async () => {
+      try {
       const response = await fetch('data/all_synonyms.json');
+      if (!response.ok) throw new Error(`Synonym data returned HTTP ${response.status}`);
       const synonymData = await response.json();
       
       // Build mappings
@@ -72,12 +76,19 @@ class SynonymManager {
       });
       
       this.isLoaded = true;
+      window.dispatchEvent(new CustomEvent('taxonomy-synonyms-ready'));
       console.log(`Loaded ${synonymData.length} synonym entries`);
       console.log(`Total ID mappings: ${this.idToValidId.size}`);
       console.log(`Total name mappings: ${this.nameToValidId.size}`);
     } catch (error) {
       console.error('Failed to load synonym data:', error);
+      throw error;
+    } finally {
+      this.loadPromise = null;
     }
+    })();
+
+    return this.loadPromise;
   }
   
   /**

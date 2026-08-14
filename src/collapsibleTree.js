@@ -1,11 +1,12 @@
-import { setupFocusInfo } from './searchFocus.js';
-import { setupSearch } from './search.js?v=20260728-major-search-context-1';
-import { highlightPath } from './highlight.js';
+import { setupFocusInfo } from './searchFocus.js?v=20260815-toggle-highlight-1';
+import { setupSearch } from './search.js?v=20260815-expand-refresh-1';
+import { highlightPath } from './highlight.js?v=20260815-toggle-highlight-1';
 import { setHighlightedPath } from './viewSwitch.js';
 import { attachSynonymMetadata } from './data.js';
 import { initSynonyms, getSynonymInfo, isSynonymsReady } from './synonyms.js';
 import { setupHover } from './hover.js';
 import { getURLState } from './urlhash.js';
+import { formatDenseNodeLabel, prepareDenseSearchTree } from './denseSearchTree.js?v=20260815-dense-search-1';
 
 /**
  * Render a collapsible tree layout.
@@ -29,6 +30,7 @@ export async function renderCollapsibleTree({
     dy = null,             // Horizontal level spacing (null = auto-calculate)
     hideRoot = false,      // Layout-only root for a forest of disconnected trees
     fitToViewport = false, // Fit a filtered horizontal path between its label gutters
+    denseSearch = false,   // Keep large filtered result trees initially compact
 } = {}) {
     if (!rows || !rows.length) {
         console.warn('renderCollapsibleTree: rows is empty.');
@@ -38,9 +40,6 @@ export async function renderCollapsibleTree({
     // Defensive clear so repeated Focus View renders cannot stack multiple
     // collapsible SVGs inside the same chart container.
     d3.select(selector).selectAll('*').remove();
-
-    // Ensure synonym data is loaded before attaching metadata.
-    await initSynonyms();
 
     // Build hierarchy from path-list
     const byId = new Map();
@@ -73,6 +72,10 @@ export async function renderCollapsibleTree({
                 const nodeRef = byId.get(id);
                 if (!nodeRef.taxagroupid && row.taxagroupid) nodeRef.taxagroupid = row.taxagroupid;
                 if (!nodeRef.isSyntheticGroup && row.isSyntheticGroup) nodeRef.isSyntheticGroup = row.isSyntheticGroup;
+            }
+
+            if (i === ids.length - 1) {
+                byId.get(id).isRecordedTerminal = true;
             }
 
             if (i > 0) {
@@ -124,6 +127,12 @@ export async function renderCollapsibleTree({
     hierarchyRoot.sort((a, b) => a.data.name.localeCompare(b.data.name));
 
     const container = document.querySelector(selector);
+    // A previous Focus View may have left the horizontal scroller at the far
+    // right. Always start a newly rendered tree from the visible origin.
+    if (container) {
+        container.scrollLeft = 0;
+        container.scrollTop = 0;
+    }
     const stage = container ? container.closest('#stage') || container.parentElement : null;
     const stageRect = stage ? stage.getBoundingClientRect() : null;
     const availableWidth = Math.floor((stageRect?.width || 900) - 18);
@@ -143,17 +152,24 @@ export async function renderCollapsibleTree({
 
     // Default: collapse everything beyond depth 1 so the tree opens compactly.
     // When expandAll=true (small, manageable groups) keep every node open.
-    hierarchyRoot.descendants().forEach((d) => {
-        if (expandAll) {
-            // Leave d.children intact; stash a copy in _children for toggle use
-            d._children = d.children && d.children.length ? d.children : null;
-        } else {
-            d._children = d.children;
-            if (d.depth > 1) {
-                d.children = null;
+    if (denseSearch) {
+        prepareDenseSearchTree(hierarchyRoot, {
+            query: initialQuery,
+            visibleNodeBudget: 40,
+        });
+    } else {
+        hierarchyRoot.descendants().forEach((d) => {
+            if (expandAll) {
+                // Leave d.children intact; stash a copy in _children for toggle use
+                d._children = d.children && d.children.length ? d.children : null;
+            } else {
+                d._children = d.children;
+                if (d.depth > 1) {
+                    d.children = null;
+                }
             }
-        }
-    });
+        });
+    }
 
     // Left margin: enough space for the root label so it is never clipped.
     // ~7px per character is a rough estimate for 12px Figtree.
@@ -174,16 +190,6 @@ export async function renderCollapsibleTree({
         180,
         Math.min(340, longestTerminalLabel * 7 + 32),
     );
-
-    // Preserve readable type and full generation spacing in Focus View.
-    // Longer paths live in a contained horizontal viewport instead of being
-    // compressed until their labels become illegible.
-    if (fitToViewport) {
-        width = Math.max(
-            width,
-            Math.ceil(leftMargin + hierarchyRoot.height * _dy + rightLabelGutter),
-        );
-    }
 
     // Create SVG — overflow:visible so labels outside the SVG box are shown
     d3.select(selector).classed('focus-path-mode', fitToViewport);
@@ -225,6 +231,8 @@ export async function renderCollapsibleTree({
 
     const displayY = (node) => (node?.y || 0) - (hideRoot ? _dy : 0);
 
+    let searchController = null;
+
     function update(source) {
         const duration = 250;
 
@@ -257,11 +265,17 @@ export async function renderCollapsibleTree({
             let initialScale = 1;
             let translateX;
             if (initialQuery || fitToViewport) {
-                // Search paths must keep both their root and terminal labels
-                // inside the viewport. Fit the searchable tree between fixed
-                // label gutters instead of pushing its root off the left edge.
+                // Fit the complete visible tree into the actual canvas, not an
+                // oversized horizontally scrolling SVG. Include both horizontal
+                // and vertical extents so no path starts outside the viewport.
                 const availableTreeWidth = Math.max(1, width - leftMargin - rightLabelGutter);
-                initialScale = Math.max(0.1, Math.min(1, availableTreeWidth / Math.max(1, maxNodeY)));
+                const visibleTreeHeight = Math.max(1, bottomNode.x - topNode.x);
+                const availableTreeHeight = Math.max(1, height - 120);
+                initialScale = Math.max(0.1, Math.min(
+                    1,
+                    availableTreeWidth / Math.max(1, maxNodeY),
+                    availableTreeHeight / visibleTreeHeight,
+                ));
                 translateX = leftMargin;
             } else {
                 // Align the rightmost nodes with the right edge of the white box.
@@ -276,42 +290,51 @@ export async function renderCollapsibleTree({
                 zoom.transform,
                 d3.zoomIdentity.translate(translateX, centerY).scale(initialScale)
             );
+            if (container) {
+                container.scrollLeft = 0;
+                container.scrollTop = 0;
+            }
             initialised = true;
         }
 
         const transition = svg.transition().duration(duration);
 
         // --- nodes ---
-        const node = gNode.selectAll('g')
+        // Bind only real taxon nodes. Nested toggle <g> controls must never
+        // participate in the hierarchy data join.
+        const node = gNode.selectAll('g.node')
             .data(nodes, d => d.id || (d.id = ++i));
+
+        const selectNode = (event, d) => {
+            // Clear any previous highlights manually
+            document.querySelectorAll('.highlight').forEach(el => {
+                el.classList.remove('highlight');
+            });
+
+            // Set new highlight to the clicked path
+            highlightPath(gLink.selectAll('path'), gNode.selectAll('g.node'), d);
+            setHighlightedPath(d);
+
+            if (typeof info !== 'undefined' && info) {
+                info.show(d, { history: 'push' });
+            }
+        };
+
+        const toggleBranch = (event, d) => {
+            event.stopPropagation();
+            if (d.children || d._children) {
+                d.children = d.children ? null : d._children;
+                update(d);
+                searchController?.refreshSearchVisibility?.();
+            }
+        };
 
         const nodeEnter = node.enter().append('g')
             .attr('class', 'node')
             .attr('transform', d => `translate(${displayY({ y: source.y0 ?? source.y ?? 0 })},${source.x0 ?? source.x ?? 0})`)
             .attr('fill-opacity', 0)
             .attr('stroke-opacity', 0)
-            .on('click', (event, d) => {
-                // Clear any previous highlights manually
-                document.querySelectorAll('.highlight').forEach(el => {
-                    el.classList.remove('highlight');
-                });
-
-                // Set new highlight to the clicked path
-                // Note: gLink and gNode are defined in the outer scope
-                highlightPath(gLink.selectAll('path'), gNode.selectAll('g.node'), d);
-                setHighlightedPath(d);
-
-                // Show side panel / info popup if the 'info' variable is initialized
-                if (typeof info !== 'undefined' && info) {
-                    info.show(d, { history: 'push' });
-                }
-
-                // Standard expansion/collapse logic
-                if (d.children || d._children) {
-                    d.children = d.children ? null : d._children;
-                    update(d);
-                }
-            })
+            .on('click', selectNode)
             .on('dblclick', (event, d) => {
                 if (window.navigateToNode && d.data && d.data.taxagroupid) {
                     // Navigate directly to the clicked taxagroup if the function exists
@@ -320,24 +343,67 @@ export async function renderCollapsibleTree({
             });
 
         nodeEnter.append('circle')
-            .attr('r', 4.5)
-            .attr('fill', d => {
-                if (d.data && d.data.isAnchor) return '#2e7d32'; // Anchor green
-                return d._children ? '#555' : '#999';
-            })
-            .attr('stroke-width', 10);
+            .attr('class', 'node-marker')
+            .attr('r', 4.5);
+
+        // Match the Major Groups interaction: keep the taxon dot at the node
+        // and place a separate +/− control on the incoming branch.
+        const toggleGroup = nodeEnter.append('g')
+            .attr('class', 'node-toggle-group')
+            .attr('transform', 'translate(-22, 0)')
+            .on('click', toggleBranch)
+            .on('keydown', (event, d) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleBranch(event, d);
+                }
+            });
+
+        toggleGroup.append('circle')
+            .attr('class', 'node-toggle-button')
+            .attr('r', 7);
+
+        toggleGroup.append('text')
+            .attr('class', 'toggle node-toggle')
+            .attr('text-anchor', 'middle')
+            .attr('dy', '0.34em')
+            .attr('aria-hidden', 'true');
 
         nodeEnter.append('text')
             .attr('class', 'node-label')
             .attr('dy', '0.31em')
-            .attr('x', d => d._children ? -8 : 8)
-            .attr('text-anchor', d => d._children ? 'end' : 'start')
+            .attr('x', 10)
+            .attr('text-anchor', 'start')
             // Keep labels as one unstroked text element. Chromium corrupts its
             // native find-in-page highlight when searchable SVG text has a
             // stroke; index.css supplies a text-shadow halo instead.
-            .text(d => d.data.name);
+            .text(d => denseSearch ? formatDenseNodeLabel(d) : d.data.name);
 
         const positionedNodes = node.merge(nodeEnter);
+        positionedNodes.select('circle.node-marker')
+            .attr('fill', d => d.data?.isAnchor ? '#2e7d32' : '#999')
+            .attr('stroke', 'none');
+        positionedNodes.select('g.node-toggle-group')
+            .style('display', d => (d.children || d._children) ? null : 'none')
+            .attr('tabindex', d => (d.children || d._children) ? 0 : null)
+            .attr('role', d => (d.children || d._children) ? 'button' : null)
+            .attr('aria-expanded', d => (d.children || d._children) ? String(!!d.children) : null)
+            .attr('aria-label', d => {
+                if (!d.children && !d._children) return null;
+                const action = d.children ? 'Collapse' : 'Expand';
+                const count = Number(d.data?.filteredTaxonCount || 0);
+                return `${action} ${d.data?.name || 'taxon branch'}${count > 1 ? `, ${count} taxa` : ''}`;
+            });
+        positionedNodes.select('circle.node-toggle-button')
+            .attr('fill', '#f3f4f6')
+            .attr('stroke', '#43a047')
+            .attr('stroke-width', 1.5);
+        positionedNodes.select('text.node-toggle')
+            .text(d => d.children ? '−' : (d._children ? '+' : ''));
+        positionedNodes.select('text.node-label')
+            .attr('x', 10)
+            .attr('text-anchor', 'start')
+            .text(d => denseSearch ? formatDenseNodeLabel(d) : d.data.name);
         if (fitToViewport) {
             // Focus View is rebuilt and searched immediately. Position its
             // nodes synchronously so the search refresh cannot interrupt the
@@ -420,7 +486,7 @@ export async function renderCollapsibleTree({
     update(hierarchyRoot);
 
     // Setup search functionality
-    setupSearch({
+    searchController = setupSearch({
         root: hierarchyRoot,
         link: gLink.selectAll('path'),
         node: gNode.selectAll('g.node'),
