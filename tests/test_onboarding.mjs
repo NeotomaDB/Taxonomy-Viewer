@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 
 test('Data Steward explanation is the final tour stop', async () => {
   const moduleUrl = new URL('../src/onboarding/steps.js', import.meta.url);
@@ -84,4 +85,12 @@ test('starting the tour runs its view transition callback', async () => {
     delete globalThis.document;
     delete globalThis.window;
   }
+});
+
+test('Take Tour loads its runtime from local project assets', async () => {
+  const indexHtml = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+
+  assert.match(indexHtml, /assets\/vendor\/driver\.css\?v=1\.3\.5/);
+  assert.match(indexHtml, /assets\/vendor\/driver\.js\.iife\.js\?v=1\.3\.5/);
+  assert.doesNotMatch(indexHtml, /cdn\.jsdelivr\.net\/npm\/driver\.js/);
 });
