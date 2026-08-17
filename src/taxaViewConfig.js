@@ -9,6 +9,10 @@ export const FORCE_LIST_TREE_GROUPS = new Set(['ACR', 'WCH', 'LAB', 'CHO', 'BRZ'
 
 export const NON_BIO_GROUPS = new Set(['WCH', 'BIM', 'AQU', 'PHY', 'MAG', 'CHM', 'SED', 'LOI', 'LAB', 'CAR', 'ISO', 'CHR', 'UPA', 'DNA', 'PHT']);
 
+export function getTaxonTypeForGroup(taxagroupid) {
+    return NON_BIO_GROUPS.has(taxagroupid) ? 'nonbio' : 'bio';
+}
+
 // Groups where the collapsible list tree should be completely expanded at initialization.
 export const EXPAND_ALL_COLLAPSIBLE = new Set([
     'ACR', 'SPO', 'CNI', 'BRC', 'ANL', 'MOL', 'NEM', 'FLT', 'ECH', 'ROT', 'BRZ', 'FUN', 'CHO', 'FOR', 'SIL', 'PLA', 'PRO', 'PRZ', 'VER', 'ISO',

@@ -6,6 +6,7 @@ import {
   getFocusViewSpacing,
   getRadialOverviewDepth,
   getRadialSemanticLabelConfig,
+  getTaxonTypeForGroup,
   shouldAutoFocusCollapsibleSearch,
 } from '../src/taxaViewConfig.js';
 
@@ -53,4 +54,12 @@ test('gives horizontal Focus View paths adaptive, bounded spacing', () => {
     ]),
     { dx: 44, dy: 260 },
   );
+});
+
+test('routes unidentified palynomorphs to the non-biological taxonomy view', () => {
+  assert.equal(getTaxonTypeForGroup('UPA'), 'nonbio');
+});
+
+test('keeps biological groups in the biological taxonomy view', () => {
+  assert.equal(getTaxonTypeForGroup('VPL'), 'bio');
 });

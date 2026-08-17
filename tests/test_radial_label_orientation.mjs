@@ -52,3 +52,10 @@ test('accounts for user rotation when orienting a sibling fan', () => {
 
   assert.equal(isRadialLabelOutward(child, 0.1), false);
 });
+
+test('uses the leaf angle when a parent represents a very wide terminal fan', () => {
+  const wideFanParent = branch(Math.PI * 1.25);
+  const farLeaf = leaf(Math.PI * 0.25, wideFanParent);
+
+  assert.equal(isRadialLabelOutward(farLeaf, Math.PI * 0.25), true);
+});

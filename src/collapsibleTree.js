@@ -1,5 +1,5 @@
 import { setupFocusInfo } from './searchFocus.js?v=20260815-toggle-highlight-1';
-import { setupSearch } from './search.js?v=20260815-expand-refresh-1';
+import { setupSearch } from './search.js?v=20260817-recent-busy-1';
 import { highlightPath } from './highlight.js?v=20260815-toggle-highlight-1';
 import { setHighlightedPath } from './viewSwitch.js';
 import { attachSynonymMetadata } from './data.js';
@@ -39,7 +39,7 @@ export async function renderCollapsibleTree({
 
     // Defensive clear so repeated Focus View renders cannot stack multiple
     // collapsible SVGs inside the same chart container.
-    d3.select(selector).selectAll('*').remove();
+    d3.select(selector).selectAll('*').interrupt().remove();
 
     // Build hierarchy from path-list
     const byId = new Map();
@@ -297,8 +297,6 @@ export async function renderCollapsibleTree({
             initialised = true;
         }
 
-        const transition = svg.transition().duration(duration);
-
         // --- nodes ---
         // Bind only real taxon nodes. Nested toggle <g> controls must never
         // participate in the hierarchy data join.
@@ -413,16 +411,20 @@ export async function renderCollapsibleTree({
                 .attr('fill-opacity', 1)
                 .attr('stroke-opacity', 1);
         } else {
-            positionedNodes.transition(transition)
+            positionedNodes.transition().duration(duration)
                 .attr('transform', d => `translate(${displayY(d)},${d.x})`)
                 .attr('fill-opacity', 1)
                 .attr('stroke-opacity', 1);
         }
 
-        node.exit().transition(transition).remove()
-            .attr('transform', d => `translate(${displayY(source)},${source.x})`)
-            .attr('fill-opacity', 0)
-            .attr('stroke-opacity', 0);
+        if (fitToViewport) {
+            node.exit().remove();
+        } else {
+            node.exit().transition().duration(duration).remove()
+                .attr('transform', d => `translate(${displayY(source)},${source.x})`)
+                .attr('fill-opacity', 0)
+                .attr('stroke-opacity', 0);
+        }
 
         // --- links ---
         const link = gLink.selectAll('path')
@@ -438,14 +440,18 @@ export async function renderCollapsibleTree({
         if (fitToViewport) {
             positionedLinks.attr('d', diagonal);
         } else {
-            positionedLinks.transition(transition).attr('d', diagonal);
+            positionedLinks.transition().duration(duration).attr('d', diagonal);
         }
 
-        link.exit().transition(transition).remove()
-            .attr('d', d => {
-                const o = { x: source.x, y: source.y };
-                return diagonal({ source: o, target: o });
-            });
+        if (fitToViewport) {
+            link.exit().remove();
+        } else {
+            link.exit().transition().duration(duration).remove()
+                .attr('d', d => {
+                    const o = { x: source.x, y: source.y };
+                    return diagonal({ source: o, target: o });
+                });
+        }
 
         setupHover(gNode.selectAll('g.node'), { taxagroupid });
 
@@ -506,6 +512,10 @@ export async function renderCollapsibleTree({
         taxagroupid: taxagroupid || rows?.[0]?.taxagroupid || null,
         onSearchClear: () => { },
     });
+    if (typeof window !== 'undefined') {
+        window.__runTaxonSearch = searchController.runSearch;
+    }
+    await searchController.autoRunPromise;
 
     // Restore focus node from URL state if requested
     window.addEventListener('RestoreFocusNode', (e) => {

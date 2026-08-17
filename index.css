@@ -2386,6 +2386,47 @@ body[data-app-view="about"] .app-view-indicator {
   font-weight: 600;
 }
 
+.visualization-busy {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: inherit;
+  background: rgba(248, 252, 248, 0.82);
+  color: #2f6f35;
+  font-family: "Figtree", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(2px);
+}
+
+.visualization-busy[hidden] {
+  display: none;
+}
+
+.visualization-busy-spinner {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: 2px solid rgba(67, 160, 71, 0.25);
+  border-top-color: #43a047;
+  border-radius: 50%;
+  animation: app-loading-spin 0.8s linear infinite;
+}
+
+body.taxonomy-busy .summary-search-btn {
+  pointer-events: none;
+}
+
+body.taxonomy-busy .summary-search-btn:disabled {
+  opacity: 0.45;
+  cursor: wait;
+}
+
 #chart.focus-path-mode {
   display: block;
   max-width: 100%;

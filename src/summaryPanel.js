@@ -1,3 +1,9 @@
+import {
+  beginTaxonomyBusy,
+  isTaxonomyBusy,
+  syncTaxonomyBusyState,
+} from './busyState.js';
+
 function formatDateLabel(value) {
   if (!value) return 'Unknown';
   const date = new Date(value);
@@ -63,21 +69,42 @@ function flattenSummary(summaryData) {
   });
 }
 
+export function getSummaryNavigationQuery(item) {
+  if (item?.taxonid !== null && item?.taxonid !== undefined && item?.taxonid !== '') {
+    return String(item.taxonid);
+  }
+  return String(item?.taxonname || '');
+}
+
 async function navigateToSummaryItem(item) {
   const searchInput = document.getElementById('searchInput');
   const searchBtn = document.getElementById('searchBtn');
   if (!searchInput || !searchBtn) return;
 
-  if (item.taxagroupid && typeof window.loadTreeForGroup === 'function') {
-    await window.loadTreeForGroup(item.taxagroupid);
-  }
-
-  searchInput.value = item.taxonname || String(item.taxonid);
-  window.__suppressSearchHistory = true;
+  const releaseBusy = beginTaxonomyBusy();
   try {
-    searchBtn.click();
+    if (item.taxagroupid && typeof window.loadTreeForGroup === 'function') {
+      await window.loadTreeForGroup(item.taxagroupid);
+    }
+
+    // Recent-change rows identify one exact taxon. Navigate by ID so a name
+    // such as "Dahlia" cannot also match "Papaver dahlianum-type".
+    searchInput.value = getSummaryNavigationQuery(item);
+    if (typeof window.__runTaxonSearch === 'function') {
+      await window.__runTaxonSearch({ recordHistory: false });
+    } else {
+      window.__suppressSearchHistory = true;
+      try {
+        searchBtn.click();
+      } finally {
+        window.__suppressSearchHistory = false;
+      }
+    }
+
+    // Keep the human-readable name in the field after the exact-ID lookup.
+    if (item.taxonname) searchInput.value = item.taxonname;
   } finally {
-    window.__suppressSearchHistory = false;
+    releaseBusy();
   }
 }
 
@@ -301,6 +328,7 @@ export function updateSummaryPanel(summaryData, currentTaxagroupid, taxagroupNam
     ${expandedPanelHtml}
   `;
   panel.style.display = 'block';
+  syncTaxonomyBusyState();
 
   const toggle = panel.querySelector('#summary-toggle');
   if (toggle) {
@@ -349,10 +377,15 @@ export function updateSummaryPanel(summaryData, currentTaxagroupid, taxagroupNam
 
   panel.querySelectorAll('.summary-search-btn').forEach(button => {
     button.addEventListener('click', async () => {
+      if (isTaxonomyBusy()) return;
       const taxonId = Number(button.getAttribute('data-taxonid'));
       const selected = visibleEntries.find(item => item.taxonid === taxonId);
       if (selected) {
-        await navigateToSummaryItem(selected);
+        try {
+          await navigateToSummaryItem(selected);
+        } catch (error) {
+          console.error('Failed to open recent taxonomy change', error);
+        }
       }
     });
   });

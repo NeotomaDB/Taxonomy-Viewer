@@ -1657,13 +1657,12 @@ export function setupSearch({
     };
   }
 
-  if (autoRunSearch) {
-    runSearch();
-  }
+  const autoRunPromise = autoRunSearch ? runSearch() : Promise.resolve();
 
   return {
     resetSearchState,
     runSearch,
+    autoRunPromise,
     // Collapsible trees add/remove live SVG nodes after a branch toggle.
     // Reapply the active query to those fresh selections so CSS does not hide
     // successfully expanded descendants as if they were unrelated context.

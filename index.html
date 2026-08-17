@@ -52,7 +52,7 @@
             pointer-events: none;
         }
     </style>
-    <link rel="stylesheet" href="index.css?v=20260815-expand-refresh-1">
+    <link rel="stylesheet" href="index.css?v=20260817-recent-busy-1">
 </head>
 
 <body class="app-loading" aria-busy="true">
@@ -95,6 +95,10 @@
                 </div>
             </div>
             <div id="chart"></div>
+            <div id="visualizationBusy" class="visualization-busy" role="status" aria-live="polite" hidden>
+                <span class="visualization-busy-spinner" aria-hidden="true"></span>
+                <span>Loading ...</span>
+            </div>
             <div id="color-legend" class="visualizer-legend" aria-label="Visualizer legend">
                 <button id="legendToggle" class="legend-toggle" type="button" aria-label="Collapse legend"
                     aria-expanded="true" data-tooltip="Collapse" title="Collapse">-</button>
@@ -502,7 +506,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/d3@7"
         onload="window.__resolveD3()" onerror="window.__rejectD3(new Error('Failed to load D3'))"></script>
     <script defer src="src/taxon-group-select.js"></script>
-    <script type="module" src="taxon_group_viz.js?v=20260815-sibling-orientation-2"></script>
+    <script type="module" src="taxon_group_viz.js?v=20260817-recent-busy-3"></script>
     <script type="module">
         import {
             getURLNavigationState,
@@ -512,11 +516,11 @@
             resetURLHistory,
             updateURLState
         } from './src/urlhash.js';
-        import { FORCE_LIST_TREE_GROUPS, EXPAND_ALL_COLLAPSIBLE, FOCUS_VIEW_GROUPS, DENSE_SEARCH_RESULT_THRESHOLD, getFocusViewSpacing, getTreeViewSpacing, NON_BIO_GROUPS } from './src/taxaViewConfig.js?v=20260815-dense-search-1';
+        import { FORCE_LIST_TREE_GROUPS, EXPAND_ALL_COLLAPSIBLE, FOCUS_VIEW_GROUPS, DENSE_SEARCH_RESULT_THRESHOLD, getFocusViewSpacing, getTreeViewSpacing, NON_BIO_GROUPS, getTaxonTypeForGroup } from './src/taxaViewConfig.js?v=20260817-unknown-context-1';
         import { initViewSwitch, resetViewState, activateFocusView, setFocusViewRenderOptions } from './src/viewSwitch.js';
         import { updateAnomalyBar } from './src/anomaly_bar.js?v=20260723-issues-dropdown-only';
         import { buildSynonymRelationships, updateSynonymBar } from './src/synonym_bar.js?v=20260724-steward-surfaces-1';
-        import { updateSummaryPanel } from './src/summaryPanel.js';
+        import { updateSummaryPanel } from './src/summaryPanel.js?v=20260817-recent-busy-1';
         import { resolveGroupAnomalyRows } from './src/groupAnomalyRows.js';
         import { getSynonymInfo, initSynonyms, isInvalidId } from './src/synonyms.js';
         import { expandCompactTaxonPaths } from './src/data.js';
@@ -1368,7 +1372,7 @@
             allRowsForSynonyms,
             taxagroupid = null,
         }) {
-            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260815-expand-refresh-2');
+            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260817-recent-busy-4');
             const spacing = getFocusViewSpacing(rows);
             const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
             const denseSearch = !!currentQuery && rows.length > DENSE_SEARCH_RESULT_THRESHOLD;
@@ -1486,7 +1490,6 @@
             const initialNodesToRender = nodesToRender;
             initViewSwitch(
                 async (rows, rootId, rootName, allRowsForSynonyms, renderOptions = {}) => {
-                    d3.select('#chart').selectAll('*').remove();
                     if (renderOptions.isFocusView) {
                         await renderHorizontalFocusTree({
                             rows,
@@ -1496,6 +1499,7 @@
                         });
                         return;
                     }
+                    d3.select('#chart').selectAll('*').remove();
 
                     // Whole View restores the stored radial overview nodes.
                     await window.renderMammalTree({
@@ -1577,7 +1581,6 @@
             // Initialize view switch
             initViewSwitch(
                 async (rows, rootId, rootName, allRowsForSynonyms, renderOptions = {}) => {
-                    d3.select('#chart').selectAll('*').remove();
                     if (renderOptions.isFocusView) {
                         await renderHorizontalFocusTree({
                             rows,
@@ -1588,6 +1591,7 @@
                         });
                         return;
                     }
+                    d3.select('#chart').selectAll('*').remove();
 
                     await window.renderMammalTree({
                         rows: rows,
@@ -1668,7 +1672,6 @@
 
                     initViewSwitch(
                         async (rows, rootId, rootName, allRowsForSynonyms, renderOptions = {}) => {
-                            d3.select('#chart').selectAll('*').remove();
                             if (renderOptions.isFocusView) {
                                 await renderHorizontalFocusTree({
                                     rows,
@@ -1679,6 +1682,7 @@
                                 });
                                 return;
                             }
+                            d3.select('#chart').selectAll('*').remove();
 
                             await window.renderMammalTree({
                                 rows: rows,
@@ -1985,6 +1989,18 @@
                 return;
             }
 
+            // A group can be opened from Recent changes, linked results, or a
+            // restored URL while the opposite Taxon Type is active.  Align the
+            // type and rebuild its dropdown first so the selected group never
+            // renders behind a misleading "Major Groups" label.
+            const targetTaxonType = getTaxonTypeForGroup(taxagroupid);
+            if (currentTaxonType !== targetTaxonType) {
+                currentTaxonType = targetTaxonType;
+                document.getElementById('bioTaxonBtn')?.classList.toggle('active', targetTaxonType === 'bio');
+                document.getElementById('nonBioTaxonBtn')?.classList.toggle('active', targetTaxonType === 'nonbio');
+                populateTaxonGroupDropdown(allTaxaGroupsList);
+            }
+
             // Save current state so Back button can return here
             if (pushToStack) {
                 navigationStack.push({
@@ -1996,7 +2012,7 @@
                 });
                 currentTreeDepth += 1;
                 pushURLState(
-                    { group: taxagroupid, root: null, focus: null },
+                    { type: targetTaxonType, group: taxagroupid, root: null, focus: null },
                     { treeDepth: currentTreeDepth }
                 );
                 updateBackButton();
@@ -2103,7 +2119,6 @@
             // Initialize view switch with render function
             initViewSwitch(
                 async (rows, rootId, rootName, allRowsForSynonyms, renderOptions = {}) => {
-                    d3.select('#chart').selectAll('*').remove();
                     if (renderOptions.isFocusView) {
                         await renderHorizontalFocusTree({
                             rows,
@@ -2114,12 +2129,13 @@
                         });
                         return;
                     }
+                    d3.select('#chart').selectAll('*').remove();
 
                     const forceCollapsible = !!renderOptions.forceCollapsible;
                     const isFilteredSearchView = rows !== filteredRows;
                     const shouldUseSearchCollapsible = forceCollapsible || (FOCUS_VIEW_GROUPS.has(taxagroupid) && isFilteredSearchView);
                     if (shouldUseCollapsible || shouldUseSearchCollapsible) {
-                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260815-expand-refresh-2');
+                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260817-recent-busy-4');
                         const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
                         const denseSearch = shouldUseSearchCollapsible && !!currentQuery && rows.length > DENSE_SEARCH_RESULT_THRESHOLD;
                         await renderCollapsibleTree({
@@ -2161,7 +2177,7 @@
             // Use collapsible tree for small datasets (< 50 nodes) OR forced groups
             if (shouldUseCollapsible) {
                 console.log('Using collapsible tree view');
-                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260815-expand-refresh-2');
+                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260817-recent-busy-4');
                 await renderCollapsibleTree({
                     rows: filteredRows,
                     allRowsForSynonyms: allRowsForGroup,

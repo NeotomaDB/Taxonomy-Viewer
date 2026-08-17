@@ -5,13 +5,13 @@ import { createPopup } from './src/popup.js';
 import { highlightPath } from './src/highlight.js?v=20260815-toggle-highlight-1';
 import { enrichTreeWithPaths, reorderTreeForGrouping, computeLeafOrder } from './src/grouping.js';
 import { groupUncertainLeaves } from './src/groupUncertain.js';
-import { setupSearch } from './src/search.js?v=20260815-expand-refresh-1';
+import { setupSearch } from './src/search.js?v=20260817-recent-busy-1';
 import { initSynonyms, getSynonymInfo, isSynonymsReady } from './src/synonyms.js';
 import { setHighlightedPath, clearHighlightedPath } from './src/viewSwitch.js';
 import { setupHover } from './src/hover.js';
 import { EXPAND_ALL_RADIAL, FOCUS_VIEW_GROUPS, SEARCH_COLLAPSIBLE_MATCH_THRESHOLD, getRadialOverviewDepth, getRadialSemanticLabelConfig, isMajorGroupDisplayName, shouldAutoFocusCollapsibleSearch } from './src/taxaViewConfig.js?v=20260622-node-clearance-3';
 import { getURLState, pushURLState } from './src/urlhash.js';
-import { isRadialLabelOutward } from './src/radialLabelOrientation.js?v=20260815-sibling-orientation-2';
+import { isRadialLabelOutward } from './src/radialLabelOrientation.js?v=20260817-wide-fan-orientation-1';
 // Data helpers now imported from ./src/data.js
 
 /**
@@ -477,8 +477,6 @@ async function renderMammalTree({
       if (rv) rv.textContent = `${Math.round(currentRotate)}\u00B0`;
     }
 
-    const t = svg.transition().duration(duration);
-
     // Update links
     const linksData = root.links();
     link = gLinks.selectAll('path')
@@ -487,8 +485,8 @@ async function renderMammalTree({
     link.join(
       enter => enter.append('path').attr('d', linkGen),
       updateSel => updateSel,
-      exit => exit.transition(t).style('opacity', 0).remove()
-    ).transition(t).attr('d', linkGen).style('opacity', 1);
+      exit => exit.transition().duration(duration).style('opacity', 0).remove()
+    ).transition().duration(duration).attr('d', linkGen).style('opacity', 1);
 
     // Update nodes
     const nodesData = root.descendants();
@@ -599,7 +597,7 @@ async function renderMammalTree({
 
     const nodeMerge = nodeEnter.merge(node);
 
-    nodeMerge.transition(t)
+    nodeMerge.transition().duration(duration)
       .attr('transform', d => `rotate(${(d.x * 180 / Math.PI - 90)}) translate(${d.y},0)`)
       .style('opacity', 1);
 
@@ -618,7 +616,7 @@ async function renderMammalTree({
       });
 
     // Remove exits
-    node.exit().transition(t).style('opacity', 0).remove();
+    node.exit().transition().duration(duration).style('opacity', 0).remove();
   }
 
   // Recompute text orientation after rotation so labels don't appear upside-down
@@ -870,9 +868,10 @@ async function renderMammalTree({
     // The Major Groups overview is a map of the whole taxonomy. Searching
     // there should highlight a route without erasing the surrounding map.
     preserveNonMatchContext: isInitialView,
-    onSearchResults: () => {
+    onSearchResults: async () => {
       if (usesFocusViewSearch && typeof window !== 'undefined' && window.activateFocusView) {
-        window.activateFocusView();
+        await window.activateFocusView();
+        return;
       }
       window.setTimeout(() => cull?.refresh(), 0);
     },
@@ -891,6 +890,9 @@ async function renderMammalTree({
     onSearchClear: () => { if (cull) cull.refresh(); },
     taxagroupid,
   });
+  if (typeof window !== 'undefined') {
+    window.__runTaxonSearch = searchControls.runSearch;
+  }
 
   // 8) Zoom/pan (wheel/pinch)
   const zoomBehavior = d3.zoom()
