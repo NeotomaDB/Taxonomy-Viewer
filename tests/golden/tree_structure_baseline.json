@@ -573,15 +573,15 @@
       "records_sha256": "3fe1d3471921a774b1c77054db7c15aba0e55537f288a1d541ee04b8bd305f9b"
     },
     "UPA": {
-      "input_row_count": 867,
+      "input_row_count": 868,
       "root_id": 313,
       "root_name": "Unknown",
-      "node_count": 867,
-      "edge_count": 866,
-      "leaf_count": 839,
+      "node_count": 868,
+      "edge_count": 867,
+      "leaf_count": 840,
       "max_depth": 3,
-      "structure_sha256": "e837d49b952573d29a371186f28e41692d3694ba6eda361302c4bd5d859c05d5",
-      "records_sha256": "96c07061fad0c5574d9f32a916e8aecea8ce2312adc30ce8a26026138c7eb206"
+      "structure_sha256": "584474c1a7e645969cbaaf1fe331f2922667c4247c9bf74c897ba5745c5c0156",
+      "records_sha256": "461a02f26abba33ebd10415ee1986c90e4cb18ff5cd77861f4e5cdc2744900b4"
     },
     "VER": {
       "input_row_count": 13,
@@ -595,15 +595,15 @@
       "records_sha256": "1aad52bae2722682910eb081f0016f4a79149af60b949200cc403537bac59b0c"
     },
     "VPL": {
-      "input_row_count": 19284,
+      "input_row_count": 19286,
       "root_id": -2003,
       "root_name": "Vascular plants",
-      "node_count": 19287,
-      "edge_count": 19286,
-      "leaf_count": 15542,
+      "node_count": 19289,
+      "edge_count": 19288,
+      "leaf_count": 15544,
       "max_depth": 19,
-      "structure_sha256": "9d617b5a298aa497554301143587f575e60fbc2084e3e6b85c957d8f689f6416",
-      "records_sha256": "c6a59dcca6d41119325a71249221cf777e371c1c2ce29a41a55baffcf2ed033d"
+      "structure_sha256": "67fb790985916031cc442e2ab6c3b59448b2ef7cae97ab1d066bff3edadc20e0",
+      "records_sha256": "720a8ff9d8740467607e643d99219c1b9615c9fb7504cb43da733ae30d0a52bb"
     },
     "WCH": {
       "input_row_count": 62,
