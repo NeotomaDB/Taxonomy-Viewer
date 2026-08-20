@@ -3,6 +3,7 @@
 
 import { pushURLState, updateURLState } from './urlhash.js';
 import { taxonomicAncestors } from './taxonomicPath.js';
+import { filterRowsForFocusMatches } from './focusRows.js';
 
 let currentHighlightedPath = null; // The currently highlighted node path
 let currentMatchIds = new Set(); // IDs of the matched search result taxa
@@ -205,13 +206,9 @@ async function switchToFocusView({ history = 'replace' } = {}) {
   let filteredRows = [];
   
   if (currentMatchIds.size > 0) {
-    filteredRows = originalRows.filter(row => {
-      const rowIds = (row.ids_root_to_leaf || []).map(id => Number(id));
-      const leafId = rowIds[rowIds.length - 1];
-      return currentMatchIds.has(Number(row.taxonid)) || currentMatchIds.has(Number(leafId));
-    });
+    filteredRows = filterRowsForFocusMatches(originalRows, currentMatchIds);
     
-    console.log('Filtered by match IDs:', {
+    console.log('Filtered by matched taxon subtrees:', {
       originalCount: originalRows.length,
       filteredCount: filteredRows.length,
       matchIdsCount: currentMatchIds.size,
@@ -260,7 +257,13 @@ async function switchToFocusView({ history = 'replace' } = {}) {
     originalRootInfo.rootId,
     originalRootInfo.rootName,
     allRowsForSynonyms,
-    { isFocusView: true, ...focusViewRenderOptions }
+    {
+      isFocusView: true,
+      focusNodeIds: currentMatchIds.size > 0
+        ? Array.from(currentMatchIds)
+        : currentHighlightedPath?.pathIds?.slice(-1) || [],
+      ...focusViewRenderOptions,
+    }
   );
   restoreFocusedNodeAfterRender();
   console.log('Rendering complete');

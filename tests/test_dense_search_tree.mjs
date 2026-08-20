@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { formatDenseNodeLabel, prepareDenseSearchTree } from '../src/denseSearchTree.js';
+import { formatDenseNodeLabel, prepareDenseSearchTree, prepareFocusedTaxonTree } from '../src/denseSearchTree.js';
 
 function node(name, children = [], recorded = false) {
   const value = { data: { name, isRecordedTerminal: recorded }, children, parent: null };
@@ -37,4 +37,34 @@ test('uses a visible-node budget when no exact taxon exists', () => {
   assert.equal(root.children, null);
   assert.equal(result.visibleNodeCount, 1);
   assert.equal(formatDenseNodeLabel(root), 'Root · 8 taxa');
+});
+
+test('collapses a focused internal taxon while keeping its path visible', () => {
+  const human = node('Homo sapiens', [], true);
+  human.data.id = 6116;
+  const primates = node('Primates', [human], true);
+  primates.data.id = 6359;
+  const mammalia = node('Mammalia', [primates]);
+  mammalia.data.id = 6171;
+
+  const result = prepareFocusedTaxonTree(mammalia, { focusNodeIds: [6359] });
+
+  assert.equal(result.mode, 'focus');
+  assert.deepEqual(mammalia.children, [primates]);
+  assert.equal(primates.children, null);
+  assert.deepEqual(primates._children, [human]);
+});
+
+test('does not invent an expand control for a focused terminal taxon', () => {
+  const human = node('Homo sapiens', [], true);
+  human.data.id = 6116;
+  const primates = node('Primates', [human]);
+  primates.data.id = 6359;
+  const mammalia = node('Mammalia', [primates]);
+  mammalia.data.id = 6171;
+
+  prepareFocusedTaxonTree(mammalia, { focusNodeIds: ['6116'] });
+
+  assert.deepEqual(human.children, []);
+  assert.equal(human._children, null);
 });

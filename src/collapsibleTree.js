@@ -1,12 +1,12 @@
 import { setupFocusInfo } from './searchFocus.js?v=20260815-toggle-highlight-1';
-import { setupSearch } from './search.js?v=20260817-recent-busy-1';
+import { setupSearch } from './search.js?v=20260820-internal-subtree-2';
 import { highlightPath } from './highlight.js?v=20260815-toggle-highlight-1';
-import { setHighlightedPath } from './viewSwitch.js';
+import { setHighlightedPath } from './viewSwitch.js?v=20260820-internal-subtree-2';
 import { attachSynonymMetadata } from './data.js';
 import { initSynonyms, getSynonymInfo, isSynonymsReady } from './synonyms.js';
 import { setupHover } from './hover.js';
 import { getURLState } from './urlhash.js';
-import { formatDenseNodeLabel, prepareDenseSearchTree } from './denseSearchTree.js?v=20260815-dense-search-1';
+import { formatDenseNodeLabel, prepareDenseSearchTree, prepareFocusedTaxonTree } from './denseSearchTree.js?v=20260820-internal-subtree-2';
 
 /**
  * Render a collapsible tree layout.
@@ -31,6 +31,7 @@ export async function renderCollapsibleTree({
     hideRoot = false,      // Layout-only root for a forest of disconnected trees
     fitToViewport = false, // Fit a filtered horizontal path between its label gutters
     denseSearch = false,   // Keep large filtered result trees initially compact
+    focusNodeIds = [],     // Focus View matches: show their paths, collapse their subtrees
 } = {}) {
     if (!rows || !rows.length) {
         console.warn('renderCollapsibleTree: rows is empty.');
@@ -152,7 +153,9 @@ export async function renderCollapsibleTree({
 
     // Default: collapse everything beyond depth 1 so the tree opens compactly.
     // When expandAll=true (small, manageable groups) keep every node open.
-    if (denseSearch) {
+    if (focusNodeIds.length > 0) {
+        prepareFocusedTaxonTree(hierarchyRoot, { focusNodeIds });
+    } else if (denseSearch) {
         prepareDenseSearchTree(hierarchyRoot, {
             query: initialQuery,
             visibleNodeBudget: 40,
@@ -509,6 +512,10 @@ export async function renderCollapsibleTree({
         // Keep every taxon name on the selected root-to-leaf path visible.
         hideAncestorLabelsOnSelect: false,
         disableGoToTree: true,           // we're already in a tree; navigateToNode is irrelevant here
+        // The Focus View dataset is already scoped to the selected subtree.
+        // Keep newly expanded descendants visible instead of hiding them as
+        // non-matching search context.
+        preserveNonMatchContext: fitToViewport,
         taxagroupid: taxagroupid || rows?.[0]?.taxagroupid || null,
         onSearchClear: () => { },
     });

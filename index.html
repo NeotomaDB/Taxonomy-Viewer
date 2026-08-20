@@ -514,7 +514,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/d3@7"
         onload="window.__resolveD3()" onerror="window.__rejectD3(new Error('Failed to load D3'))"></script>
     <script defer src="src/taxon-group-select.js"></script>
-    <script type="module" src="taxon_group_viz.js?v=20260817-recent-busy-3"></script>
+    <script type="module" src="taxon_group_viz.js?v=20260820-internal-subtree-2"></script>
     <script type="module">
         import {
             getURLNavigationState,
@@ -525,7 +525,7 @@
             updateURLState
         } from './src/urlhash.js';
         import { FORCE_LIST_TREE_GROUPS, EXPAND_ALL_COLLAPSIBLE, FOCUS_VIEW_GROUPS, DENSE_SEARCH_RESULT_THRESHOLD, getFocusViewSpacing, getTreeViewSpacing, NON_BIO_GROUPS, getTaxonTypeForGroup } from './src/taxaViewConfig.js?v=20260817-unknown-context-1';
-        import { initViewSwitch, resetViewState, activateFocusView, setFocusViewRenderOptions } from './src/viewSwitch.js';
+        import { initViewSwitch, resetViewState, activateFocusView, setFocusViewRenderOptions } from './src/viewSwitch.js?v=20260820-internal-subtree-2';
         import { updateAnomalyBar } from './src/anomaly_bar.js?v=20260723-issues-dropdown-only';
         import { buildSynonymRelationships, updateSynonymBar } from './src/synonym_bar.js?v=20260724-steward-surfaces-1';
         import { updateSummaryPanel } from './src/summaryPanel.js?v=20260817-recent-busy-1';
@@ -1411,8 +1411,9 @@
             rootName,
             allRowsForSynonyms,
             taxagroupid = null,
+            focusNodeIds = [],
         }) {
-            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260817-recent-busy-4');
+            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260820-internal-subtree-2');
             const spacing = getFocusViewSpacing(rows);
             const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
             const denseSearch = !!currentQuery && rows.length > DENSE_SEARCH_RESULT_THRESHOLD;
@@ -1428,6 +1429,7 @@
                 anchorIds,
                 expandAll: !denseSearch,
                 denseSearch,
+                focusNodeIds,
                 initialQuery: currentQuery,
                 autoRunSearch: !!currentQuery,
                 taxagroupid: taxagroupid || rows[0]?.taxagroupid || null,
@@ -1536,6 +1538,7 @@
                             rootId,
                             rootName,
                             allRowsForSynonyms,
+                            focusNodeIds: renderOptions.focusNodeIds || [],
                         });
                         return;
                     }
@@ -1628,6 +1631,7 @@
                             rootName,
                             allRowsForSynonyms,
                             taxagroupid,
+                            focusNodeIds: renderOptions.focusNodeIds || [],
                         });
                         return;
                     }
@@ -1719,6 +1723,7 @@
                                     rootName,
                                     allRowsForSynonyms,
                                     taxagroupid: currentTaxagroupid,
+                                    focusNodeIds: renderOptions.focusNodeIds || [],
                                 });
                                 return;
                             }
@@ -2166,6 +2171,7 @@
                             rootName,
                             allRowsForSynonyms,
                             taxagroupid,
+                            focusNodeIds: renderOptions.focusNodeIds || [],
                         });
                         return;
                     }
@@ -2175,7 +2181,7 @@
                     const isFilteredSearchView = rows !== filteredRows;
                     const shouldUseSearchCollapsible = forceCollapsible || (FOCUS_VIEW_GROUPS.has(taxagroupid) && isFilteredSearchView);
                     if (shouldUseCollapsible || shouldUseSearchCollapsible) {
-                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260817-recent-busy-4');
+                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260820-internal-subtree-2');
                         const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
                         const denseSearch = shouldUseSearchCollapsible && !!currentQuery && rows.length > DENSE_SEARCH_RESULT_THRESHOLD;
                         await renderCollapsibleTree({
@@ -2217,7 +2223,7 @@
             // Use collapsible tree for small datasets (< 50 nodes) OR forced groups
             if (shouldUseCollapsible) {
                 console.log('Using collapsible tree view');
-                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260817-recent-busy-4');
+                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260820-internal-subtree-2');
                 await renderCollapsibleTree({
                     rows: filteredRows,
                     allRowsForSynonyms: allRowsForGroup,

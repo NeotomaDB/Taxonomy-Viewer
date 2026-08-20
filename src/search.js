@@ -19,7 +19,7 @@ import {
   initSynonyms,
   isSynonymsReady,
 } from './synonyms.js';
-import { setHighlightedPath, clearHighlightedPath, setMatchIds } from './viewSwitch.js';
+import { setHighlightedPath, clearHighlightedPath, setMatchIds } from './viewSwitch.js?v=20260820-internal-subtree-2';
 import { fetchAndRenderExternalLinks } from './externaltaxa.js';
 import { fetchAndRenderTaxonMetadata } from './taxonMetadata.js';
 import { fetchAndRenderTaxonSummary } from './taxonSummary.js';

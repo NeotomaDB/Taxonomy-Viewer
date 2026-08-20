@@ -41,6 +41,51 @@ function pathFromRoot(node) {
 }
 
 /**
+ * Show only the paths to the selected Focus View taxa and keep each selected
+ * internal taxon collapsed. Expanding it later reveals the subtree already
+ * present in _children.
+ */
+export function prepareFocusedTaxonTree(root, { focusNodeIds = [] } = {}) {
+  if (!root) return { mode: 'empty', focusNodes: [], visibleNodeCount: 0 };
+
+  countFilteredTaxa(root);
+  const allNodes = collectNodes(root);
+  const normalizedFocusIds = new Set(
+    Array.from(focusNodeIds, id => String(id)),
+  );
+  const focusNodes = allNodes.filter(node =>
+    normalizedFocusIds.has(String(node.data?.id ?? node.data?.taxonid)),
+  );
+
+  if (focusNodes.length === 0) {
+    return { mode: 'missing', focusNodes: [], visibleNodeCount: allNodes.length };
+  }
+
+  allNodes.forEach((node) => {
+    node._children = node.children?.length ? node.children : null;
+    if (node._children) node.children = null;
+  });
+
+  const visibleNodes = new Set([root]);
+  focusNodes.forEach((focusNode) => {
+    const path = pathFromRoot(focusNode);
+    path.slice(0, -1).forEach((node, index) => {
+      const nextNode = path[index + 1];
+      if (!node.children) node.children = [];
+      if (!node.children.includes(nextNode)) node.children.push(nextNode);
+      visibleNodes.add(node);
+      visibleNodes.add(nextNode);
+    });
+  });
+
+  return {
+    mode: 'focus',
+    focusNodes,
+    visibleNodeCount: visibleNodes.size,
+  };
+}
+
+/**
  * Collapses a filtered search tree to a readable initial state.
  * Exact-name matches receive a visible root-to-match path; otherwise the tree
  * expands breadth-first until the visible-node budget would be exceeded.
