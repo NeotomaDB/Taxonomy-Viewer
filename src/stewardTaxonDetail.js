@@ -101,6 +101,9 @@ export function buildStewardSynonymPanelHtml({
         index,
         displayedSynonyms.length,
       )).join('')}
+      <div class="steward-synonym-authority-note">
+        This relationship reflects Neotoma taxonomy records and may differ from other taxonomic authorities.
+      </div>
     </section>
   `;
 }

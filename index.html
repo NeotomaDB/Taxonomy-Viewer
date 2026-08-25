@@ -60,7 +60,7 @@
             pointer-events: none;
         }
     </style>
-    <link rel="stylesheet" href="index.css?v=20260817-recent-busy-1">
+    <link rel="stylesheet" href="index.css?v=20260825-synonym-history-1">
 </head>
 
 <body class="app-loading" aria-busy="true">
@@ -527,7 +527,7 @@
         import { FORCE_LIST_TREE_GROUPS, EXPAND_ALL_COLLAPSIBLE, FOCUS_VIEW_GROUPS, DENSE_SEARCH_RESULT_THRESHOLD, getFocusViewSpacing, getTreeViewSpacing, NON_BIO_GROUPS, getTaxonTypeForGroup } from './src/taxaViewConfig.js?v=20260817-unknown-context-1';
         import { initViewSwitch, resetViewState, activateFocusView, setFocusViewRenderOptions } from './src/viewSwitch.js?v=20260820-internal-subtree-2';
         import { updateAnomalyBar } from './src/anomaly_bar.js?v=20260723-issues-dropdown-only';
-        import { buildSynonymRelationships, updateSynonymBar } from './src/synonym_bar.js?v=20260724-steward-surfaces-1';
+        import { buildSynonymRelationships, updateSynonymBar } from './src/synonym_bar.js?v=20260825-neotoma-synonyms-1';
         import { updateSummaryPanel } from './src/summaryPanel.js?v=20260817-recent-busy-1';
         import { resolveGroupAnomalyRows } from './src/groupAnomalyRows.js';
         import { getSynonymInfo, initSynonyms, isInvalidId } from './src/synonyms.js';
@@ -975,7 +975,7 @@
         function ensureOnboarding({ autoStart = false } = {}) {
             if (onboardingModulePromise) return onboardingModulePromise;
             onboardingModulePromise = Promise.all([
-                import('./src/onboarding/onboarding.js?v=20260818-local-tour-1'),
+                import('./src/onboarding/onboarding.js?v=20260825-viewer-copy-1'),
                 loadStylesheetOnce('assets/vendor/driver.css?v=1.3.5'),
                 loadStylesheetOnce('src/onboarding/onboarding.css?v=20260818-local-tour-1'),
                 loadScriptOnce('assets/vendor/driver.js.iife.js?v=1.3.5'),
@@ -2058,7 +2058,12 @@
                 currentTreeDepth += 1;
                 pushURLState(
                     { type: targetTaxonType, group: taxagroupid, root: null, focus: null },
-                    { treeDepth: currentTreeDepth }
+                    { treeDepth: currentTreeDepth },
+                    // Opening a recent-change taxon can target the group that is
+                    // already visible. Preserve a real checkpoint even when the
+                    // shareable URL is otherwise unchanged, so Go Back restores
+                    // the preceding Data Steward state instead of skipping it.
+                    { forcePush: true }
                 );
                 updateBackButton();
             }

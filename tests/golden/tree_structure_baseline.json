@@ -243,15 +243,15 @@
       "records_sha256": "f3b8e928ad7be02f1be8416a6b5cab633be4f9d8f132687f8ebbb7b2822d191b"
     },
     "DIA": {
-      "input_row_count": 8639,
+      "input_row_count": 8640,
       "root_id": 5396,
       "root_name": "Bacillariophyta",
-      "node_count": 8639,
-      "edge_count": 8638,
-      "leaf_count": 7852,
+      "node_count": 8640,
+      "edge_count": 8639,
+      "leaf_count": 7853,
       "max_depth": 9,
-      "structure_sha256": "15e5bbfa706d0c12c9407fbd8c49c2d7d2afab225be61365af6d8619ad6d0132",
-      "records_sha256": "b7aa5eeef1069a50003ef72523e579e5b4ecac8954b6731995aeab8ca35f1757"
+      "structure_sha256": "0dd1a6f2dda19b851c0def79cb8aad00045f1d2f0c1712d2c1f344557eacd135",
+      "records_sha256": "fdf11a396039c8fa5b320363e4f8e1ab57cbe7b39c4fbf54d6879b577f747d40"
     },
     "DIN": {
       "input_row_count": 425,
@@ -353,15 +353,15 @@
       "records_sha256": "987abfa57417012c4201d2a4e77eb0d3235e5a70c6cce19c9edc607c7f8005e7"
     },
     "INS": {
-      "input_row_count": 15470,
+      "input_row_count": 15463,
       "root_id": 0,
       "root_name": "Root",
-      "node_count": 15487,
-      "edge_count": 15486,
-      "leaf_count": 11645,
+      "node_count": 15480,
+      "edge_count": 15479,
+      "leaf_count": 11638,
       "max_depth": 15,
-      "structure_sha256": "290df821d0f9d6be83d94a1a09c5185534e03ac602f30e5b2bcce0b643152365",
-      "records_sha256": "4d53857a06ddf13d9ea11990293d2787c2411b01cdbd462a59f80946ac926cad"
+      "structure_sha256": "fe2da74e76db7f465ff65f57ed91f14e9a3f0531b657d0fde4703fe6ed30ff4d",
+      "records_sha256": "c6d033ae6d9aa80acfe3cf1eb24a22bb9ef65003ad13b5bc39ceeaca8ac6eea7"
     },
     "ISO": {
       "input_row_count": 14,
@@ -562,15 +562,15 @@
       "records_sha256": "a6e65606661b01a1a10a4c20c8889f7ff1c55b57880887ba2a55fa55f2ff88f1"
     },
     "TES": {
-      "input_row_count": 453,
+      "input_row_count": 457,
       "root_id": 32182,
       "root_name": "Eukaryota",
-      "node_count": 469,
-      "edge_count": 468,
-      "leaf_count": 337,
+      "node_count": 473,
+      "edge_count": 472,
+      "leaf_count": 341,
       "max_depth": 11,
-      "structure_sha256": "d1e0e6c1b8ce04445c96492ca37c6274f7c5064afdf45e5f140703844cdbfe47",
-      "records_sha256": "3fe1d3471921a774b1c77054db7c15aba0e55537f288a1d541ee04b8bd305f9b"
+      "structure_sha256": "f4e47ff543f94bfce3f11208a081ee5e7ab2f148a87ffcf0be2267c134cfda95",
+      "records_sha256": "3c1bf47addb6fb4d901776827308aae5351bbd745bbb9bd14b01f3fb2941cd95"
     },
     "UPA": {
       "input_row_count": 868,

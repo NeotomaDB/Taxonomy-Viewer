@@ -13,6 +13,10 @@ test('Data Steward explanation is the final tour stop', async () => {
   assert.match(finalStep.popover.description, /recent taxonomy changes/i);
   assert.match(finalStep.popover.description, /resolved synonym relationships/i);
   assert.match(finalStep.popover.description, /potential taxonomic issues/i);
+  assert.doesNotMatch(
+    FIRST_TIME_TOUR_STEPS.map(step => step.popover.description).join(' '),
+    /\bvisualizer\b/i,
+  );
 });
 
 test('starting the tour runs its view transition callback', async () => {

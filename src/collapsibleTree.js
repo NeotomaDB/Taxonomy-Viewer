@@ -1,4 +1,4 @@
-import { setupFocusInfo } from './searchFocus.js?v=20260815-toggle-highlight-1';
+import { setupFocusInfo } from './searchFocus.js?v=20260825-canvas-synonyms-1';
 import { setupSearch } from './search.js?v=20260820-internal-subtree-2';
 import { highlightPath } from './highlight.js?v=20260815-toggle-highlight-1';
 import { setHighlightedPath } from './viewSwitch.js?v=20260820-internal-subtree-2';

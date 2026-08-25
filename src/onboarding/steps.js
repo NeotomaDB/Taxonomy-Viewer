@@ -17,7 +17,7 @@ export const FIRST_TIME_TOUR_STEPS = [
     popover: {
       title: 'Click a Taxon',
       description:
-        'Start by clicking a taxon in the visualizer. The path you click is highlighted in blue, and <strong>Search Results</strong> shows its path from root to taxon plus available metadata.',
+        'Start by clicking a taxon in the viewer. The path you click is highlighted in blue, and <strong>Search Results</strong> shows its path from root to taxon plus available metadata.',
       side: 'left',
       align: 'center',
     },
@@ -27,7 +27,7 @@ export const FIRST_TIME_TOUR_STEPS = [
     popover: {
       title: 'Two-Level Visualization',
       description:
-        'By default, the visualizer opens in <strong>Major Groups View</strong>, which shows the broad taxonomic hierarchy down to class level. To drill into species-level detail, choose a group from the <strong>Taxon Group</strong> dropdown, or click a <span class="onboarding-anchor-text">green anchor node</span> in Major Groups View and select the <span class="onboarding-action-button">Go to Group View</span> button in the panel.',
+        'By default, the viewer opens in <strong>Major Groups View</strong>, which shows the broad taxonomic hierarchy down to class level. To drill into species-level detail, choose a group from the <strong>Taxon Group</strong> dropdown, or click a <span class="onboarding-anchor-text">green anchor node</span> in Major Groups View and select the <span class="onboarding-action-button">Go to Group View</span> button in the panel.',
       side: 'top',
       align: 'center',
     },

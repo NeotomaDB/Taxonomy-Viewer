@@ -97,13 +97,15 @@ export function updateURLState(newParams) {
  *
  * Any pending fine-grained state is first committed to the current entry, so
  * the previous screen keeps its latest search, focus, rotation, and view mode.
+ * Set forcePush when an in-app action must remain reversible even if its URL
+ * happens to match the current entry.
  */
-export function pushURLState(newParams, navigationState = {}) {
+export function pushURLState(newParams, navigationState = {}, { forcePush = false } = {}) {
   replacePendingState();
   const nextState = mergeURLState(getURLState(), newParams);
   const nextURL = buildURL(nextState);
 
-  if (isCurrentURL(nextState)) {
+  if (isCurrentURL(nextState) && !forcePush) {
     window.history.replaceState(withNavigationState(navigationState), '', nextURL);
     return;
   }

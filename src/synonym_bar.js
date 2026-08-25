@@ -92,7 +92,7 @@ function showSynonymRelationships(groupName, relationships) {
     <div class="synonym-relationships-panel-header">
       <div>
         <h3>${escapeHtml(groupName)} synonym relationships</h3>
-        <p>Invalid names linked to the accepted taxon record used on the canvas.</p>
+        <p>Names that Neotoma links to the accepted taxon record shown on the canvas. Other taxonomic authorities may treat these names differently.</p>
       </div>
       <button id="closeSynonymRelationships" class="synonym-relationships-close" type="button" aria-label="Close synonym relationships">
         ×
@@ -102,7 +102,7 @@ function showSynonymRelationships(groupName, relationships) {
       <table class="synonym-relationships-table">
         <thead>
           <tr>
-            <th scope="col">Invalid synonym</th>
+            <th scope="col">Synonym</th>
             <th scope="col">Accepted name in Neotoma</th>
             <th scope="col">Relationship</th>
             <th scope="col">Updated</th>

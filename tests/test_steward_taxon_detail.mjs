@@ -3,7 +3,7 @@ import test from 'node:test';
 
 import { buildStewardSynonymPanelHtml } from '../src/stewardTaxonDetail.js';
 
-test('matches the Explorer resolution panel except for its disclaimer', () => {
+test('builds a Neotoma-scoped resolution panel', () => {
   const html = buildStewardSynonymPanelHtml({
     taxonId: 44439,
     selectedName: 'Dermanura phaeotis',
@@ -21,10 +21,10 @@ test('matches the Explorer resolution panel except for its disclaimer', () => {
   assert.match(html, /<strong>Synonym:<\/strong>/);
   assert.match(html, /<em>Artibeus phaeotis \(ID 44440\)<\/em>/);
   assert.match(html, /<strong>Type:<\/strong> nomenclatural synonym[\s\S]* · [\s\S]*<strong>Updated:<\/strong> June 1[78], 2021/);
-  assert.doesNotMatch(html, /Synonym status shown here/);
+  assert.match(html, /reflects Neotoma taxonomy records and may differ from other taxonomic authorities/);
 });
 
-test('matches the Explorer accepted-name synonym panel except for its disclaimer', () => {
+test('builds a Neotoma-scoped accepted-name synonym panel', () => {
   const html = buildStewardSynonymPanelHtml({
     taxonId: 44439,
     selectedName: 'Dermanura phaeotis',
@@ -44,7 +44,7 @@ test('matches the Explorer accepted-name synonym panel except for its disclaimer
   assert.match(html, /<strong>Synonym:<\/strong>/);
   assert.match(html, /<em>Artibeus phaeotis \(ID 44440\)<\/em>/);
   assert.match(html, /<strong>Type:<\/strong> nomenclatural synonym[\s\S]* · [\s\S]*<strong>Updated:<\/strong> June 1[78], 2021/);
-  assert.doesNotMatch(html, /Synonym status shown here/);
+  assert.match(html, /reflects Neotoma taxonomy records and may differ from other taxonomic authorities/);
 });
 
 test('omits the synonym panel for a taxon without synonym relationships', () => {

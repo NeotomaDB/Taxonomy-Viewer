@@ -9,8 +9,12 @@ import { fetchAndRenderTaxonMetadata } from './taxonMetadata.js';
 import { fetchAndRenderTaxonSummary } from './taxonSummary.js';
 import { isMajorGroupDisplayName } from './taxaViewConfig.js';
 import { pushURLState, updateURLState } from './urlhash.js';
-import { clearStewardTaxonDetail, renderStewardTaxonDetail } from './stewardTaxonDetail.js';
-import { taxonomicAncestors } from './taxonomicPath.js';
+import {
+  buildStewardSynonymPanelHtml,
+  clearStewardTaxonDetail,
+  renderStewardTaxonDetail,
+} from './stewardTaxonDetail.js';
+import { taxonomicAncestors } from './taxonomicPath.js?v=20260825-vpl-scientific-path-1';
 
 export function setupFocusInfo(nodeSelection, getCurrentRotate = () => 0, highlightOnlyTargetNode = false) {
   const panel = document.getElementById('info');
@@ -98,6 +102,11 @@ export function setupFocusInfo(nodeSelection, getCurrentRotate = () => 0, highli
       isTerminalTaxon: !hasSubtree,
       synonymInfo: d.data.synonymMetadata,
     });
+    const synonymPanelHtml = buildStewardSynonymPanelHtml({
+      taxonId: nodeId,
+      selectedName: d.data.name,
+      synonymInfo: d.data.synonymMetadata,
+    });
     const goToGroupButton = ((isAnchor || isSyntheticEntry) && taxagroupid && window.loadTreeForGroup) ? `
       <button id="goToGroupBtn" style="
         margin-top: 12px;
@@ -130,6 +139,7 @@ export function setupFocusInfo(nodeSelection, getCurrentRotate = () => 0, highli
         <div style="margin-bottom:8px;"><strong>Path:</strong> ${pathHtml}</div>
         <div id="taxon-metadata-container"></div>
         <div id="taxon-summary-container"></div>
+        ${synonymPanelHtml}
         <div style="display:flex; flex-wrap:wrap; gap:8px;">
           ${goToTreeButton}
           ${goToGroupButton}

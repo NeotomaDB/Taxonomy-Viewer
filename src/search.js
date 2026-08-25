@@ -25,7 +25,7 @@ import { fetchAndRenderTaxonMetadata } from './taxonMetadata.js';
 import { fetchAndRenderTaxonSummary } from './taxonSummary.js';
 import { renderStewardTaxonDetail } from './stewardTaxonDetail.js';
 import { getURLState, pushURLState, updateURLState } from './urlhash.js';
-import { taxonomicAncestors } from './taxonomicPath.js';
+import { taxonomicAncestors } from './taxonomicPath.js?v=20260825-vpl-scientific-path-1';
 import { splitSearchQuery, unwrapQuotedSearchTerm } from './searchQuery.js';
 import {
   buildTaxonAutocompleteCandidates,

@@ -34,3 +34,15 @@ test('excludes an internal forest layout container from taxonomic paths', () => 
     ['Eukaryota', 'Halodinium'],
   );
 });
+
+test('starts the Vascular plants scientific path at Tracheophyta', () => {
+  const vascularPlantsViewRoot = hierarchyNode({ id: -2003, name: 'Vascular plants' });
+  const tracheophyta = hierarchyNode({ id: 9534, name: 'Tracheophyta' }, vascularPlantsViewRoot);
+  const spermatophyta = hierarchyNode({ id: 47087, name: 'Spermatophyta' }, tracheophyta);
+  const amaranthaceae = hierarchyNode({ id: 391, name: 'Amaranthaceae' }, spermatophyta);
+
+  assert.deepEqual(
+    taxonomicAncestors(amaranthaceae, { rootToLeaf: true }).map((node) => node.data.name),
+    ['Tracheophyta', 'Spermatophyta', 'Amaranthaceae'],
+  );
+});

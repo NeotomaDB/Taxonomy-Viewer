@@ -2,7 +2,7 @@
 // Focus View shows only the highlighted path, Whole View shows the full tree
 
 import { pushURLState, updateURLState } from './urlhash.js';
-import { taxonomicAncestors } from './taxonomicPath.js';
+import { taxonomicAncestors } from './taxonomicPath.js?v=20260825-vpl-scientific-path-1';
 import { filterRowsForFocusMatches } from './focusRows.js';
 
 let currentHighlightedPath = null; // The currently highlighted node path

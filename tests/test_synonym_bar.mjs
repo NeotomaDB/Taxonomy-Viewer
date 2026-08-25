@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
+import { readFile } from 'node:fs/promises';
+
 import { buildSynonymRelationships } from '../src/synonym_bar.js';
 
 test('builds one invalid-to-valid relationship for each synonym record', () => {
@@ -34,4 +36,13 @@ test('does not present an unresolved record as a resolved synonym relationship',
     [{ taxonid: 1, taxonname: 'Unresolved name' }],
     () => null,
   ), []);
+});
+
+test('frames synonym status as Neotoma-specific rather than universally invalid', async () => {
+  const source = await readFile(new URL('../src/synonym_bar.js', import.meta.url), 'utf8');
+
+  assert.match(source, /<th scope="col">Synonym<\/th>/);
+  assert.match(source, /Other taxonomic authorities may treat these names differently/);
+  assert.doesNotMatch(source, /Invalid synonym/);
+  assert.doesNotMatch(source, /Invalid names linked/);
 });

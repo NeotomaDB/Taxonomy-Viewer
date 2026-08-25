@@ -1,5 +1,5 @@
 import { applyAngleCulling, applySemanticZoomLabels } from './src/labelCulling.js?v=20260728-svg-find-halo-1';
-import { setupFocusInfo } from './src/searchFocus.js?v=20260815-toggle-highlight-1';
+import { setupFocusInfo } from './src/searchFocus.js?v=20260825-canvas-synonyms-1';
 import { normalizeRows, pathsToTree, attachSynonymMetadata } from './src/data.js';
 import { createPopup } from './src/popup.js';
 import { highlightPath } from './src/highlight.js?v=20260815-toggle-highlight-1';

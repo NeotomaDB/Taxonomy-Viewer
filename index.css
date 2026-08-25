@@ -1026,6 +1026,17 @@ body:not([data-app-view="steward"]) #steward-taxon-detail {
   color: #7c3a1e;
 }
 
+.steward-synonym-authority-note {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.steward-synonym-panel--resolution .steward-synonym-authority-note {
+  color: #9a3412;
+}
+
 .steward-detail-group {
   margin: 10px 0 0;
 }

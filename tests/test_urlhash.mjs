@@ -74,6 +74,24 @@ test('pushes semantic navigation while retaining the previous fine-grained state
   assert.deepEqual(getURLNavigationState(), { treeDepth: 1 });
 });
 
+test('can force a navigation checkpoint when the shareable URL is unchanged', () => {
+  fakeWindow.calls.length = 0;
+  fakeWindow.location.pathname = '/index.html';
+  fakeWindow.location.hash = '#view=steward&group=VPL';
+  fakeWindow.history.state = { taxonomyVisualizer: { treeDepth: 0 } };
+
+  pushURLState(
+    { group: 'VPL', root: null, focus: null },
+    { treeDepth: 1 },
+    { forcePush: true },
+  );
+
+  assert.equal(fakeWindow.calls.length, 1);
+  assert.equal(fakeWindow.calls[0].method, 'push');
+  assert.equal(fakeWindow.calls[0].url, '#group=VPL&view=steward');
+  assert.deepEqual(getURLNavigationState(), { treeDepth: 1 });
+});
+
 test('fine-grained updates replace instead of pushing', async () => {
   fakeWindow.calls.length = 0;
   fakeWindow.location.pathname = '/index.html';

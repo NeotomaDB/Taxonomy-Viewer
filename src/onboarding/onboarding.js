@@ -1,4 +1,4 @@
-import { FIRST_TIME_TOUR_STEPS } from './steps.js?v=20260815-data-steward-tour-1';
+import { FIRST_TIME_TOUR_STEPS } from './steps.js?v=20260825-viewer-copy-1';
 import {
   markFirstTourCompleted,
   markFirstTourSkipped,
@@ -36,7 +36,7 @@ function expandTourSurface() {
   const controlToggle = document.getElementById('visualizerControlToggle');
   if (controlBox?.classList.contains('is-collapsed')) {
     controlBox.classList.remove('is-collapsed');
-    syncToggle(controlToggle, true, 'Collapse visualizer controls', 'Expand visualizer controls');
+    syncToggle(controlToggle, true, 'Collapse viewer controls', 'Expand viewer controls');
   }
 
   const legend = document.getElementById('color-legend');
