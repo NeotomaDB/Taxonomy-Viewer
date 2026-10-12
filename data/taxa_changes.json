@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-05T08:23:38+00:00",
-  "since": "2026-09-05",
+  "generated_at": "2026-10-12T08:38:44+00:00",
+  "since": "2026-09-12",
   "counts": {
-    "new": 109,
-    "modified": 65,
-    "total": 174
+    "new": 124,
+    "modified": 73,
+    "total": 197
   },
   "new": [
     {
@@ -414,6 +414,30 @@
       ]
     },
     {
+      "taxonid": 69920,
+      "taxonname": "Aulacoseira cf. islandica",
+      "highertaxonid": 24392,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:49:58.000Z",
+      "recdatemodified": "2026-10-06T20:49:58.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24599,
+        24632,
+        24392,
+        69920
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Centrales",
+        "Aulacoseiraceae",
+        "Aulacoseira",
+        "Aulacoseira cf. islandica"
+      ]
+    },
+    {
       "taxonid": 69885,
       "taxonname": "Cocconeis scutellum / C.fluviatilis",
       "highertaxonid": 24406,
@@ -438,6 +462,128 @@
       ]
     },
     {
+      "taxonid": 69911,
+      "taxonname": "Cyclotella aff. gordonensis",
+      "highertaxonid": 24414,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T14:09:00.000Z",
+      "recdatemodified": "2026-10-05T14:09:00.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24599,
+        24641,
+        24414,
+        69911
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Centrales",
+        "Stephanodiscaceae",
+        "Cyclotella",
+        "Cyclotella aff. gordonensis"
+      ]
+    },
+    {
+      "taxonid": 69913,
+      "taxonname": "Cyclotella pseudocomensis",
+      "highertaxonid": 24414,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T15:27:31.000Z",
+      "recdatemodified": "2026-10-05T15:27:31.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24599,
+        24641,
+        24414,
+        69913
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Centrales",
+        "Stephanodiscaceae",
+        "Cyclotella",
+        "Cyclotella pseudocomensis"
+      ]
+    },
+    {
+      "taxonid": 69915,
+      "taxonname": "Cyclotella radiosa / C. comta",
+      "highertaxonid": 24414,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T20:01:41.000Z",
+      "recdatemodified": "2026-10-05T20:01:41.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24599,
+        24641,
+        24414,
+        69915
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Centrales",
+        "Stephanodiscaceae",
+        "Cyclotella",
+        "Cyclotella radiosa / C. comta"
+      ]
+    },
+    {
+      "taxonid": 69921,
+      "taxonname": "Cymbopleura cf. anglica",
+      "highertaxonid": 24422,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:52:18.000Z",
+      "recdatemodified": "2026-10-06T20:52:18.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        22534,
+        24422,
+        69921
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Naviculaceae",
+        "Cymbopleura",
+        "Cymbopleura cf. anglica"
+      ]
+    },
+    {
+      "taxonid": 69919,
+      "taxonname": "Epithemia adnata var. saxonica",
+      "highertaxonid": 10672,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:38:43.000Z",
+      "recdatemodified": "2026-10-06T20:38:43.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        24624,
+        24441,
+        10672,
+        69919
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Rhopalodiaceae",
+        "Epithemia",
+        "Epithemia adnata",
+        "Epithemia adnata var. saxonica"
+      ]
+    },
+    {
       "taxonid": 69881,
       "taxonname": "Eunotia fennica",
       "highertaxonid": 5395,
@@ -459,6 +605,54 @@
         "Eunotiaceae",
         "Eunotia",
         "Eunotia fennica"
+      ]
+    },
+    {
+      "taxonid": 69912,
+      "taxonname": "Fragilaria montana",
+      "highertaxonid": 24447,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T15:13:13.000Z",
+      "recdatemodified": "2026-10-05T15:13:13.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        24614,
+        24447,
+        69912
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Fragilariaceae",
+        "Fragilaria",
+        "Fragilaria montana"
+      ]
+    },
+    {
+      "taxonid": 69916,
+      "taxonname": "Fragilaria ulna fo. angustissima",
+      "highertaxonid": 24447,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T20:31:01.000Z",
+      "recdatemodified": "2026-10-05T20:31:01.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        24614,
+        24447,
+        69916
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Fragilariaceae",
+        "Fragilaria",
+        "Fragilaria ulna fo. angustissima"
       ]
     },
     {
@@ -510,6 +704,30 @@
       ]
     },
     {
+      "taxonid": 69922,
+      "taxonname": "Navicula cf. caterva",
+      "highertaxonid": 22536,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:53:50.000Z",
+      "recdatemodified": "2026-10-06T20:53:50.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        22534,
+        22536,
+        69922
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Naviculaceae",
+        "Navicula",
+        "Navicula cf. caterva"
+      ]
+    },
+    {
       "taxonid": 69882,
       "taxonname": "Nitzschia dealpina",
       "highertaxonid": 24521,
@@ -534,19 +752,141 @@
       ]
     },
     {
-      "taxonid": 69803,
-      "taxonname": "Nanohaloarchaeaceae_X_sp.",
-      "highertaxonid": 32182,
-      "taxagroupid": "EUK",
-      "recdatecreated": "2026-09-10T20:52:41.000Z",
-      "recdatemodified": "2026-09-10T20:52:41.000Z",
+      "taxonid": 69917,
+      "taxonname": "Nitzschia regula",
+      "highertaxonid": 24521,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:29:56.000Z",
+      "recdatemodified": "2026-10-06T20:29:56.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        24603,
+        24521,
+        69917
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Bacillariaceae",
+        "Nitzschia",
+        "Nitzschia regula"
+      ]
+    },
+    {
+      "taxonid": 69918,
+      "taxonname": "Staurosira brevistriata var. papillosa",
+      "highertaxonid": 25139,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:35:15.000Z",
+      "recdatemodified": "2026-10-06T20:35:15.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        24614,
+        24579,
+        25139,
+        69918
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Fragilariaceae",
+        "Staurosira",
+        "Staurosira brevistriata",
+        "Staurosira brevistriata var. papillosa"
+      ]
+    },
+    {
+      "taxonid": 69923,
+      "taxonname": "Staurosira cf. construens",
+      "highertaxonid": 24579,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:59:09.000Z",
+      "recdatemodified": "2026-10-06T20:59:09.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        24614,
+        24579,
+        69923
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Fragilariaceae",
+        "Staurosira",
+        "Staurosira cf. construens"
+      ]
+    },
+    {
+      "taxonid": 69924,
+      "taxonname": "Staurosirella cf. frigida",
+      "highertaxonid": 24580,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T21:01:00.000Z",
+      "recdatemodified": "2026-10-06T21:01:00.000Z",
+      "path_ids": [
+        2054,
+        5396,
+        24597,
+        24614,
+        24580,
+        69924
+      ],
+      "path_names": [
+        "Algae",
+        "Bacillariophyta",
+        "Pennales",
+        "Fragilariaceae",
+        "Staurosirella",
+        "Staurosirella cf. frigida"
+      ]
+    },
+    {
+      "taxonid": 69914,
+      "taxonname": "Adelium",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-05T17:20:38.000Z",
+      "recdatemodified": "2026-10-05T17:20:38.000Z",
       "path_ids": [
         32182,
-        69803
+        6758,
+        9449,
+        13915,
+        13916,
+        17017,
+        69914
       ],
       "path_names": [
         "Eukaryota",
-        "Nanohaloarchaeaceae_X_sp."
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Tenebrionidae",
+        "Adelium"
+      ]
+    },
+    {
+      "taxonid": 69926,
+      "taxonname": "Alleculidae",
+      "highertaxonid": null,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-09T12:26:02.000Z",
+      "recdatemodified": "2026-10-09T12:26:02.000Z",
+      "path_ids": [
+        69926
+      ],
+      "path_names": [
+        "Alleculidae"
       ]
     },
     {
@@ -1405,40 +1745,6 @@
         "Candoninae",
         "Candona",
         "Candona spicata"
-      ]
-    },
-    {
-      "taxonid": 69801,
-      "taxonname": "Cyclocypris montiporta",
-      "highertaxonid": 14507,
-      "taxagroupid": "OST",
-      "recdatecreated": "2026-09-07T08:11:37.000Z",
-      "recdatemodified": "2026-09-07T08:11:37.000Z",
-      "path_ids": [
-        32182,
-        6758,
-        9449,
-        9450,
-        13914,
-        14443,
-        14448,
-        14449,
-        14498,
-        14507,
-        69801
-      ],
-      "path_names": [
-        "Eukaryota",
-        "Animalia",
-        "Arthropoda",
-        "Crustacea",
-        "Ostracoda",
-        "Podocopida",
-        "Cypridocopina",
-        "Cypridoidea",
-        "Cyclocyprididae",
-        "Cyclocypris",
-        "Cyclocypris montiporta"
       ]
     },
     {
@@ -2336,42 +2642,6 @@
       ]
     },
     {
-      "taxonid": 69802,
-      "taxonname": "Fabaeformiscandona fujimotoi",
-      "highertaxonid": 14482,
-      "taxagroupid": "OST",
-      "recdatecreated": "2026-09-07T08:13:34.000Z",
-      "recdatemodified": "2026-09-07T08:13:34.000Z",
-      "path_ids": [
-        32182,
-        6758,
-        9449,
-        9450,
-        13914,
-        14443,
-        14448,
-        14449,
-        14450,
-        14451,
-        14482,
-        69802
-      ],
-      "path_names": [
-        "Eukaryota",
-        "Animalia",
-        "Arthropoda",
-        "Crustacea",
-        "Ostracoda",
-        "Podocopida",
-        "Cypridocopina",
-        "Cypridoidea",
-        "Candonidae",
-        "Candoninae",
-        "Fabaeformiscandona",
-        "Fabaeformiscandona fujimotoi"
-      ]
-    },
-    {
       "taxonid": 69902,
       "taxonname": "Hungarocypris serrata",
       "highertaxonid": 50275,
@@ -2515,6 +2785,42 @@
         "Candoninae",
         "Pseudocandona",
         "Pseudocandona gajewskajae"
+      ]
+    },
+    {
+      "taxonid": 69925,
+      "taxonname": "Stenocypris menghaiensis",
+      "highertaxonid": 49861,
+      "taxagroupid": "OST",
+      "recdatecreated": "2026-10-07T08:36:07.000Z",
+      "recdatemodified": "2026-10-07T08:36:07.000Z",
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        9450,
+        13914,
+        14443,
+        14448,
+        14449,
+        14522,
+        14547,
+        49861,
+        69925
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Crustacea",
+        "Ostracoda",
+        "Podocopida",
+        "Cypridocopina",
+        "Cypridoidea",
+        "Cyprididae",
+        "Herpetocypridinae",
+        "Stenocypris",
+        "Stenocypris menghaiensis"
       ]
     },
     {
@@ -2924,6 +3230,44 @@
       ]
     },
     {
+      "taxonid": 69927,
+      "taxonname": "Macrothelypteris polypodioides",
+      "highertaxonid": 44793,
+      "taxagroupid": "VPL",
+      "recdatecreated": "2026-10-12T02:46:43.000Z",
+      "recdatemodified": "2026-10-12T02:46:43.000Z",
+      "path_ids": [
+        32182,
+        9095,
+        33028,
+        33029,
+        33038,
+        9534,
+        9535,
+        676,
+        9538,
+        9539,
+        2682,
+        44793,
+        69927
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Plantae",
+        "Viridiplantae",
+        "Streptophyta",
+        "Embryophyta",
+        "Tracheophyta",
+        "Monilophyta",
+        "Polypodiophyta",
+        "Leptosporangiatae",
+        "Polypodiales",
+        "Thelypteridaceae",
+        "Macrothelypteris",
+        "Macrothelypteris polypodioides"
+      ]
+    },
+    {
       "taxonid": 69886,
       "taxonname": "Phialanthus",
       "highertaxonid": 40270,
@@ -3051,6 +3395,20 @@
         "Podocarpaceae",
         "Podocarpus",
         "Podocarpus imbricatus-type"
+      ]
+    },
+    {
+      "taxonid": 69928,
+      "taxonname": "Polypodium pallidum",
+      "highertaxonid": null,
+      "taxagroupid": "VPL",
+      "recdatecreated": "2026-10-12T02:49:44.000Z",
+      "recdatemodified": "2026-10-12T02:49:44.000Z",
+      "path_ids": [
+        69928
+      ],
+      "path_names": [
+        "Polypodium pallidum"
       ]
     },
     {
@@ -4527,6 +4885,264 @@
         "Charcoal",
         "Charcoal morphotype D",
         "length:width"
+      ]
+    },
+    {
+      "taxonid": 63425,
+      "taxonname": "Alleculinae",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T17:10:08.000Z",
+      "recdatemodified": "2026-10-09T12:20:44.000Z",
+      "changed_fields": [
+        "recdatemodified"
+      ],
+      "previous": {},
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        13915,
+        13916,
+        17017,
+        63425
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Tenebrionidae",
+        "Alleculinae"
+      ]
+    },
+    {
+      "taxonid": 58503,
+      "taxonname": "Alleculinae indet.",
+      "highertaxonid": 63425,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:18:38.000Z",
+      "recdatemodified": "2026-10-09T12:14:20.000Z",
+      "changed_fields": [
+        "recdatemodified"
+      ],
+      "previous": {},
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        13915,
+        13916,
+        17017,
+        63425,
+        58503
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Tenebrionidae",
+        "Alleculinae",
+        "Alleculinae indet."
+      ]
+    },
+    {
+      "taxonid": 15668,
+      "taxonname": "Blethisa",
+      "highertaxonid": 53111,
+      "taxagroupid": "INS",
+      "recdatecreated": "2013-01-01T00:00:00.000Z",
+      "recdatemodified": "2026-10-09T12:37:56.000Z",
+      "changed_fields": [
+        "recdatemodified"
+      ],
+      "previous": {},
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        13915,
+        13916,
+        13919,
+        38289,
+        53111,
+        15668
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Carabidae",
+        "Elaphrinae",
+        "Elaphrini",
+        "Blethisa"
+      ]
+    },
+    {
+      "taxonid": 13928,
+      "taxonname": "Diacheila",
+      "highertaxonid": 53111,
+      "taxagroupid": "INS",
+      "recdatecreated": "2013-01-07T00:00:00.000Z",
+      "recdatemodified": "2026-10-09T12:39:07.000Z",
+      "changed_fields": [
+        "recdatemodified"
+      ],
+      "previous": {},
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        13915,
+        13916,
+        13919,
+        38289,
+        53111,
+        13928
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Carabidae",
+        "Elaphrinae",
+        "Elaphrini",
+        "Diacheila"
+      ]
+    },
+    {
+      "taxonid": 53111,
+      "taxonname": "Elaphrini",
+      "highertaxonid": 38289,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-16T18:00:13.000Z",
+      "recdatemodified": "2026-10-09T12:36:52.000Z",
+      "changed_fields": [
+        "recdatemodified"
+      ],
+      "previous": {},
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        13915,
+        13916,
+        13919,
+        38289,
+        53111
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Carabidae",
+        "Elaphrinae",
+        "Elaphrini"
+      ]
+    },
+    {
+      "taxonid": 13930,
+      "taxonname": "Elaphrus",
+      "highertaxonid": 53111,
+      "taxagroupid": "INS",
+      "recdatecreated": "2013-01-07T00:00:00.000Z",
+      "recdatemodified": "2026-10-09T12:38:29.000Z",
+      "changed_fields": [
+        "recdatemodified"
+      ],
+      "previous": {},
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        13915,
+        13916,
+        13919,
+        38289,
+        53111,
+        13930
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Carabidae",
+        "Elaphrinae",
+        "Elaphrini",
+        "Elaphrus"
+      ]
+    },
+    {
+      "taxonid": 35105,
+      "taxonname": "Mycetochara",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2018-04-23T16:46:13.000Z",
+      "recdatemodified": "2026-10-05T17:17:49.000Z",
+      "changed_fields": [
+        "recdatemodified"
+      ],
+      "previous": {},
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        13915,
+        13916,
+        17017,
+        35105
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Tenebrionidae",
+        "Mycetochara"
+      ]
+    },
+    {
+      "taxonid": 51242,
+      "taxonname": "Tenebrionidae cf. Adelium sp.",
+      "highertaxonid": 69914,
+      "taxagroupid": "INS",
+      "recdatecreated": "2023-07-10T00:54:11.000Z",
+      "recdatemodified": "2026-10-05T17:21:21.000Z",
+      "changed_fields": [
+        "recdatemodified"
+      ],
+      "previous": {},
+      "path_ids": [
+        32182,
+        6758,
+        9449,
+        13915,
+        13916,
+        17017,
+        69914,
+        51242
+      ],
+      "path_names": [
+        "Eukaryota",
+        "Animalia",
+        "Arthropoda",
+        "Insecta",
+        "Coleoptera",
+        "Tenebrionidae",
+        "Adelium",
+        "Tenebrionidae cf. Adelium sp."
       ]
     },
     {

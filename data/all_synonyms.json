@@ -5289,6 +5289,21 @@
     ]
   },
   {
+    "valid_id": 63425,
+    "valid_name": "Alleculinae",
+    "taxagroupid": "INS",
+    "synonyms": [
+      {
+        "invalid_id": 69926,
+        "invalid_name": "Alleculidae",
+        "synonymtypeid": 7,
+        "synonymtype": "nomenclatural, homotypic, or objective synonym: family reduced to subfamily",
+        "recdatecreated": "2026-10-09T12:26:02.000Z",
+        "recdatemodified": "2026-10-09T12:26:02.000Z"
+      }
+    ]
+  },
+  {
     "valid_id": 38116,
     "valid_name": "Alophini gen sp.",
     "taxagroupid": "INS",
@@ -31488,6 +31503,21 @@
         "synonymtype": "taxonomic, heterotypic, or subjective synonym",
         "recdatecreated": "2021-06-21T02:18:05.000Z",
         "recdatemodified": "2021-06-21T02:18:05.000Z"
+      }
+    ]
+  },
+  {
+    "valid_id": 69927,
+    "valid_name": "Macrothelypteris polypodioides",
+    "taxagroupid": "VPL",
+    "synonyms": [
+      {
+        "invalid_id": 69928,
+        "invalid_name": "Polypodium pallidum",
+        "synonymtypeid": 1,
+        "synonymtype": "taxonomic, heterotypic, or subjective synonym",
+        "recdatecreated": "2026-10-12T02:49:46.000Z",
+        "recdatemodified": "2026-10-12T02:49:46.000Z"
       }
     ]
   },

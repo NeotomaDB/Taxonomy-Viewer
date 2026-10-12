@@ -146057,17 +146057,6 @@
     "validatorName": "Grimm, Eric Christopher",
     "validatedate": "2013-01-05T00:00:00.000Z"
   },
-  "13928": {
-    "taxonid": 13928,
-    "author": "Motschulsky, 1844",
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 44,
-    "validatorName": "Grimm, Eric Christopher",
-    "validatedate": "2019-03-18T00:00:00.000Z"
-  },
   "13929": {
     "taxonid": 13929,
     "author": "Faldermann, 1835",
@@ -146078,17 +146067,6 @@
     "validatorid": 44,
     "validatorName": "Grimm, Eric Christopher",
     "validatedate": "2013-01-07T00:00:00.000Z"
-  },
-  "13930": {
-    "taxonid": 13930,
-    "author": "Fabricius, 1775",
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 44,
-    "validatorName": "Grimm, Eric Christopher",
-    "validatedate": "2019-03-18T00:00:00.000Z"
   },
   "13931": {
     "taxonid": 13931,
@@ -161599,17 +161577,6 @@
     "validatorid": null,
     "validatorName": null,
     "validatedate": null
-  },
-  "15668": {
-    "taxonid": 15668,
-    "author": "Bonelli, 1810",
-    "publicationid": 6064,
-    "publication": "Bousquet, Y. 2012. Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico. ZooKeys 245:1-1722. [DOI: 10.3897/zookeys.245.3416]",
-    "citation": "Bousquet, Y. 2012. Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico. ZooKeys 245:1-1722. [DOI: 10.3897/zookeys.245.3416]",
-    "publicationYear": "2012",
-    "validatorid": 44,
-    "validatorName": "Grimm, Eric Christopher",
-    "validatedate": "2019-03-18T00:00:00.000Z"
   },
   "15669": {
     "taxonid": 15669,
@@ -329507,17 +329474,6 @@
   "35104": {
     "taxonid": 35104,
     "author": "Fall, 1931",
-    "publicationid": 9626,
-    "publication": "Authors, G. 2001. Global Biodiversity Information Facility. http://www.gbif.org/.",
-    "citation": "Authors, G. 2001. Global Biodiversity Information Facility. http://www.gbif.org/.",
-    "publicationYear": "2001",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2018-04-23T00:00:00.000Z"
-  },
-  "35105": {
-    "taxonid": 35105,
-    "author": "Hatch",
     "publicationid": 9626,
     "publication": "Authors, G. 2001. Global Biodiversity Information Facility. http://www.gbif.org/.",
     "citation": "Authors, G. 2001. Global Biodiversity Information Facility. http://www.gbif.org/.",
@@ -503370,17 +503326,6 @@
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2023-07-10T00:00:00.000Z"
   },
-  "51242": {
-    "taxonid": 51242,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2023-07-10T00:00:00.000Z"
-  },
   "51243": {
     "taxonid": 51243,
     "author": "Kraatz, 1857",
@@ -503578,6 +503523,17 @@
     "validatorid": 13857,
     "validatorName": "Ramstack Hobbs, Joy M.",
     "validatedate": "2023-07-12T00:00:00.000Z"
+  },
+  "51242": {
+    "taxonid": 51242,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-05T00:00:00.000Z"
   },
   "51261": {
     "taxonid": 51261,
@@ -521003,17 +520959,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "53111": {
-    "taxonid": 53111,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
   "53112": {
     "taxonid": 53112,
     "author": null,
@@ -521024,6 +520969,17 @@
     "validatorid": 202,
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
+  },
+  "53111": {
+    "taxonid": 53111,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 8711,
+    "validatorName": "Wolters, Steffen",
+    "validatedate": "2026-10-09T00:00:00.000Z"
   },
   "53158": {
     "taxonid": 53158,
@@ -587058,17 +587014,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "63425": {
-    "taxonid": 63425,
-    "author": "Laporte 1840",
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": null,
-    "validatorName": null,
-    "validatedate": null
-  },
   "63427": {
     "taxonid": 63427,
     "author": null,
@@ -587343,6 +587288,17 @@
     "validatorid": 202,
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
+  },
+  "63425": {
+    "taxonid": 63425,
+    "author": "Laporte, 1840",
+    "publicationid": 1533,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 8711,
+    "validatorName": "Wolters, Steffen",
+    "validatedate": "2026-10-09T00:00:00.000Z"
   },
   "63482": {
     "taxonid": 63482,
@@ -587993,17 +587949,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "58503": {
-    "taxonid": 58503,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
   "63584": {
     "taxonid": 63584,
     "author": "Laporte, 1836",
@@ -588553,6 +588498,17 @@
     "validatorid": null,
     "validatorName": null,
     "validatedate": null
+  },
+  "58503": {
+    "taxonid": 58503,
+    "author": "Laporte, 1840",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 8711,
+    "validatorName": "Wolters, Steffen",
+    "validatedate": "2026-10-09T00:00:00.000Z"
   },
   "63645": {
     "taxonid": 63645,
@@ -650253,6 +650209,28 @@
     "validatorName": "Zaova, Dušica",
     "validatedate": "2026-09-24T00:00:00.000Z"
   },
+  "15668": {
+    "taxonid": 15668,
+    "author": "Bonelli, 1810",
+    "publicationid": 6064,
+    "publication": "Bousquet, Y. 2012. Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico. ZooKeys 245:1-1722. [DOI: 10.3897/zookeys.245.3416]",
+    "citation": "Bousquet, Y. 2012. Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico. ZooKeys 245:1-1722. [DOI: 10.3897/zookeys.245.3416]",
+    "publicationYear": "2012",
+    "validatorid": 8711,
+    "validatorName": "Wolters, Steffen",
+    "validatedate": "2026-10-09T00:00:00.000Z"
+  },
+  "13930": {
+    "taxonid": 13930,
+    "author": "Fabricius, 1775",
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 8711,
+    "validatorName": "Wolters, Steffen",
+    "validatedate": "2026-10-09T00:00:00.000Z"
+  },
   "67433": {
     "taxonid": 67433,
     "author": "Turczaninow, 1848",
@@ -650538,5 +650516,225 @@
     "validatorid": 9440,
     "validatorName": "Marchetto, Aldo",
     "validatedate": "2026-10-02T00:00:00.000Z"
+  },
+  "69911": {
+    "taxonid": 69911,
+    "author": "Wunsam & Schmidt, 1995",
+    "publicationid": 22207,
+    "publication": "Wunsam, S., and R. Schmidt. 1995. A diatom-phosphorus transfer function for Alpine and pre-alpine lakes. Memorie dell'Istituto Italiano di Idrobiologia 55:85-99.",
+    "citation": "Wunsam, S., and R. Schmidt. 1995. A diatom-phosphorus transfer function for Alpine and pre-alpine lakes. Memorie dell'Istituto Italiano di Idrobiologia 55:85-99.",
+    "publicationYear": "1995",
+    "validatorid": 9440,
+    "validatorName": "Marchetto, Aldo",
+    "validatedate": "2026-10-05T00:00:00.000Z"
+  },
+  "69912": {
+    "taxonid": 69912,
+    "author": "(Krasske ex Hustedt) Lange-Bertalot, 1981",
+    "publicationid": 4445,
+    "publication": "Lange-Bertalot, H. 1980. Zur systematischen Bewertung der bandförmigen Kolonien bei Navicula und Fragilaria. Kriterien für die Vereinigung von Synedra (subgen. Synedra) Ehrenberg mit Fragilaria Lyngbye. Nova Hedwigia 33: 723-787.",
+    "citation": "Lange-Bertalot, H. 1980. Zur systematischen Bewertung der bandförmigen Kolonien bei Navicula und Fragilaria. Kriterien für die Vereinigung von Synedra (subgen. Synedra) Ehrenberg mit Fragilaria Lyngbye. Nova Hedwigia 33: 723-787.",
+    "publicationYear": "1980",
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-05T00:00:00.000Z"
+  },
+  "69913": {
+    "taxonid": 69913,
+    "author": "W.Scheffler, 1994",
+    "publicationid": 22209,
+    "publication": "Scheffler, W. 1994. Cyclotella pseudocomensis nov. sp. (Bacillariophyceae) aus norddeutschen Seen. Diatom Research 9(2):355-369.",
+    "citation": "Scheffler, W. 1994. Cyclotella pseudocomensis nov. sp. (Bacillariophyceae) aus norddeutschen Seen. Diatom Research 9(2):355-369.",
+    "publicationYear": "1994",
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-05T00:00:00.000Z"
+  },
+  "35105": {
+    "taxonid": 35105,
+    "author": "Hatch",
+    "publicationid": 9626,
+    "publication": "Authors, G. 2001. Global Biodiversity Information Facility. http://www.gbif.org/.",
+    "citation": "Authors, G. 2001. Global Biodiversity Information Facility. http://www.gbif.org/.",
+    "publicationYear": "2001",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-05T00:00:00.000Z"
+  },
+  "69914": {
+    "taxonid": 69914,
+    "author": "W. Kirby, 1819",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-05T00:00:00.000Z"
+  },
+  "69915": {
+    "taxonid": 69915,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-05T00:00:00.000Z"
+  },
+  "69916": {
+    "taxonid": 69916,
+    "author": "(Grunow) Krammer & Lange-Bertalot, 1991",
+    "publicationid": 3737,
+    "publication": "Aboal, M., M. Alvarez-Cobelas, J. Cambra and L. Ector. 2003. Floristic list of non marine diatoms (Bacillariophyceae) of Iberian Peninsula, Balearic Islands, and Canary Islands. Updated taxonomy and bibliography. In: Witkowski, A. (ed), Diatom Monographs. A.R.G. Gantner Verlag K.G. 4: 639 pp.",
+    "citation": "Aboal, M., M. Alvarez-Cobelas, J. Cambra and L. Ector. 2003. Floristic list of non marine diatoms (Bacillariophyceae) of Iberian Peninsula, Balearic Islands, and Canary Islands. Updated taxonomy and bibliography. In: Witkowski, A. (ed), Diatom Monographs. A.R.G. Gantner Verlag K.G. 4: 639 pp.",
+    "publicationYear": "2003",
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-05T00:00:00.000Z"
+  },
+  "69917": {
+    "taxonid": 69917,
+    "author": "Hustedt, 1922",
+    "publicationid": 4199,
+    "publication": "Hustedt, F. 1922. Bacillariales aus Innerasien. Gesammelt von Dr. Sven Hedin. In: Hedin, S. (ed.), Southern Tibet, discoveries in former times compared with my own researches in 1906-1908. Lithographic Institute of the General Staff of the Swedish Army, Stockholm 6(3):107-152.",
+    "citation": "Hustedt, F. 1922. Bacillariales aus Innerasien. Gesammelt von Dr. Sven Hedin. In: Hedin, S. (ed.), Southern Tibet, discoveries in former times compared with my own researches in 1906-1908. Lithographic Institute of the General Staff of the Swedish Army, Stockholm 6(3):107-152.",
+    "publicationYear": "1922",
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-06T00:00:00.000Z"
+  },
+  "69918": {
+    "taxonid": 69918,
+    "author": "Cleve, 1953",
+    "publicationid": 3903,
+    "publication": "Cleve-Euler, A. 1953. Die diatomeen von Schweeden und Finnland. II-Arraphideae, Brachyraphideae. Kungliga Svenska Vetskapakademiens Handlingar 4(1): 158 pp.",
+    "citation": "Cleve-Euler, A. 1953. Die diatomeen von Schweeden und Finnland. II-Arraphideae, Brachyraphideae. Kungliga Svenska Vetskapakademiens Handlingar 4(1): 158 pp.",
+    "publicationYear": "1953",
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-06T00:00:00.000Z"
+  },
+  "69919": {
+    "taxonid": 69919,
+    "author": "(Kützing) R.M.Patrick, 1975",
+    "publicationid": 4624,
+    "publication": "Patrick, R. and C.W. Reimer. 1966. The Diatoms of the United States exclusive of Alaska and Hawaii. Volume 1. Fragilariaceae, Eunotoniaceae, Achnanthaceae, Naviculaceae. Monographs of the Academy of Natural Sciences of Philadelphia 13: 688 pp., 64 pls.",
+    "citation": "Patrick, R. and C.W. Reimer. 1966. The Diatoms of the United States exclusive of Alaska and Hawaii. Volume 1. Fragilariaceae, Eunotoniaceae, Achnanthaceae, Naviculaceae. Monographs of the Academy of Natural Sciences of Philadelphia 13: 688 pp., 64 pls.",
+    "publicationYear": "1966",
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-06T00:00:00.000Z"
+  },
+  "69920": {
+    "taxonid": 69920,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-06T00:00:00.000Z"
+  },
+  "69921": {
+    "taxonid": 69921,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-06T00:00:00.000Z"
+  },
+  "69922": {
+    "taxonid": 69922,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-06T00:00:00.000Z"
+  },
+  "69923": {
+    "taxonid": 69923,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-06T00:00:00.000Z"
+  },
+  "69924": {
+    "taxonid": 69924,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16530,
+    "validatorName": "Benito, Xavier",
+    "validatedate": "2026-10-06T00:00:00.000Z"
+  },
+  "69925": {
+    "taxonid": 69925,
+    "author": "Zhai et al., 2026",
+    "publicationid": 22212,
+    "publication": "Zhai, D., R.J. Smith, H. Mai, P. Jiang, and K. Zeng. 2026. On Stenocypris (Crustacea, Ostracoda) species from Yunnan Province, southwestern China, with a description of a new species. Zookeys 1284:271-297. [DOI: 10.3897/zookeys.1284.195403]",
+    "citation": "Zhai, D., R.J. Smith, H. Mai, P. Jiang, and K. Zeng. 2026. On Stenocypris (Crustacea, Ostracoda) species from Yunnan Province, southwestern China, with a description of a new species. Zookeys 1284:271-297. [DOI: 10.3897/zookeys.1284.195403]",
+    "publicationYear": "2026",
+    "validatorid": 18467,
+    "validatorName": "Smith, Robin James",
+    "validatedate": "2026-10-07T00:00:00.000Z"
+  },
+  "69926": {
+    "taxonid": 69926,
+    "author": "Laporte, 1840",
+    "publicationid": 1533,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 8711,
+    "validatorName": "Wolters, Steffen",
+    "validatedate": "2026-10-09T00:00:00.000Z"
+  },
+  "13928": {
+    "taxonid": 13928,
+    "author": "Motschulsky, 1844",
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 8711,
+    "validatorName": "Wolters, Steffen",
+    "validatedate": "2026-10-09T00:00:00.000Z"
+  },
+  "69927": {
+    "taxonid": 69927,
+    "author": "Holttum, 1969",
+    "publicationid": 15424,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 17170,
+    "validatorName": "Herbert, Annika",
+    "validatedate": "2026-10-12T00:00:00.000Z"
+  },
+  "69928": {
+    "taxonid": 69928,
+    "author": "Brackenridge, 1854",
+    "publicationid": 15424,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 17170,
+    "validatorName": "Herbert, Annika",
+    "validatedate": "2026-10-12T00:00:00.000Z"
   }
 }

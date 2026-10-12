@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T08:23:38+00:00",
+  "generated_at": "2026-10-12T08:38:44+00:00",
   "taxa": {
     "1": {
       "taxonid": 1,
@@ -106225,14 +106225,6 @@
       "recdatecreated": "2013-01-05T00:00:00.000Z",
       "recdatemodified": "2013-01-05T00:00:00.000Z"
     },
-    "13928": {
-      "taxonid": 13928,
-      "taxonname": "Diacheila",
-      "highertaxonid": 38289,
-      "taxagroupid": "INS",
-      "recdatecreated": "2013-01-07T00:00:00.000Z",
-      "recdatemodified": "2019-03-18T18:41:19.000Z"
-    },
     "13929": {
       "taxonid": 13929,
       "taxonname": "Diacheila polita",
@@ -106240,14 +106232,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2013-01-07T00:00:00.000Z",
       "recdatemodified": "2013-01-07T00:00:00.000Z"
-    },
-    "13930": {
-      "taxonid": 13930,
-      "taxonname": "Elaphrus",
-      "highertaxonid": 38289,
-      "taxagroupid": "INS",
-      "recdatecreated": "2013-01-07T00:00:00.000Z",
-      "recdatemodified": "2019-03-18T18:40:26.000Z"
     },
     "13931": {
       "taxonid": 13931,
@@ -117528,14 +117512,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2013-01-01T00:00:00.000Z",
       "recdatemodified": "2013-01-01T00:00:00.000Z"
-    },
-    "15668": {
-      "taxonid": 15668,
-      "taxonname": "Blethisa",
-      "highertaxonid": 38289,
-      "taxagroupid": "INS",
-      "recdatecreated": "2013-01-01T00:00:00.000Z",
-      "recdatemodified": "2019-03-18T18:40:10.000Z"
     },
     "15669": {
       "taxonid": 15669,
@@ -239648,14 +239624,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2018-04-23T16:44:17.000Z",
       "recdatemodified": "2018-04-23T16:44:17.000Z"
-    },
-    "35105": {
-      "taxonid": 35105,
-      "taxonname": "Mycetochara",
-      "highertaxonid": 18103,
-      "taxagroupid": "INS",
-      "recdatecreated": "2018-04-23T16:46:13.000Z",
-      "recdatemodified": "2018-04-23T16:46:13.000Z"
     },
     "35106": {
       "taxonid": 35106,
@@ -366089,14 +366057,6 @@
       "recdatecreated": "2023-07-10T00:51:19.000Z",
       "recdatemodified": "2023-07-10T00:51:19.000Z"
     },
-    "51242": {
-      "taxonid": 51242,
-      "taxonname": "Tenebrionidae cf. Adelium sp.",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2023-07-10T00:54:11.000Z",
-      "recdatemodified": "2023-07-10T00:54:11.000Z"
-    },
     "51243": {
       "taxonid": 51243,
       "taxonname": "Thinodromus",
@@ -366240,6 +366200,14 @@
       "taxagroupid": "DIA",
       "recdatecreated": "2023-07-12T19:06:11.000Z",
       "recdatemodified": "2023-07-12T19:06:11.000Z"
+    },
+    "51242": {
+      "taxonid": 51242,
+      "taxonname": "Tenebrionidae cf. Adelium sp.",
+      "highertaxonid": 69914,
+      "taxagroupid": "INS",
+      "recdatecreated": "2023-07-10T00:54:11.000Z",
+      "recdatemodified": "2026-10-05T17:21:21.000Z"
     },
     "51261": {
       "taxonid": 51261,
@@ -378913,14 +378881,6 @@
       "recdatecreated": "2025-05-16T17:56:19.000Z",
       "recdatemodified": "2025-05-16T17:56:19.000Z"
     },
-    "53111": {
-      "taxonid": 53111,
-      "taxonname": "Elaphrini",
-      "highertaxonid": 13919,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-16T18:00:13.000Z",
-      "recdatemodified": "2025-05-16T18:00:13.000Z"
-    },
     "53112": {
       "taxonid": 53112,
       "taxonname": "Elaphrini indet.",
@@ -378928,6 +378888,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-16T18:00:16.000Z",
       "recdatemodified": "2025-05-16T18:00:16.000Z"
+    },
+    "53111": {
+      "taxonid": 53111,
+      "taxonname": "Elaphrini",
+      "highertaxonid": 38289,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-16T18:00:13.000Z",
+      "recdatemodified": "2026-10-09T12:36:52.000Z"
     },
     "53158": {
       "taxonid": 53158,
@@ -426953,14 +426921,6 @@
       "recdatecreated": "2025-05-17T12:50:15.000Z",
       "recdatemodified": "2025-05-17T12:50:15.000Z"
     },
-    "63425": {
-      "taxonid": 63425,
-      "taxonname": "Alleculidae",
-      "highertaxonid": 13916,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T17:10:08.000Z",
-      "recdatemodified": "2025-05-17T17:10:08.000Z"
-    },
     "63427": {
       "taxonid": 63427,
       "taxonname": "Lagriidae",
@@ -427160,6 +427120,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-17T20:08:29.000Z",
       "recdatemodified": "2025-05-17T20:08:29.000Z"
+    },
+    "63425": {
+      "taxonid": 63425,
+      "taxonname": "Alleculinae",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T17:10:08.000Z",
+      "recdatemodified": "2026-10-09T12:20:44.000Z"
     },
     "63482": {
       "taxonid": 63482,
@@ -427633,14 +427601,6 @@
       "recdatecreated": "2025-05-18T00:35:31.000Z",
       "recdatemodified": "2025-05-18T00:35:31.000Z"
     },
-    "58503": {
-      "taxonid": 58503,
-      "taxonname": "Alleculidae indet.",
-      "highertaxonid": 63425,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:18:38.000Z",
-      "recdatemodified": "2025-05-18T04:05:03.000Z"
-    },
     "63584": {
       "taxonid": 63584,
       "taxonname": "Lycidae",
@@ -428040,6 +428000,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-18T04:26:56.000Z",
       "recdatemodified": "2025-10-24T16:44:09.000Z"
+    },
+    "58503": {
+      "taxonid": 58503,
+      "taxonname": "Alleculinae indet.",
+      "highertaxonid": 63425,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:18:38.000Z",
+      "recdatemodified": "2026-10-09T12:14:20.000Z"
     },
     "63645": {
       "taxonid": 63645,
@@ -472913,6 +472881,22 @@
       "recdatecreated": "2026-09-24T13:41:27.000Z",
       "recdatemodified": "2026-09-24T13:41:27.000Z"
     },
+    "15668": {
+      "taxonid": 15668,
+      "taxonname": "Blethisa",
+      "highertaxonid": 53111,
+      "taxagroupid": "INS",
+      "recdatecreated": "2013-01-01T00:00:00.000Z",
+      "recdatemodified": "2026-10-09T12:37:56.000Z"
+    },
+    "13930": {
+      "taxonid": 13930,
+      "taxonname": "Elaphrus",
+      "highertaxonid": 53111,
+      "taxagroupid": "INS",
+      "recdatecreated": "2013-01-07T00:00:00.000Z",
+      "recdatemodified": "2026-10-09T12:38:29.000Z"
+    },
     "67433": {
       "taxonid": 67433,
       "taxonname": "Molopanthera",
@@ -473120,6 +473104,166 @@
       "taxagroupid": "DIA",
       "recdatecreated": "2026-10-02T14:41:05.000Z",
       "recdatemodified": "2026-10-02T14:41:05.000Z"
+    },
+    "69911": {
+      "taxonid": 69911,
+      "taxonname": "Cyclotella aff. gordonensis",
+      "highertaxonid": 24414,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T14:09:00.000Z",
+      "recdatemodified": "2026-10-05T14:09:00.000Z"
+    },
+    "69912": {
+      "taxonid": 69912,
+      "taxonname": "Fragilaria montana",
+      "highertaxonid": 24447,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T15:13:13.000Z",
+      "recdatemodified": "2026-10-05T15:13:13.000Z"
+    },
+    "69913": {
+      "taxonid": 69913,
+      "taxonname": "Cyclotella pseudocomensis",
+      "highertaxonid": 24414,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T15:27:31.000Z",
+      "recdatemodified": "2026-10-05T15:27:31.000Z"
+    },
+    "35105": {
+      "taxonid": 35105,
+      "taxonname": "Mycetochara",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2018-04-23T16:46:13.000Z",
+      "recdatemodified": "2026-10-05T17:17:49.000Z"
+    },
+    "69914": {
+      "taxonid": 69914,
+      "taxonname": "Adelium",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-05T17:20:38.000Z",
+      "recdatemodified": "2026-10-05T17:20:38.000Z"
+    },
+    "69915": {
+      "taxonid": 69915,
+      "taxonname": "Cyclotella radiosa / C. comta",
+      "highertaxonid": 24414,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T20:01:41.000Z",
+      "recdatemodified": "2026-10-05T20:01:41.000Z"
+    },
+    "69916": {
+      "taxonid": 69916,
+      "taxonname": "Fragilaria ulna fo. angustissima",
+      "highertaxonid": 24447,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-05T20:31:01.000Z",
+      "recdatemodified": "2026-10-05T20:31:01.000Z"
+    },
+    "69917": {
+      "taxonid": 69917,
+      "taxonname": "Nitzschia regula",
+      "highertaxonid": 24521,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:29:56.000Z",
+      "recdatemodified": "2026-10-06T20:29:56.000Z"
+    },
+    "69918": {
+      "taxonid": 69918,
+      "taxonname": "Staurosira brevistriata var. papillosa",
+      "highertaxonid": 25139,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:35:15.000Z",
+      "recdatemodified": "2026-10-06T20:35:15.000Z"
+    },
+    "69919": {
+      "taxonid": 69919,
+      "taxonname": "Epithemia adnata var. saxonica",
+      "highertaxonid": 10672,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:38:43.000Z",
+      "recdatemodified": "2026-10-06T20:38:43.000Z"
+    },
+    "69920": {
+      "taxonid": 69920,
+      "taxonname": "Aulacoseira cf. islandica",
+      "highertaxonid": 24392,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:49:58.000Z",
+      "recdatemodified": "2026-10-06T20:49:58.000Z"
+    },
+    "69921": {
+      "taxonid": 69921,
+      "taxonname": "Cymbopleura cf. anglica",
+      "highertaxonid": 24422,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:52:18.000Z",
+      "recdatemodified": "2026-10-06T20:52:18.000Z"
+    },
+    "69922": {
+      "taxonid": 69922,
+      "taxonname": "Navicula cf. caterva",
+      "highertaxonid": 22536,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:53:50.000Z",
+      "recdatemodified": "2026-10-06T20:53:50.000Z"
+    },
+    "69923": {
+      "taxonid": 69923,
+      "taxonname": "Staurosira cf. construens",
+      "highertaxonid": 24579,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T20:59:09.000Z",
+      "recdatemodified": "2026-10-06T20:59:09.000Z"
+    },
+    "69924": {
+      "taxonid": 69924,
+      "taxonname": "Staurosirella cf. frigida",
+      "highertaxonid": 24580,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-06T21:01:00.000Z",
+      "recdatemodified": "2026-10-06T21:01:00.000Z"
+    },
+    "69925": {
+      "taxonid": 69925,
+      "taxonname": "Stenocypris menghaiensis",
+      "highertaxonid": 49861,
+      "taxagroupid": "OST",
+      "recdatecreated": "2026-10-07T08:36:07.000Z",
+      "recdatemodified": "2026-10-07T08:36:07.000Z"
+    },
+    "69926": {
+      "taxonid": 69926,
+      "taxonname": "Alleculidae",
+      "highertaxonid": null,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-09T12:26:02.000Z",
+      "recdatemodified": "2026-10-09T12:26:02.000Z"
+    },
+    "13928": {
+      "taxonid": 13928,
+      "taxonname": "Diacheila",
+      "highertaxonid": 53111,
+      "taxagroupid": "INS",
+      "recdatecreated": "2013-01-07T00:00:00.000Z",
+      "recdatemodified": "2026-10-09T12:39:07.000Z"
+    },
+    "69927": {
+      "taxonid": 69927,
+      "taxonname": "Macrothelypteris polypodioides",
+      "highertaxonid": 44793,
+      "taxagroupid": "VPL",
+      "recdatecreated": "2026-10-12T02:46:43.000Z",
+      "recdatemodified": "2026-10-12T02:46:43.000Z"
+    },
+    "69928": {
+      "taxonid": 69928,
+      "taxonname": "Polypodium pallidum",
+      "highertaxonid": null,
+      "taxagroupid": "VPL",
+      "recdatecreated": "2026-10-12T02:49:44.000Z",
+      "recdatemodified": "2026-10-12T02:49:44.000Z"
     }
   }
 }
