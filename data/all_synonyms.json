@@ -7700,6 +7700,36 @@
     ]
   },
   {
+    "valid_id": 58537,
+    "valid_name": "Scaurus atratus",
+    "taxagroupid": "INS",
+    "synonyms": [
+      {
+        "invalid_id": 69955,
+        "invalid_name": "Zophobas atratus",
+        "synonymtypeid": 2,
+        "synonymtype": "nomenclatural, homotypic, or objective synonym",
+        "recdatecreated": "2026-10-18T14:53:04.000Z",
+        "recdatemodified": "2026-10-18T14:53:04.000Z"
+      }
+    ]
+  },
+  {
+    "valid_id": 58538,
+    "valid_name": "Scaurus punctatus",
+    "taxagroupid": "INS",
+    "synonyms": [
+      {
+        "invalid_id": 69956,
+        "invalid_name": "Scaurus uncinus",
+        "synonymtypeid": 2,
+        "synonymtype": "nomenclatural, homotypic, or objective synonym",
+        "recdatecreated": "2026-10-18T14:56:45.000Z",
+        "recdatemodified": "2026-10-18T14:56:45.000Z"
+      }
+    ]
+  },
+  {
     "valid_id": 18121,
     "valid_name": "Scirtidae",
     "taxagroupid": "INS",
@@ -17460,6 +17490,21 @@
         "synonymtype": "taxonomic, heterotypic, or subjective synonym",
         "recdatecreated": "2025-07-18T19:04:55.000Z",
         "recdatemodified": "2025-07-18T19:04:55.000Z"
+      }
+    ]
+  },
+  {
+    "valid_id": 42274,
+    "valid_name": "Centropyxis-type",
+    "taxagroupid": "TES",
+    "synonyms": [
+      {
+        "invalid_id": 69946,
+        "invalid_name": "Centropyxis undiff.",
+        "synonymtypeid": 1,
+        "synonymtype": "taxonomic, heterotypic, or subjective synonym",
+        "recdatecreated": "2026-10-16T17:55:54.000Z",
+        "recdatemodified": "2026-10-16T17:55:54.000Z"
       }
     ]
   },

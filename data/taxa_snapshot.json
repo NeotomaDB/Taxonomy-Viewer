@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T08:38:44+00:00",
+  "generated_at": "2026-10-19T07:20:40+00:00",
   "taxa": {
     "1": {
       "taxonid": 1,
@@ -14448,14 +14448,6 @@
       "taxagroupid": "VPL",
       "recdatecreated": "2013-01-01T00:00:00.000Z",
       "recdatemodified": "2017-03-22T10:18:51.000Z"
-    },
-    "22864": {
-      "taxonid": 22864,
-      "taxonname": "Upis",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-07-30T14:46:45.000Z",
-      "recdatemodified": "2014-07-30T14:46:45.000Z"
     },
     "2012": {
       "taxonid": 2012,
@@ -119425,14 +119417,6 @@
       "recdatecreated": "2013-01-01T00:00:00.000Z",
       "recdatemodified": "2014-04-10T17:18:11.000Z"
     },
-    "16943": {
-      "taxonid": 16943,
-      "taxonname": "Bruchidae",
-      "highertaxonid": 13916,
-      "taxagroupid": "INS",
-      "recdatecreated": "2013-01-01T00:00:00.000Z",
-      "recdatemodified": "2013-01-01T00:00:00.000Z"
-    },
     "16944": {
       "taxonid": 16944,
       "taxonname": "Bruchidae gen. sp.",
@@ -136945,14 +136929,6 @@
       "recdatecreated": "2014-01-31T20:48:39.000Z",
       "recdatemodified": "2014-07-29T19:44:12.000Z"
     },
-    "22862": {
-      "taxonid": 22862,
-      "taxonname": "Trimytis",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-07-30T14:41:36.000Z",
-      "recdatemodified": "2014-07-30T14:41:36.000Z"
-    },
     "20400": {
       "taxonid": 20400,
       "taxonname": "Platystethus americanus",
@@ -143760,14 +143736,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2014-03-27T15:09:54.000Z",
       "recdatemodified": "2017-12-18T20:53:57.000Z"
-    },
-    "21341": {
-      "taxonid": 21341,
-      "taxonname": "Apionidae",
-      "highertaxonid": 13916,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-03-27T15:13:40.000Z",
-      "recdatemodified": "2014-03-27T15:13:40.000Z"
     },
     "21342": {
       "taxonid": 21342,
@@ -150633,14 +150601,6 @@
       "recdatecreated": "2014-05-16T14:57:28.000Z",
       "recdatemodified": "2014-05-16T14:57:28.000Z"
     },
-    "22339": {
-      "taxonid": 22339,
-      "taxonname": "Georissus",
-      "highertaxonid": 13969,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-05-16T15:03:04.000Z",
-      "recdatemodified": "2014-05-16T15:03:04.000Z"
-    },
     "22340": {
       "taxonid": 22340,
       "taxonname": "Helocombus",
@@ -150856,6 +150816,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2014-05-19T15:14:48.000Z",
       "recdatemodified": "2014-05-19T15:14:48.000Z"
+    },
+    "22339": {
+      "taxonid": 22339,
+      "taxonname": "Georissus",
+      "highertaxonid": 34330,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-05-16T15:03:04.000Z",
+      "recdatemodified": "2026-10-17T19:40:54.000Z"
     },
     "22371": {
       "taxonid": 22371,
@@ -151720,14 +151688,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2014-05-23T18:39:20.000Z",
       "recdatemodified": "2014-05-23T18:39:20.000Z"
-    },
-    "22506": {
-      "taxonid": 22506,
-      "taxonname": "Apsena",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-05-23T19:04:08.000Z",
-      "recdatemodified": "2014-05-23T19:04:08.000Z"
     },
     "22507": {
       "taxonid": 22507,
@@ -153921,14 +153881,6 @@
       "recdatecreated": "2014-07-27T05:58:48.000Z",
       "recdatemodified": "2014-07-27T05:58:48.000Z"
     },
-    "22863": {
-      "taxonid": 22863,
-      "taxonname": "Triorophus",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-07-30T14:45:03.000Z",
-      "recdatemodified": "2014-07-30T14:45:03.000Z"
-    },
     "22789": {
       "taxonid": 22789,
       "taxonname": "Oreocereus hempelianus",
@@ -154385,22 +154337,6 @@
       "recdatecreated": "2014-07-29T19:35:08.000Z",
       "recdatemodified": "2014-07-29T19:35:08.000Z"
     },
-    "22851": {
-      "taxonid": 22851,
-      "taxonname": "Argoporis",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-07-29T19:58:45.000Z",
-      "recdatemodified": "2014-07-29T19:58:45.000Z"
-    },
-    "22852": {
-      "taxonid": 22852,
-      "taxonname": "Blapstinus",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-07-29T20:04:24.000Z",
-      "recdatemodified": "2014-07-29T20:04:24.000Z"
-    },
     "22853": {
       "taxonid": 22853,
       "taxonname": "Bolitotherus",
@@ -154432,22 +154368,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2014-07-30T14:24:56.000Z",
       "recdatemodified": "2014-07-30T14:24:56.000Z"
-    },
-    "22860": {
-      "taxonid": 22860,
-      "taxonname": "Stenomorpha",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-07-30T14:29:40.000Z",
-      "recdatemodified": "2014-07-30T14:29:40.000Z"
-    },
-    "22861": {
-      "taxonid": 22861,
-      "taxonname": "Tenebrio",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-07-30T14:34:36.000Z",
-      "recdatemodified": "2014-07-30T14:34:36.000Z"
     },
     "22866": {
       "taxonid": 22866,
@@ -154544,6 +154464,38 @@
       "taxagroupid": "INS",
       "recdatecreated": "2014-07-30T15:28:00.000Z",
       "recdatemodified": "2026-06-02T14:11:13.000Z"
+    },
+    "22861": {
+      "taxonid": 22861,
+      "taxonname": "Tenebrio",
+      "highertaxonid": 69953,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-07-30T14:34:36.000Z",
+      "recdatemodified": "2026-10-17T10:49:52.000Z"
+    },
+    "22851": {
+      "taxonid": 22851,
+      "taxonname": "Argoporis",
+      "highertaxonid": 69953,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-07-29T19:58:45.000Z",
+      "recdatemodified": "2026-10-17T18:46:21.000Z"
+    },
+    "22860": {
+      "taxonid": 22860,
+      "taxonname": "Stenomorpha",
+      "highertaxonid": 69952,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-07-30T14:29:40.000Z",
+      "recdatemodified": "2026-10-18T14:44:52.000Z"
+    },
+    "22852": {
+      "taxonid": 22852,
+      "taxonname": "Blapstinus",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-07-29T20:04:24.000Z",
+      "recdatemodified": "2026-10-19T07:19:49.000Z"
     },
     "22880": {
       "taxonid": 22880,
@@ -155281,14 +155233,6 @@
       "recdatecreated": "2014-08-05T20:13:28.000Z",
       "recdatemodified": "2019-03-16T05:30:12.000Z"
     },
-    "22981": {
-      "taxonid": 22981,
-      "taxonname": "Noterus",
-      "highertaxonid": 20255,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-08-05T21:45:25.000Z",
-      "recdatemodified": "2014-08-05T21:45:25.000Z"
-    },
     "22982": {
       "taxonid": 22982,
       "taxonname": "Phoenicopteriformes",
@@ -155632,6 +155576,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2014-08-05T21:22:10.000Z",
       "recdatemodified": "2026-02-20T20:22:43.000Z"
+    },
+    "22981": {
+      "taxonid": 22981,
+      "taxonname": "Noterus",
+      "highertaxonid": 63428,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-08-05T21:45:25.000Z",
+      "recdatemodified": "2026-10-17T18:33:05.000Z"
     },
     "23025": {
       "taxonid": 23025,
@@ -170625,14 +170577,6 @@
       "recdatecreated": "2015-06-17T21:12:01.000Z",
       "recdatemodified": "2016-04-16T19:09:02.000Z"
     },
-    "25109": {
-      "taxonid": 25109,
-      "taxonname": "Helops sp.",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2015-06-17T21:14:37.000Z",
-      "recdatemodified": "2015-06-17T21:14:37.000Z"
-    },
     "25110": {
       "taxonid": 25110,
       "taxonname": "Pinnularia birnirkiana",
@@ -170776,6 +170720,14 @@
       "taxagroupid": "DIA",
       "recdatecreated": "2015-06-18T15:18:24.000Z",
       "recdatemodified": "2015-06-18T15:18:24.000Z"
+    },
+    "25109": {
+      "taxonid": 25109,
+      "taxonname": "Helops sp.",
+      "highertaxonid": 58644,
+      "taxagroupid": "INS",
+      "recdatecreated": "2015-06-17T21:14:37.000Z",
+      "recdatemodified": "2026-10-18T15:13:46.000Z"
     },
     "25129": {
       "taxonid": 25129,
@@ -233697,14 +233649,6 @@
       "recdatecreated": "2017-11-06T21:14:58.000Z",
       "recdatemodified": "2017-11-06T21:16:00.000Z"
     },
-    "34331": {
-      "taxonid": 34331,
-      "taxonname": "Georyssidae gen. sp.",
-      "highertaxonid": 34330,
-      "taxagroupid": "INS",
-      "recdatecreated": "2017-11-06T21:15:50.000Z",
-      "recdatemodified": "2017-11-06T21:15:50.000Z"
-    },
     "34332": {
       "taxonid": 34332,
       "taxonname": "Georyssus sp.",
@@ -235225,14 +235169,6 @@
       "recdatecreated": "2017-11-28T22:03:15.000Z",
       "recdatemodified": "2017-11-28T22:03:15.000Z"
     },
-    "34526": {
-      "taxonid": 34526,
-      "taxonname": "Tribolium",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2017-11-28T22:04:40.000Z",
-      "recdatemodified": "2017-11-28T22:04:40.000Z"
-    },
     "34527": {
       "taxonid": 34527,
       "taxonname": "Tribolium sp.",
@@ -235608,14 +235544,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2017-12-05T20:14:59.000Z",
       "recdatemodified": "2017-12-05T20:14:59.000Z"
-    },
-    "34580": {
-      "taxonid": 34580,
-      "taxonname": "Alphitophagus",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2017-12-05T20:43:25.000Z",
-      "recdatemodified": "2017-12-05T20:43:25.000Z"
     },
     "34581": {
       "taxonid": 34581,
@@ -236120,22 +236048,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2017-12-13T18:37:16.000Z",
       "recdatemodified": "2017-12-13T18:37:16.000Z"
-    },
-    "34640": {
-      "taxonid": 34640,
-      "taxonname": "Araeoschizus",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2017-12-13T18:39:42.000Z",
-      "recdatemodified": "2017-12-13T18:42:53.000Z"
-    },
-    "34641": {
-      "taxonid": 34641,
-      "taxonname": "Blapstinus sp.",
-      "highertaxonid": 22852,
-      "taxagroupid": "INS",
-      "recdatecreated": "2017-12-13T18:42:33.000Z",
-      "recdatemodified": "2017-12-13T18:42:33.000Z"
     },
     "34642": {
       "taxonid": 34642,
@@ -294993,14 +294905,6 @@
       "recdatecreated": "2020-10-22T05:54:46.000Z",
       "recdatemodified": "2020-10-22T05:54:46.000Z"
     },
-    "42274": {
-      "taxonid": 42274,
-      "taxonname": "Centropyxis-type",
-      "highertaxonid": 30680,
-      "taxagroupid": "TES",
-      "recdatecreated": "2020-10-22T05:56:51.000Z",
-      "recdatemodified": "2020-10-22T05:56:51.000Z"
-    },
     "42275": {
       "taxonid": 42275,
       "taxonname": "Pteridaceae-type",
@@ -295328,6 +295232,14 @@
       "taxagroupid": "VPL",
       "recdatecreated": "2020-10-26T14:19:11.000Z",
       "recdatemodified": "2026-02-20T20:16:48.000Z"
+    },
+    "42274": {
+      "taxonid": 42274,
+      "taxonname": "Centropyxis-type",
+      "highertaxonid": 1191,
+      "taxagroupid": "TES",
+      "recdatecreated": "2020-10-22T05:56:51.000Z",
+      "recdatemodified": "2026-10-16T17:53:08.000Z"
     },
     "42315": {
       "taxonid": 42315,
@@ -343049,14 +342961,6 @@
       "recdatecreated": "2022-06-22T20:46:50.000Z",
       "recdatemodified": "2022-07-07T01:03:00.000Z"
     },
-    "21618": {
-      "taxonid": 21618,
-      "taxonname": "Apion",
-      "highertaxonid": 21341,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-04-10T17:09:07.000Z",
-      "recdatemodified": "2022-07-09T15:35:27.000Z"
-    },
     "48242": {
       "taxonid": 48242,
       "taxonname": "ctccttttgtcaaaagcaaaaaataaagattcagaaagcaacaataaaaaaag",
@@ -361737,14 +361641,6 @@
       "recdatecreated": "2023-04-11T08:28:45.000Z",
       "recdatemodified": "2023-04-11T08:30:21.000Z"
     },
-    "50763": {
-      "taxonid": 50763,
-      "taxonname": "Apionidae gen. spp.",
-      "highertaxonid": 21618,
-      "taxagroupid": "INS",
-      "recdatecreated": "2023-04-14T19:58:24.000Z",
-      "recdatemodified": "2023-04-14T19:58:24.000Z"
-    },
     "50764": {
       "taxonid": 50764,
       "taxonname": "Bembidarenini",
@@ -379888,14 +379784,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-16T18:32:51.000Z",
       "recdatemodified": "2025-05-16T18:32:51.000Z"
-    },
-    "63435": {
-      "taxonid": 63435,
-      "taxonname": "Colonidae",
-      "highertaxonid": 13916,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T19:22:51.000Z",
-      "recdatemodified": "2025-05-17T19:22:51.000Z"
     },
     "53540": {
       "taxonid": 53540,
@@ -399585,14 +399473,6 @@
       "recdatecreated": "2025-05-17T05:20:08.000Z",
       "recdatemodified": "2025-05-17T05:20:08.000Z"
     },
-    "58528": {
-      "taxonid": 58528,
-      "taxonname": "Pimelia",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:11.000Z",
-      "recdatemodified": "2025-05-17T05:20:11.000Z"
-    },
     "58529": {
       "taxonid": 58529,
       "taxonname": "Pimelia sp.",
@@ -399657,37 +399537,13 @@
       "recdatecreated": "2025-05-17T05:19:57.000Z",
       "recdatemodified": "2025-05-18T04:05:03.000Z"
     },
-    "58530": {
-      "taxonid": 58530,
-      "taxonname": "Asida",
-      "highertaxonid": 17017,
+    "58528": {
+      "taxonid": 58528,
+      "taxonname": "Pimelia",
+      "highertaxonid": 69952,
       "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:17.000Z",
-      "recdatemodified": "2025-05-17T05:20:17.000Z"
-    },
-    "58531": {
-      "taxonid": 58531,
-      "taxonname": "Asida dejeani",
-      "highertaxonid": 58530,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:20.000Z",
-      "recdatemodified": "2025-05-17T05:20:20.000Z"
-    },
-    "58532": {
-      "taxonid": 58532,
-      "taxonname": "Asida sp.",
-      "highertaxonid": 58530,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:25.000Z",
-      "recdatemodified": "2025-05-17T05:20:25.000Z"
-    },
-    "58533": {
-      "taxonid": 58533,
-      "taxonname": "Akis",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:28.000Z",
-      "recdatemodified": "2025-05-17T05:20:28.000Z"
+      "recdatecreated": "2025-05-17T05:20:11.000Z",
+      "recdatemodified": "2026-10-17T19:28:36.000Z"
     },
     "58534": {
       "taxonid": 58534,
@@ -399696,54 +399552,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-17T05:20:31.000Z",
       "recdatemodified": "2025-05-17T05:20:31.000Z"
-    },
-    "58535": {
-      "taxonid": 58535,
-      "taxonname": "Scaurus",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:34.000Z",
-      "recdatemodified": "2025-05-17T05:20:34.000Z"
-    },
-    "58536": {
-      "taxonid": 58536,
-      "taxonname": "Scaurus tristis",
-      "highertaxonid": 58535,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:37.000Z",
-      "recdatemodified": "2025-05-17T05:20:37.000Z"
-    },
-    "58537": {
-      "taxonid": 58537,
-      "taxonname": "Scaurus atratus",
-      "highertaxonid": 58535,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:42.000Z",
-      "recdatemodified": "2025-05-17T05:20:42.000Z"
-    },
-    "58538": {
-      "taxonid": 58538,
-      "taxonname": "Scaurus punctatus",
-      "highertaxonid": 58535,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:48.000Z",
-      "recdatemodified": "2025-05-17T05:20:48.000Z"
-    },
-    "58539": {
-      "taxonid": 58539,
-      "taxonname": "Scaurus sp.",
-      "highertaxonid": 58535,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:53.000Z",
-      "recdatemodified": "2025-05-17T05:20:53.000Z"
-    },
-    "58540": {
-      "taxonid": 58540,
-      "taxonname": "Blaps",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:20:56.000Z",
-      "recdatemodified": "2025-05-17T05:20:56.000Z"
     },
     "58541": {
       "taxonid": 58541,
@@ -399793,14 +399601,6 @@
       "recdatecreated": "2025-05-17T05:21:26.000Z",
       "recdatemodified": "2025-05-17T05:21:26.000Z"
     },
-    "58547": {
-      "taxonid": 58547,
-      "taxonname": "Tentyria",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:21:29.000Z",
-      "recdatemodified": "2025-05-17T05:21:29.000Z"
-    },
     "58548": {
       "taxonid": 58548,
       "taxonname": "Tentyria laevis",
@@ -399848,54 +399648,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-17T05:21:49.000Z",
       "recdatemodified": "2025-05-17T05:21:49.000Z"
-    },
-    "58554": {
-      "taxonid": 58554,
-      "taxonname": "Stenosis",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:21:52.000Z",
-      "recdatemodified": "2025-05-17T05:21:52.000Z"
-    },
-    "58555": {
-      "taxonid": 58555,
-      "taxonname": "Stenosis intermedia",
-      "highertaxonid": 58554,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:21:56.000Z",
-      "recdatemodified": "2025-05-17T05:21:56.000Z"
-    },
-    "58556": {
-      "taxonid": 58556,
-      "taxonname": "Stenosis sardea",
-      "highertaxonid": 58554,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:22:01.000Z",
-      "recdatemodified": "2025-05-17T05:22:01.000Z"
-    },
-    "58557": {
-      "taxonid": 58557,
-      "taxonname": "Stenosis sp.",
-      "highertaxonid": 58554,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:22:07.000Z",
-      "recdatemodified": "2025-05-17T05:22:07.000Z"
-    },
-    "58558": {
-      "taxonid": 58558,
-      "taxonname": "Phylan",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:22:10.000Z",
-      "recdatemodified": "2025-05-17T05:22:10.000Z"
-    },
-    "58559": {
-      "taxonid": 58559,
-      "taxonname": "Phylan gibbus",
-      "highertaxonid": 58558,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:22:13.000Z",
-      "recdatemodified": "2025-05-17T05:22:13.000Z"
     },
     "58560": {
       "taxonid": 58560,
@@ -400081,37 +399833,109 @@
       "recdatecreated": "2025-05-17T05:23:30.000Z",
       "recdatemodified": "2025-05-17T05:23:30.000Z"
     },
-    "58583": {
-      "taxonid": 58583,
-      "taxonname": "Scaphidema",
-      "highertaxonid": 17017,
+    "58547": {
+      "taxonid": 58547,
+      "taxonname": "Tentyria",
+      "highertaxonid": 69952,
       "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:23:33.000Z",
-      "recdatemodified": "2025-05-17T05:23:33.000Z"
+      "recdatecreated": "2025-05-17T05:21:29.000Z",
+      "recdatemodified": "2026-10-17T19:26:39.000Z"
     },
-    "58584": {
-      "taxonid": 58584,
-      "taxonname": "Scaphidema metallicum",
-      "highertaxonid": 58583,
+    "58555": {
+      "taxonid": 58555,
+      "taxonname": "Stenosis intermedia",
+      "highertaxonid": 58554,
       "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:23:36.000Z",
-      "recdatemodified": "2025-05-17T05:23:36.000Z"
+      "recdatecreated": "2025-05-17T05:21:56.000Z",
+      "recdatemodified": "2026-10-18T14:40:51.000Z"
     },
-    "58585": {
-      "taxonid": 58585,
-      "taxonname": "Platydema",
-      "highertaxonid": 17017,
+    "58557": {
+      "taxonid": 58557,
+      "taxonname": "Stenosis sp.",
+      "highertaxonid": 58554,
       "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:23:39.000Z",
-      "recdatemodified": "2025-05-17T05:23:39.000Z"
+      "recdatecreated": "2025-05-17T05:22:07.000Z",
+      "recdatemodified": "2026-10-18T14:42:23.000Z"
     },
-    "58586": {
-      "taxonid": 58586,
-      "taxonname": "Platydema violaceum",
-      "highertaxonid": 58585,
+    "58535": {
+      "taxonid": 58535,
+      "taxonname": "Scaurus",
+      "highertaxonid": 69953,
       "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:23:42.000Z",
-      "recdatemodified": "2025-05-17T05:23:42.000Z"
+      "recdatecreated": "2025-05-17T05:20:34.000Z",
+      "recdatemodified": "2026-10-18T14:59:31.000Z"
+    },
+    "58537": {
+      "taxonid": 58537,
+      "taxonname": "Scaurus atratus",
+      "highertaxonid": 58535,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:42.000Z",
+      "recdatemodified": "2026-10-18T14:50:47.000Z"
+    },
+    "58538": {
+      "taxonid": 58538,
+      "taxonname": "Scaurus punctatus",
+      "highertaxonid": 58535,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:48.000Z",
+      "recdatemodified": "2026-10-18T14:55:19.000Z"
+    },
+    "58536": {
+      "taxonid": 58536,
+      "taxonname": "Scaurus tristis",
+      "highertaxonid": 58535,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:37.000Z",
+      "recdatemodified": "2026-10-18T14:58:16.000Z"
+    },
+    "58539": {
+      "taxonid": 58539,
+      "taxonname": "Scaurus sp.",
+      "highertaxonid": 58535,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:53.000Z",
+      "recdatemodified": "2026-10-18T14:59:02.000Z"
+    },
+    "58559": {
+      "taxonid": 58559,
+      "taxonname": "Phylan gibbus",
+      "highertaxonid": 58558,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:22:13.000Z",
+      "recdatemodified": "2026-10-18T15:15:58.000Z"
+    },
+    "58558": {
+      "taxonid": 58558,
+      "taxonname": "Phylan",
+      "highertaxonid": 69949,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:22:10.000Z",
+      "recdatemodified": "2026-10-18T15:16:53.000Z"
+    },
+    "58531": {
+      "taxonid": 58531,
+      "taxonname": "Asida dejeanii",
+      "highertaxonid": 58530,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:20.000Z",
+      "recdatemodified": "2026-10-19T07:02:47.000Z"
+    },
+    "58532": {
+      "taxonid": 58532,
+      "taxonname": "Asida sp.",
+      "highertaxonid": 58530,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:25.000Z",
+      "recdatemodified": "2026-10-19T07:03:32.000Z"
+    },
+    "58530": {
+      "taxonid": 58530,
+      "taxonname": "Asida",
+      "highertaxonid": 69952,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:17.000Z",
+      "recdatemodified": "2026-10-19T07:04:22.000Z"
     },
     "58589": {
       "taxonid": 58589,
@@ -400177,14 +400001,6 @@
       "recdatecreated": "2025-05-17T05:25:19.000Z",
       "recdatemodified": "2025-05-17T05:25:19.000Z"
     },
-    "58616": {
-      "taxonid": 58616,
-      "taxonname": "Alphitobius",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:26:05.000Z",
-      "recdatemodified": "2025-05-17T05:26:05.000Z"
-    },
     "58617": {
       "taxonid": 58617,
       "taxonname": "Alphitobius diaperinus",
@@ -400241,14 +400057,6 @@
       "recdatecreated": "2025-05-17T05:26:47.000Z",
       "recdatemodified": "2025-05-17T05:26:47.000Z"
     },
-    "58628": {
-      "taxonid": 58628,
-      "taxonname": "Uloma",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:26:50.000Z",
-      "recdatemodified": "2025-05-17T05:26:50.000Z"
-    },
     "58629": {
       "taxonid": 58629,
       "taxonname": "Uloma culinaris",
@@ -400273,14 +400081,6 @@
       "recdatecreated": "2025-05-17T05:27:05.000Z",
       "recdatemodified": "2025-05-17T05:27:05.000Z"
     },
-    "58632": {
-      "taxonid": 58632,
-      "taxonname": "Bius",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:27:08.000Z",
-      "recdatemodified": "2025-05-17T05:27:08.000Z"
-    },
     "58633": {
       "taxonid": 58633,
       "taxonname": "Bius thoracicus",
@@ -400288,6 +400088,46 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-17T05:27:11.000Z",
       "recdatemodified": "2025-05-17T05:27:11.000Z"
+    },
+    "58616": {
+      "taxonid": 58616,
+      "taxonname": "Alphitobius",
+      "highertaxonid": 69953,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:26:05.000Z",
+      "recdatemodified": "2026-10-17T10:31:12.000Z"
+    },
+    "58632": {
+      "taxonid": 58632,
+      "taxonname": "Bius",
+      "highertaxonid": 69953,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:27:08.000Z",
+      "recdatemodified": "2026-10-17T10:45:58.000Z"
+    },
+    "58628": {
+      "taxonid": 58628,
+      "taxonname": "Uloma",
+      "highertaxonid": 69953,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:26:50.000Z",
+      "recdatemodified": "2026-10-17T18:58:46.000Z"
+    },
+    "58586": {
+      "taxonid": 58586,
+      "taxonname": "Platydema violacea",
+      "highertaxonid": 58585,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:23:42.000Z",
+      "recdatemodified": "2026-10-18T15:11:47.000Z"
+    },
+    "58585": {
+      "taxonid": 58585,
+      "taxonname": "Platydema",
+      "highertaxonid": 69950,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:23:39.000Z",
+      "recdatemodified": "2026-10-18T15:12:56.000Z"
     },
     "58641": {
       "taxonid": 58641,
@@ -400384,14 +400224,6 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-17T05:28:30.000Z",
       "recdatemodified": "2025-05-17T05:28:30.000Z"
-    },
-    "58653": {
-      "taxonid": 58653,
-      "taxonname": "Xanthomus",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T05:28:33.000Z",
-      "recdatemodified": "2025-05-17T05:28:33.000Z"
     },
     "58654": {
       "taxonid": 58654,
@@ -400624,6 +400456,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-17T05:31:26.000Z",
       "recdatemodified": "2025-05-17T05:31:26.000Z"
+    },
+    "58653": {
+      "taxonid": 58653,
+      "taxonname": "Xanthomus",
+      "highertaxonid": 69953,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:28:33.000Z",
+      "recdatemodified": "2026-10-17T18:49:56.000Z"
     },
     "58693": {
       "taxonid": 58693,
@@ -405289,22 +405129,6 @@
       "recdatecreated": "2025-05-17T07:33:54.000Z",
       "recdatemodified": "2025-05-17T07:33:54.000Z"
     },
-    "59671": {
-      "taxonid": 59671,
-      "taxonname": "Bruchinae",
-      "highertaxonid": 16943,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T07:33:58.000Z",
-      "recdatemodified": "2025-05-17T07:33:58.000Z"
-    },
-    "59672": {
-      "taxonid": 59672,
-      "taxonname": "Bruchinae indet.",
-      "highertaxonid": 59671,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-17T07:34:02.000Z",
-      "recdatemodified": "2025-05-17T07:34:02.000Z"
-    },
     "59673": {
       "taxonid": 59673,
       "taxonname": "Zabrotes",
@@ -405416,6 +405240,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2013-01-01T00:00:00.000Z",
       "recdatemodified": "2025-05-20T02:05:25.000Z"
+    },
+    "59672": {
+      "taxonid": 59672,
+      "taxonname": "Bruchinae indet.",
+      "highertaxonid": 16943,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T07:34:02.000Z",
+      "recdatemodified": "2026-10-17T18:17:09.000Z"
     },
     "59701": {
       "taxonid": 59701,
@@ -426937,14 +426769,6 @@
       "recdatecreated": "2025-05-17T17:46:48.000Z",
       "recdatemodified": "2025-05-17T17:46:48.000Z"
     },
-    "20255": {
-      "taxonid": 20255,
-      "taxonname": "Noteridae gen. sp.",
-      "highertaxonid": 13916,
-      "taxagroupid": "INS",
-      "recdatecreated": "2014-01-24T21:24:55.000Z",
-      "recdatemodified": "2025-05-17T17:46:48.000Z"
-    },
     "63429": {
       "taxonid": 63429,
       "taxonname": "Serropalpidae",
@@ -427128,6 +426952,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2025-05-17T17:10:08.000Z",
       "recdatemodified": "2026-10-09T12:20:44.000Z"
+    },
+    "20255": {
+      "taxonid": 20255,
+      "taxonname": "Noteridae gen. sp.",
+      "highertaxonid": 63428,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-01-24T21:24:55.000Z",
+      "recdatemodified": "2026-10-17T18:36:52.000Z"
     },
     "63482": {
       "taxonid": 63482,
@@ -458297,22 +458129,6 @@
       "recdatecreated": "2025-10-24T16:34:34.000Z",
       "recdatemodified": "2025-10-24T16:34:34.000Z"
     },
-    "63600": {
-      "taxonid": 63600,
-      "taxonname": "Cybocephalidae",
-      "highertaxonid": 13916,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-18T04:21:54.000Z",
-      "recdatemodified": "2025-10-24T16:44:09.000Z"
-    },
-    "63605": {
-      "taxonid": 63605,
-      "taxonname": "Thorictidae",
-      "highertaxonid": 13916,
-      "taxagroupid": "INS",
-      "recdatecreated": "2025-05-18T04:26:56.000Z",
-      "recdatemodified": "2025-10-24T16:44:09.000Z"
-    },
     "67951": {
       "taxonid": 67951,
       "taxonname": "Amphora delphinea var. minor",
@@ -458384,6 +458200,14 @@
       "taxagroupid": "INS",
       "recdatecreated": "2013-11-01T21:07:01.000Z",
       "recdatemodified": "2026-02-20T22:05:19.000Z"
+    },
+    "63605": {
+      "taxonid": 63605,
+      "taxonname": "Thorictinae",
+      "highertaxonid": 17036,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-18T04:26:56.000Z",
+      "recdatemodified": "2026-10-17T19:33:12.000Z"
     },
     "67959": {
       "taxonid": 67959,
@@ -473137,14 +472961,6 @@
       "recdatecreated": "2018-04-23T16:46:13.000Z",
       "recdatemodified": "2026-10-05T17:17:49.000Z"
     },
-    "69914": {
-      "taxonid": 69914,
-      "taxonname": "Adelium",
-      "highertaxonid": 17017,
-      "taxagroupid": "INS",
-      "recdatecreated": "2026-10-05T17:20:38.000Z",
-      "recdatemodified": "2026-10-05T17:20:38.000Z"
-    },
     "69915": {
       "taxonid": 69915,
       "taxonname": "Cyclotella radiosa / C. comta",
@@ -473264,6 +473080,390 @@
       "taxagroupid": "VPL",
       "recdatecreated": "2026-10-12T02:49:44.000Z",
       "recdatemodified": "2026-10-12T02:49:44.000Z"
+    },
+    "69929": {
+      "taxonid": 69929,
+      "taxonname": "Eunotia sp. 15 NE Lakes",
+      "highertaxonid": 5395,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T18:52:39.000Z",
+      "recdatemodified": "2026-10-13T18:52:39.000Z"
+    },
+    "69930": {
+      "taxonid": 69930,
+      "taxonname": "Diploneis sp. 1 VTEC Lakes",
+      "highertaxonid": 24433,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T19:31:44.000Z",
+      "recdatemodified": "2026-10-13T19:31:44.000Z"
+    },
+    "69931": {
+      "taxonid": 69931,
+      "taxonname": "Discostella sp. 1 VTEC Lakes",
+      "highertaxonid": 24434,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T19:33:31.000Z",
+      "recdatemodified": "2026-10-13T19:33:31.000Z"
+    },
+    "69932": {
+      "taxonid": 69932,
+      "taxonname": "Eolimna sp. 1 VTEC Lakes",
+      "highertaxonid": 24440,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T19:34:45.000Z",
+      "recdatemodified": "2026-10-13T19:34:45.000Z"
+    },
+    "69933": {
+      "taxonid": 69933,
+      "taxonname": "Neidium sp. 1 VTEC Lakes",
+      "highertaxonid": 24520,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T19:36:00.000Z",
+      "recdatemodified": "2026-10-13T19:36:00.000Z"
+    },
+    "69934": {
+      "taxonid": 69934,
+      "taxonname": "Nitzschia sp. 1 VTEC Lakes",
+      "highertaxonid": 24521,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T19:37:11.000Z",
+      "recdatemodified": "2026-10-13T19:37:11.000Z"
+    },
+    "69935": {
+      "taxonid": 69935,
+      "taxonname": "Pinnularia sp. 1 VTEC Lakes",
+      "highertaxonid": 5397,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T19:58:04.000Z",
+      "recdatemodified": "2026-10-13T19:58:04.000Z"
+    },
+    "69936": {
+      "taxonid": 69936,
+      "taxonname": "Sellaphora sp. 1 VTEC Lakes",
+      "highertaxonid": 24569,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T20:00:09.000Z",
+      "recdatemodified": "2026-10-13T20:00:09.000Z"
+    },
+    "69937": {
+      "taxonid": 69937,
+      "taxonname": "Sellaphora sp. 2 VTEC Lakes",
+      "highertaxonid": 24569,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T20:01:21.000Z",
+      "recdatemodified": "2026-10-13T20:01:21.000Z"
+    },
+    "69938": {
+      "taxonid": 69938,
+      "taxonname": "Sellaphora sp. 3 VTEC Lakes",
+      "highertaxonid": 24569,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T20:02:43.000Z",
+      "recdatemodified": "2026-10-13T20:02:43.000Z"
+    },
+    "69939": {
+      "taxonid": 69939,
+      "taxonname": "Sellaphora sp. 36 NE Lakes",
+      "highertaxonid": 24569,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T20:04:36.000Z",
+      "recdatemodified": "2026-10-13T20:04:36.000Z"
+    },
+    "69940": {
+      "taxonid": 69940,
+      "taxonname": "Sellaphora sp. 41 NE Lakes",
+      "highertaxonid": 24569,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-13T20:07:29.000Z",
+      "recdatemodified": "2026-10-13T20:07:29.000Z"
+    },
+    "69941": {
+      "taxonid": 69941,
+      "taxonname": "Stephanodiscus sp. 1 VTEC Lakes",
+      "highertaxonid": 24582,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-14T18:19:57.000Z",
+      "recdatemodified": "2026-10-14T18:19:57.000Z"
+    },
+    "69942": {
+      "taxonid": 69942,
+      "taxonname": "Stauroneis sp. 2 NE Lakes",
+      "highertaxonid": 24576,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-14T18:30:24.000Z",
+      "recdatemodified": "2026-10-14T18:30:24.000Z"
+    },
+    "69943": {
+      "taxonid": 69943,
+      "taxonname": "Stephanodiscus sp. 501 NE Lakes",
+      "highertaxonid": 24582,
+      "taxagroupid": "DIA",
+      "recdatecreated": "2026-10-14T18:34:52.000Z",
+      "recdatemodified": "2026-10-14T18:34:52.000Z"
+    },
+    "69944": {
+      "taxonid": 69944,
+      "taxonname": "Setaria verticillata/S.viridis",
+      "highertaxonid": 15542,
+      "taxagroupid": "VPL",
+      "recdatecreated": "2026-10-15T14:48:27.000Z",
+      "recdatemodified": "2026-10-15T14:48:27.000Z"
+    },
+    "69945": {
+      "taxonid": 69945,
+      "taxonname": "Cryptodifflugia undiff.",
+      "highertaxonid": 29727,
+      "taxagroupid": "TES",
+      "recdatecreated": "2026-10-16T14:43:13.000Z",
+      "recdatemodified": "2026-10-16T14:43:13.000Z"
+    },
+    "69946": {
+      "taxonid": 69946,
+      "taxonname": "Centropyxis undiff.",
+      "highertaxonid": null,
+      "taxagroupid": "TES",
+      "recdatecreated": "2026-10-16T17:55:54.000Z",
+      "recdatemodified": "2026-10-16T17:55:54.000Z"
+    },
+    "69947": {
+      "taxonid": 69947,
+      "taxonname": "Corythion undiff.",
+      "highertaxonid": 30694,
+      "taxagroupid": "TES",
+      "recdatecreated": "2026-10-16T17:57:48.000Z",
+      "recdatemodified": "2026-10-16T17:57:48.000Z"
+    },
+    "69948": {
+      "taxonid": 69948,
+      "taxonname": "Difflugia undiff.",
+      "highertaxonid": 608,
+      "taxagroupid": "TES",
+      "recdatecreated": "2026-10-16T17:58:46.000Z",
+      "recdatemodified": "2026-10-16T17:58:46.000Z"
+    },
+    "69949": {
+      "taxonid": 69949,
+      "taxonname": "Blaptinae",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-17T09:55:44.000Z",
+      "recdatemodified": "2026-10-17T09:55:44.000Z"
+    },
+    "58540": {
+      "taxonid": 58540,
+      "taxonname": "Blaps",
+      "highertaxonid": 69949,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:56.000Z",
+      "recdatemodified": "2026-10-17T09:56:07.000Z"
+    },
+    "69950": {
+      "taxonid": 69950,
+      "taxonname": "Diaperinae",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-17T09:58:47.000Z",
+      "recdatemodified": "2026-10-17T09:58:47.000Z"
+    },
+    "69951": {
+      "taxonid": 69951,
+      "taxonname": "Lagriinae",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-17T10:00:50.000Z",
+      "recdatemodified": "2026-10-17T10:00:50.000Z"
+    },
+    "69952": {
+      "taxonid": 69952,
+      "taxonname": "Pimeliinae",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-17T10:03:49.000Z",
+      "recdatemodified": "2026-10-17T10:03:49.000Z"
+    },
+    "69953": {
+      "taxonid": 69953,
+      "taxonname": "Tenebrioninae",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-17T10:06:13.000Z",
+      "recdatemodified": "2026-10-17T10:06:13.000Z"
+    },
+    "69914": {
+      "taxonid": 69914,
+      "taxonname": "Adelium",
+      "highertaxonid": 69951,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-05T17:20:38.000Z",
+      "recdatemodified": "2026-10-17T10:14:16.000Z"
+    },
+    "58533": {
+      "taxonid": 58533,
+      "taxonname": "Akis",
+      "highertaxonid": 69952,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:20:28.000Z",
+      "recdatemodified": "2026-10-17T10:24:14.000Z"
+    },
+    "34580": {
+      "taxonid": 34580,
+      "taxonname": "Alphitophagus",
+      "highertaxonid": 69950,
+      "taxagroupid": "INS",
+      "recdatecreated": "2017-12-05T20:43:25.000Z",
+      "recdatemodified": "2026-10-17T10:39:32.000Z"
+    },
+    "22506": {
+      "taxonid": 22506,
+      "taxonname": "Apsena",
+      "highertaxonid": 69953,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-05-23T19:04:08.000Z",
+      "recdatemodified": "2026-10-17T10:40:55.000Z"
+    },
+    "21618": {
+      "taxonid": 21618,
+      "taxonname": "Apion",
+      "highertaxonid": 14038,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-04-10T17:09:07.000Z",
+      "recdatemodified": "2026-10-17T18:08:21.000Z"
+    },
+    "50763": {
+      "taxonid": 50763,
+      "taxonname": "Apionidae gen. spp.",
+      "highertaxonid": 14038,
+      "taxagroupid": "INS",
+      "recdatecreated": "2023-04-14T19:58:24.000Z",
+      "recdatemodified": "2026-10-17T18:13:38.000Z"
+    },
+    "58554": {
+      "taxonid": 58554,
+      "taxonname": "Stenosis",
+      "highertaxonid": 69952,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:21:52.000Z",
+      "recdatemodified": "2026-10-18T14:43:02.000Z"
+    },
+    "69955": {
+      "taxonid": 69955,
+      "taxonname": "Zophobas atratus",
+      "highertaxonid": null,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-18T14:53:03.000Z",
+      "recdatemodified": "2026-10-18T14:53:03.000Z"
+    },
+    "16943": {
+      "taxonid": 16943,
+      "taxonname": "Bruchinae",
+      "highertaxonid": 14035,
+      "taxagroupid": "INS",
+      "recdatecreated": "2013-01-01T00:00:00.000Z",
+      "recdatemodified": "2026-10-17T18:23:15.000Z"
+    },
+    "34640": {
+      "taxonid": 34640,
+      "taxonname": "Araeoschizus",
+      "highertaxonid": 69952,
+      "taxagroupid": "INS",
+      "recdatecreated": "2017-12-13T18:39:42.000Z",
+      "recdatemodified": "2026-10-17T18:28:43.000Z"
+    },
+    "69956": {
+      "taxonid": 69956,
+      "taxonname": "Scaurus uncinus",
+      "highertaxonid": null,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-18T14:56:44.000Z",
+      "recdatemodified": "2026-10-18T14:56:44.000Z"
+    },
+    "63600": {
+      "taxonid": 63600,
+      "taxonname": "Cybocephalinae",
+      "highertaxonid": 16796,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-18T04:21:54.000Z",
+      "recdatemodified": "2026-10-17T18:43:47.000Z"
+    },
+    "69954": {
+      "taxonid": 69954,
+      "taxonname": "Stenochiinae",
+      "highertaxonid": 17017,
+      "taxagroupid": "INS",
+      "recdatecreated": "2026-10-17T18:53:46.000Z",
+      "recdatemodified": "2026-10-17T18:53:46.000Z"
+    },
+    "58584": {
+      "taxonid": 58584,
+      "taxonname": "Scaphidema metallicum",
+      "highertaxonid": 58583,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:23:36.000Z",
+      "recdatemodified": "2026-10-18T15:03:57.000Z"
+    },
+    "22864": {
+      "taxonid": 22864,
+      "taxonname": "Upis",
+      "highertaxonid": 69954,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-07-30T14:46:45.000Z",
+      "recdatemodified": "2026-10-17T18:55:12.000Z"
+    },
+    "22863": {
+      "taxonid": 22863,
+      "taxonname": "Triorophus",
+      "highertaxonid": 69952,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-07-30T14:45:03.000Z",
+      "recdatemodified": "2026-10-17T19:02:16.000Z"
+    },
+    "22862": {
+      "taxonid": 22862,
+      "taxonname": "Trimytis",
+      "highertaxonid": 69952,
+      "taxagroupid": "INS",
+      "recdatecreated": "2014-07-30T14:41:36.000Z",
+      "recdatemodified": "2026-10-17T19:08:08.000Z"
+    },
+    "34526": {
+      "taxonid": 34526,
+      "taxonname": "Tribolium",
+      "highertaxonid": 69953,
+      "taxagroupid": "INS",
+      "recdatecreated": "2017-11-28T22:04:40.000Z",
+      "recdatemodified": "2026-10-17T19:23:15.000Z"
+    },
+    "34331": {
+      "taxonid": 34331,
+      "taxonname": "Georissidae gen. sp.",
+      "highertaxonid": 34330,
+      "taxagroupid": "INS",
+      "recdatecreated": "2017-11-06T21:15:50.000Z",
+      "recdatemodified": "2026-10-17T19:38:26.000Z"
+    },
+    "58556": {
+      "taxonid": 58556,
+      "taxonname": "Stenosis sardea",
+      "highertaxonid": 58554,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:22:01.000Z",
+      "recdatemodified": "2026-10-18T14:41:35.000Z"
+    },
+    "58583": {
+      "taxonid": 58583,
+      "taxonname": "Scaphidema",
+      "highertaxonid": 69950,
+      "taxagroupid": "INS",
+      "recdatecreated": "2025-05-17T05:23:33.000Z",
+      "recdatemodified": "2026-10-18T15:05:18.000Z"
+    },
+    "34641": {
+      "taxonid": 34641,
+      "taxonname": "Blapstinus sp.",
+      "highertaxonid": 22852,
+      "taxagroupid": "INS",
+      "recdatecreated": "2017-12-13T18:42:33.000Z",
+      "recdatemodified": "2026-10-19T07:19:30.000Z"
     }
   }
 }

@@ -19865,17 +19865,6 @@
     "validatorName": "Grimm, Eric Christopher",
     "validatedate": "2017-03-22T00:00:00.000Z"
   },
-  "22864": {
-    "taxonid": 22864,
-    "author": null,
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-07-30T00:00:00.000Z"
-  },
   "2012": {
     "taxonid": 2012,
     "author": "(Martius) G.L. Webster, 1967",
@@ -164207,17 +164196,6 @@
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2014-04-10T00:00:00.000Z"
   },
-  "16943": {
-    "taxonid": 16943,
-    "author": "Latreille, 1802",
-    "publicationid": 6163,
-    "publication": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
-    "citation": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
-    "publicationYear": "2002",
-    "validatorid": null,
-    "validatorName": null,
-    "validatedate": null
-  },
   "16944": {
     "taxonid": 16944,
     "author": null,
@@ -188297,17 +188275,6 @@
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2014-07-29T00:00:00.000Z"
   },
-  "22862": {
-    "taxonid": 22862,
-    "author": null,
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-07-30T00:00:00.000Z"
-  },
   "20400": {
     "taxonid": 20400,
     "author": "Erichson, 1840",
@@ -197668,17 +197635,6 @@
     "validatorid": 10,
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2017-12-18T00:00:00.000Z"
-  },
-  "21341": {
-    "taxonid": 21341,
-    "author": "Schönherr, 1823",
-    "publicationid": 1533,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": null,
-    "validatorName": null,
-    "validatedate": null
   },
   "21342": {
     "taxonid": 21342,
@@ -207118,17 +207074,6 @@
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2014-05-16T00:00:00.000Z"
   },
-  "22339": {
-    "taxonid": 22339,
-    "author": null,
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-05-16T00:00:00.000Z"
-  },
   "22340": {
     "taxonid": 22340,
     "author": "Horn, 1890",
@@ -207425,6 +207370,17 @@
     "validatorid": 10,
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2014-05-19T00:00:00.000Z"
+  },
+  "22339": {
+    "taxonid": 22339,
+    "author": null,
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
   },
   "22371": {
     "taxonid": 22371,
@@ -208610,17 +208566,6 @@
     "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
     "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
     "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-05-23T00:00:00.000Z"
-  },
-  "22506": {
-    "taxonid": 22506,
-    "author": "LeConte, 1862",
-    "publicationid": 6163,
-    "publication": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
-    "citation": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
-    "publicationYear": "2002",
     "validatorid": 10,
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2014-05-23T00:00:00.000Z"
@@ -211639,17 +211584,6 @@
     "validatorName": "Grimm, Eric Christopher",
     "validatedate": "2014-07-27T00:00:00.000Z"
   },
-  "22863": {
-    "taxonid": 22863,
-    "author": "Leconte, 1851",
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-07-30T00:00:00.000Z"
-  },
   "22789": {
     "taxonid": 22789,
     "author": "(Gürke) D.R. Hunt, 1987",
@@ -212277,28 +212211,6 @@
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2014-07-29T00:00:00.000Z"
   },
-  "22851": {
-    "taxonid": 22851,
-    "author": null,
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-07-29T00:00:00.000Z"
-  },
-  "22852": {
-    "taxonid": 22852,
-    "author": null,
-    "publicationid": 1533,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-07-29T00:00:00.000Z"
-  },
   "22853": {
     "taxonid": 22853,
     "author": null,
@@ -212339,28 +212251,6 @@
     "publication": null,
     "citation": null,
     "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-07-30T00:00:00.000Z"
-  },
-  "22860": {
-    "taxonid": 22860,
-    "author": "unknown",
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-07-30T00:00:00.000Z"
-  },
-  "22861": {
-    "taxonid": 22861,
-    "author": "Linnaeus, 1758",
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
     "validatorid": 10,
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2014-07-30T00:00:00.000Z"
@@ -212496,6 +212386,50 @@
     "validatorid": 11525,
     "validatorName": "Engels, Stefan",
     "validatedate": "2026-06-02T00:00:00.000Z"
+  },
+  "22861": {
+    "taxonid": 22861,
+    "author": "Linnaeus, 1758",
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "22851": {
+    "taxonid": 22851,
+    "author": null,
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "22860": {
+    "taxonid": 22860,
+    "author": "Solier, 1836",
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "22852": {
+    "taxonid": 22852,
+    "author": "Dejean, 1821",
+    "publicationid": 1533,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-19T00:00:00.000Z"
   },
   "22880": {
     "taxonid": 22880,
@@ -213509,17 +213443,6 @@
     "validatorName": "Grimm, Eric Christopher",
     "validatedate": "2019-03-16T00:00:00.000Z"
   },
-  "22981": {
-    "taxonid": 22981,
-    "author": "Schellenberg",
-    "publicationid": 6212,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-08-05T00:00:00.000Z"
-  },
   "22982": {
     "taxonid": 22982,
     "author": "Fürbringer, 1888",
@@ -213992,6 +213915,17 @@
     "validatorid": 10,
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2014-08-05T00:00:00.000Z"
+  },
+  "22981": {
+    "taxonid": 22981,
+    "author": "Schellenberg",
+    "publicationid": 6212,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
   },
   "23025": {
     "taxonid": 23025,
@@ -234607,17 +234541,6 @@
     "validatorName": "Grimm, Eric Christopher",
     "validatedate": "2016-04-16T00:00:00.000Z"
   },
-  "25109": {
-    "taxonid": 25109,
-    "author": "Fabricius, 1775",
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2015-06-17T00:00:00.000Z"
-  },
   "25110": {
     "taxonid": 25110,
     "author": "Patrick & Freese, 1961",
@@ -234815,6 +234738,17 @@
     "validatorid": 6452,
     "validatorName": "Hausmann, Sonja",
     "validatedate": "2015-06-18T00:00:00.000Z"
+  },
+  "25109": {
+    "taxonid": 25109,
+    "author": "Fabricius, 1775",
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
   },
   "25129": {
     "taxonid": 25129,
@@ -321331,17 +321265,6 @@
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2017-11-06T00:00:00.000Z"
   },
-  "34331": {
-    "taxonid": 34331,
-    "author": "Laporte, 1840",
-    "publicationid": 1533,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2017-11-06T00:00:00.000Z"
-  },
   "34332": {
     "taxonid": 34332,
     "author": "Latreille, 1809",
@@ -323432,17 +323355,6 @@
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2017-11-28T00:00:00.000Z"
   },
-  "34526": {
-    "taxonid": 34526,
-    "author": null,
-    "publicationid": 1533,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2017-11-28T00:00:00.000Z"
-  },
   "34527": {
     "taxonid": 34527,
     "author": null,
@@ -323956,17 +323868,6 @@
     "publication": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
     "citation": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
     "publicationYear": "2002",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2017-12-05T00:00:00.000Z"
-  },
-  "34580": {
-    "taxonid": 34580,
-    "author": null,
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
     "validatorid": 10,
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2017-12-05T00:00:00.000Z"
@@ -324660,28 +324561,6 @@
     "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
     "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
     "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2017-12-13T00:00:00.000Z"
-  },
-  "34640": {
-    "taxonid": 34640,
-    "author": "LeConte, 1851",
-    "publicationid": 6202,
-    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
-    "publicationYear": "2003 onwards",
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2017-12-13T00:00:00.000Z"
-  },
-  "34641": {
-    "taxonid": 34641,
-    "author": null,
-    "publicationid": 1533,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
     "validatorid": 10,
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2017-12-13T00:00:00.000Z"
@@ -405613,17 +405492,6 @@
     "validatorName": "Grimm, Eric Christopher",
     "validatedate": "2020-10-22T00:00:00.000Z"
   },
-  "42274": {
-    "taxonid": 42274,
-    "author": "Stein, 1857",
-    "publicationid": 9983,
-    "publication": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
-    "citation": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
-    "publicationYear": "2016 onwards",
-    "validatorid": 44,
-    "validatorName": "Grimm, Eric Christopher",
-    "validatedate": "2020-10-22T00:00:00.000Z"
-  },
   "42275": {
     "taxonid": 42275,
     "author": "E.D.M. Kirchner, 1831",
@@ -406074,6 +405942,17 @@
     "validatorid": 15382,
     "validatorName": "Jenks, Cathy",
     "validatedate": "2020-10-26T00:00:00.000Z"
+  },
+  "42274": {
+    "taxonid": 42274,
+    "author": "Stein, 1857",
+    "publicationid": 9983,
+    "publication": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
+    "citation": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
+    "publicationYear": "2016 onwards",
+    "validatorid": 6390,
+    "validatorName": "Booth, Robert K.",
+    "validatedate": "2026-10-16T00:00:00.000Z"
   },
   "42315": {
     "taxonid": 42315,
@@ -471690,17 +471569,6 @@
     "validatorName": null,
     "validatedate": null
   },
-  "21618": {
-    "taxonid": 21618,
-    "author": "Herbst, 1797",
-    "publicationid": 1533,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2022-07-09T00:00:00.000Z"
-  },
   "48242": {
     "taxonid": 48242,
     "author": "Stoof-Leichsenring, unpub",
@@ -497386,17 +497254,6 @@
     "validatorName": "Horne, David",
     "validatedate": "2023-04-11T00:00:00.000Z"
   },
-  "50763": {
-    "taxonid": 50763,
-    "author": "Schönherr, 1823",
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2023-04-14T00:00:00.000Z"
-  },
   "50764": {
     "taxonid": 50764,
     "author": "Erwin, 1972",
@@ -522343,17 +522200,6 @@
     "publicationYear": null,
     "validatorid": 202,
     "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "63435": {
-    "taxonid": 63435,
-    "author": "Horn, 1880",
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": null,
-    "validatorName": null,
     "validatedate": null
   },
   "53540": {
@@ -549427,17 +549273,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "58528": {
-    "taxonid": 58528,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
   "58529": {
     "taxonid": 58529,
     "author": null,
@@ -549526,118 +549361,19 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "58530": {
-    "taxonid": 58530,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58531": {
-    "taxonid": 58531,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58532": {
-    "taxonid": 58532,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58533": {
-    "taxonid": 58533,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
+  "58528": {
+    "taxonid": 58528,
+    "author": "Fabricius, 1775",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
   },
   "58534": {
     "taxonid": 58534,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58535": {
-    "taxonid": 58535,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58536": {
-    "taxonid": 58536,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58537": {
-    "taxonid": 58537,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58538": {
-    "taxonid": 58538,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58539": {
-    "taxonid": 58539,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58540": {
-    "taxonid": 58540,
     "author": null,
     "publicationid": null,
     "publication": null,
@@ -549713,17 +549449,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "58547": {
-    "taxonid": 58547,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
   "58548": {
     "taxonid": 58548,
     "author": null,
@@ -549781,72 +549506,6 @@
   },
   "58553": {
     "taxonid": 58553,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58554": {
-    "taxonid": 58554,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58555": {
-    "taxonid": 58555,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58556": {
-    "taxonid": 58556,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58557": {
-    "taxonid": 58557,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58558": {
-    "taxonid": 58558,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58559": {
-    "taxonid": 58559,
     "author": null,
     "publicationid": null,
     "publication": null,
@@ -550109,49 +549768,148 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "58583": {
-    "taxonid": 58583,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
+  "58547": {
+    "taxonid": 58547,
+    "author": "Latreille, 1802",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
   },
-  "58584": {
-    "taxonid": 58584,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
+  "58555": {
+    "taxonid": 58555,
+    "author": "(Solier, 1838)",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
   },
-  "58585": {
-    "taxonid": 58585,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
+  "58557": {
+    "taxonid": 58557,
+    "author": "Herbst, 1799",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
   },
-  "58586": {
-    "taxonid": 58586,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
+  "58535": {
+    "taxonid": 58535,
+    "author": "Fabricius, 1775",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58537": {
+    "taxonid": 58537,
+    "author": "Fabricius, 1775",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58538": {
+    "taxonid": 58538,
+    "author": "Fabricius, 1798",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58536": {
+    "taxonid": 58536,
+    "author": "Olivier, 1795",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58539": {
+    "taxonid": 58539,
+    "author": "Fabricius, 1775",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58559": {
+    "taxonid": 58559,
+    "author": "(Fabricius, 1775)",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58558": {
+    "taxonid": 58558,
+    "author": "Sturm, 1826",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58531": {
+    "taxonid": 58531,
+    "author": "Solier, 1836",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-19T00:00:00.000Z"
+  },
+  "58532": {
+    "taxonid": 58532,
+    "author": "Latreille, 1802",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-19T00:00:00.000Z"
+  },
+  "58530": {
+    "taxonid": 58530,
+    "author": "Latreille, 1802",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-19T00:00:00.000Z"
   },
   "58589": {
     "taxonid": 58589,
@@ -550241,17 +549999,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "58616": {
-    "taxonid": 58616,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
   "58617": {
     "taxonid": 58617,
     "author": null,
@@ -550329,17 +550076,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "58628": {
-    "taxonid": 58628,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
   "58629": {
     "taxonid": 58629,
     "author": null,
@@ -550373,17 +550109,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "58632": {
-    "taxonid": 58632,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
   "58633": {
     "taxonid": 58633,
     "author": null,
@@ -550394,6 +550119,61 @@
     "validatorid": 202,
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
+  },
+  "58616": {
+    "taxonid": 58616,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "58632": {
+    "taxonid": 58632,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "58628": {
+    "taxonid": 58628,
+    "author": "Dejean, 1821",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "58586": {
+    "taxonid": 58586,
+    "author": "(Fabricius, 1790)",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58585": {
+    "taxonid": 58585,
+    "author": "Laporte & Brullé, 1831",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
   },
   "58641": {
     "taxonid": 58641,
@@ -550518,17 +550298,6 @@
   },
   "58652": {
     "taxonid": 58652,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "58653": {
-    "taxonid": 58653,
     "author": null,
     "publicationid": null,
     "publication": null,
@@ -550856,6 +550625,17 @@
     "validatorid": 202,
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
+  },
+  "58653": {
+    "taxonid": 58653,
+    "author": "Mulsant, 1854",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
   },
   "58693": {
     "taxonid": 58693,
@@ -557270,28 +557050,6 @@
     "validatorName": "Manny, Bruce A.",
     "validatedate": null
   },
-  "59671": {
-    "taxonid": 59671,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
-  "59672": {
-    "taxonid": 59672,
-    "author": null,
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 202,
-    "validatorName": "Manny, Bruce A.",
-    "validatedate": null
-  },
   "59673": {
     "taxonid": 59673,
     "author": null,
@@ -557445,6 +557203,17 @@
     "validatorid": null,
     "validatorName": null,
     "validatedate": null
+  },
+  "59672": {
+    "taxonid": 59672,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
   },
   "59701": {
     "taxonid": 59701,
@@ -587036,17 +586805,6 @@
     "validatorName": null,
     "validatedate": null
   },
-  "20255": {
-    "taxonid": 20255,
-    "author": "Latreille, 1802",
-    "publicationid": 1533,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": 10,
-    "validatorName": "Ashworth, Allan C.",
-    "validatedate": "2014-11-10T00:00:00.000Z"
-  },
   "63429": {
     "taxonid": 63429,
     "author": null,
@@ -587299,6 +587057,17 @@
     "validatorid": 8711,
     "validatorName": "Wolters, Steffen",
     "validatedate": "2026-10-09T00:00:00.000Z"
+  },
+  "20255": {
+    "taxonid": 20255,
+    "author": "Latreille, 1802",
+    "publicationid": 1533,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
   },
   "63482": {
     "taxonid": 63482,
@@ -630156,28 +629925,6 @@
     "validatorName": "Šolcová, Anna",
     "validatedate": "2025-10-24T00:00:00.000Z"
   },
-  "63600": {
-    "taxonid": 63600,
-    "author": "Jacquelin du Val, 1858",
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": null,
-    "validatorName": null,
-    "validatedate": null
-  },
-  "63605": {
-    "taxonid": 63605,
-    "author": "Agassiz, 1846",
-    "publicationid": null,
-    "publication": null,
-    "citation": null,
-    "publicationYear": null,
-    "validatorid": null,
-    "validatorName": null,
-    "validatedate": null
-  },
   "67951": {
     "taxonid": 67951,
     "author": "Cleve, P.T., 1895",
@@ -630276,6 +630023,17 @@
     "validatorid": 10,
     "validatorName": "Ashworth, Allan C.",
     "validatedate": "2013-11-01T00:00:00.000Z"
+  },
+  "63605": {
+    "taxonid": 63605,
+    "author": "Agassiz, 1846",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
   },
   "67959": {
     "taxonid": 67959,
@@ -650561,17 +650319,6 @@
     "validatorName": "Schafstall, Nick B.",
     "validatedate": "2026-10-05T00:00:00.000Z"
   },
-  "69914": {
-    "taxonid": 69914,
-    "author": "W. Kirby, 1819",
-    "publicationid": 22019,
-    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
-    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
-    "publicationYear": "2026",
-    "validatorid": 16168,
-    "validatorName": "Schafstall, Nick B.",
-    "validatedate": "2026-10-05T00:00:00.000Z"
-  },
   "69915": {
     "taxonid": 69915,
     "author": null,
@@ -650736,5 +650483,533 @@
     "validatorid": 17170,
     "validatorName": "Herbert, Annika",
     "validatedate": "2026-10-12T00:00:00.000Z"
+  },
+  "69929": {
+    "taxonid": 69929,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69930": {
+    "taxonid": 69930,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69931": {
+    "taxonid": 69931,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69932": {
+    "taxonid": 69932,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69933": {
+    "taxonid": 69933,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69934": {
+    "taxonid": 69934,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69935": {
+    "taxonid": 69935,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69936": {
+    "taxonid": 69936,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69937": {
+    "taxonid": 69937,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69938": {
+    "taxonid": 69938,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69939": {
+    "taxonid": 69939,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69940": {
+    "taxonid": 69940,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 448,
+    "validatorName": "Charles, Donald F.",
+    "validatedate": "2026-10-13T00:00:00.000Z"
+  },
+  "69941": {
+    "taxonid": 69941,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 22333,
+    "validatorName": "Bross, Melissa",
+    "validatedate": "2026-10-14T00:00:00.000Z"
+  },
+  "69942": {
+    "taxonid": 69942,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 22333,
+    "validatorName": "Bross, Melissa",
+    "validatedate": "2026-10-14T00:00:00.000Z"
+  },
+  "69943": {
+    "taxonid": 69943,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 22333,
+    "validatorName": "Bross, Melissa",
+    "validatedate": "2026-10-14T00:00:00.000Z"
+  },
+  "69944": {
+    "taxonid": 69944,
+    "author": "(Linnaues) Palisot de Beauvois, 1812",
+    "publicationid": 22229,
+    "publication": "Palisot de Beauvois, A.M.F.J. 1812. Essai d'une nouvelle agrostographie; ou nouveaux genres des graminées; avec figures représentant les caractères de tous les genres. Ess. Agrostogr. 51:182.",
+    "citation": "Palisot de Beauvois, A.M.F.J. 1812. Essai d'une nouvelle agrostographie; ou nouveaux genres des graminées; avec figures représentant les caractères de tous les genres. Ess. Agrostogr. 51:182.",
+    "publicationYear": "1812",
+    "validatorid": 8713,
+    "validatorName": "Kuneš, Petr",
+    "validatedate": "2026-10-15T00:00:00.000Z"
+  },
+  "69945": {
+    "taxonid": 69945,
+    "author": "Penard, 1890",
+    "publicationid": 9983,
+    "publication": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
+    "citation": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
+    "publicationYear": "2016 onwards",
+    "validatorid": 6390,
+    "validatorName": "Booth, Robert K.",
+    "validatedate": "2026-10-16T00:00:00.000Z"
+  },
+  "69946": {
+    "taxonid": 69946,
+    "author": "Stein, 1857",
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 6390,
+    "validatorName": "Booth, Robert K.",
+    "validatedate": "2026-10-16T00:00:00.000Z"
+  },
+  "69947": {
+    "taxonid": 69947,
+    "author": "Taranek, 1918",
+    "publicationid": 9983,
+    "publication": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
+    "citation": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
+    "publicationYear": "2016 onwards",
+    "validatorid": 6390,
+    "validatorName": "Booth, Robert K.",
+    "validatedate": "2026-10-16T00:00:00.000Z"
+  },
+  "69948": {
+    "taxonid": 69948,
+    "author": "Leclerc, 1815",
+    "publicationid": 9983,
+    "publication": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
+    "citation": "Siemensma, F.J. 2016 onwards. Microworld, world of amoeboid organisms. World-wide electronic publication, Kortenhoef, the Netherlands. http://www.arcella.nl.",
+    "publicationYear": "2016 onwards",
+    "validatorid": 6390,
+    "validatorName": "Booth, Robert K.",
+    "validatedate": "2026-10-16T00:00:00.000Z"
+  },
+  "69949": {
+    "taxonid": 69949,
+    "author": "Latreile, 1802",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "58540": {
+    "taxonid": 58540,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "69950": {
+    "taxonid": 69950,
+    "author": "Latreille, 1802",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "69951": {
+    "taxonid": 69951,
+    "author": "Latreille, 1825",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "69952": {
+    "taxonid": 69952,
+    "author": "Latreille, 1802",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "69953": {
+    "taxonid": 69953,
+    "author": "Latreille, 1802",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "69914": {
+    "taxonid": 69914,
+    "author": "W. Kirby, 1819",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "58533": {
+    "taxonid": 58533,
+    "author": null,
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "34580": {
+    "taxonid": 34580,
+    "author": null,
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "22506": {
+    "taxonid": 22506,
+    "author": "LeConte, 1862",
+    "publicationid": 6163,
+    "publication": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
+    "citation": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
+    "publicationYear": "2002",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "21618": {
+    "taxonid": 21618,
+    "author": "Herbst, 1797",
+    "publicationid": 1533,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "50763": {
+    "taxonid": 50763,
+    "author": "Schönherr, 1823",
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "58554": {
+    "taxonid": 58554,
+    "author": "Herbst, 1799",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "69955": {
+    "taxonid": 69955,
+    "author": "(Fabricius, 1775)",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "16943": {
+    "taxonid": 16943,
+    "author": "Latreille, 1802",
+    "publicationid": 6163,
+    "publication": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
+    "citation": "Arnett, R.H., M.C. Thomas, P.E. Skelley, and J.H. Frank. 2002. American Beetles. Volume 2. CRC Press, Boca Raton, Florida, United States.",
+    "publicationYear": "2002",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "34640": {
+    "taxonid": 34640,
+    "author": "LeConte, 1851",
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "69956": {
+    "taxonid": 69956,
+    "author": "(Forster, 1771)",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "63600": {
+    "taxonid": 63600,
+    "author": "Jacquelin du Val, 1858",
+    "publicationid": null,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "69954": {
+    "taxonid": 69954,
+    "author": "W. Kirby, 1837",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "58584": {
+    "taxonid": 58584,
+    "author": "(Fabricius, 1792)",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "22864": {
+    "taxonid": 22864,
+    "author": "Fabricius, 1792",
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "22863": {
+    "taxonid": 22863,
+    "author": "Leconte, 1851",
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "22862": {
+    "taxonid": 22862,
+    "author": "J.L. Leconte, 1851",
+    "publicationid": 6202,
+    "publication": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "citation": "Bartlett, T. 2003 onwards. BugGuide. http://bugguide.net/. Notes: Hosted by Iowa State University Entomology.",
+    "publicationYear": "2003 onwards",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "34526": {
+    "taxonid": 34526,
+    "author": null,
+    "publicationid": 1533,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "34331": {
+    "taxonid": 34331,
+    "author": "Laporte, 1840",
+    "publicationid": 1533,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-17T00:00:00.000Z"
+  },
+  "58556": {
+    "taxonid": 58556,
+    "author": "Küster, 1848",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "58583": {
+    "taxonid": 58583,
+    "author": "L. Redtenbacher, 1848",
+    "publicationid": 22019,
+    "publication": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "citation": "Bánki, O., Y. Roskov, M. Döring, G. Ower, D.R. Hernández Robles, C.A. Plata Corredor, T. Stjernegaard Jeppesen, A. Örn, T. Pape, D. Hobern, S. Garnett, H. Little, R.E. DeWalt, J. Miller, T. Orrell, R. Aalbu, J. Abbott, C. Abreu, and P.A. Acero. 2026. Catalogue of Life. Catalogue of Life Foundation, Amsterdam, Netherlands.. https://doi.org/10.48580/dgxbb.",
+    "publicationYear": "2026",
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-18T00:00:00.000Z"
+  },
+  "34641": {
+    "taxonid": 34641,
+    "author": "Dejean, 1821",
+    "publicationid": 1533,
+    "publication": null,
+    "citation": null,
+    "publicationYear": null,
+    "validatorid": 16168,
+    "validatorName": "Schafstall, Nick B.",
+    "validatedate": "2026-10-19T00:00:00.000Z"
   }
 }
