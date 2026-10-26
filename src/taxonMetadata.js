@@ -320,7 +320,7 @@ export function renderTaxonMetadataHtml(metadata, { framed = true } = {}) {
 
   return `
     <dl style="${surfaceStyle}font-size:12px;line-height:1.55;">
-      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Author</dt>
+      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Taxon authority</dt>
       <dd style="margin:0 0 8px 116px;color:#374151;word-break:break-word;">${author}</dd>
       <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Citation</dt>
       <dd style="margin:0 0 8px 116px;color:#374151;word-break:break-word;">${citation}${citationSearchLink}</dd>

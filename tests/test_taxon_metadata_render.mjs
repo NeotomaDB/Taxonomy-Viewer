@@ -60,7 +60,7 @@ test('renders author and citation separately, then validation details', () => {
     citation: 'Gajewski, K. 1991. Example citation.',
   });
 
-  assert.match(html, /Author/);
+  assert.match(html, /Taxon authority/);
   assert.match(html, /Miller, 1754/);
   assert.match(html, /Citation/);
   assert.match(html, /Gajewski, K\. 1991\. Example citation\./);
@@ -78,7 +78,7 @@ test('renders author and citation separately, then validation details', () => {
   assert.doesNotMatch(html, /Validator<\/dt>/);
   assert.doesNotMatch(html, /Validated<\/dt>/);
   assert.doesNotMatch(html, /\(ID 44\)/);
-  assert.ok(html.indexOf('Author') < html.indexOf('Citation'));
+  assert.ok(html.indexOf('Taxon authority') < html.indexOf('Citation'));
   assert.ok(html.indexOf('Citation') < html.indexOf('Validation'));
 });
 
@@ -111,7 +111,7 @@ test('shows a missing citation without relabeling the author as citation', () =>
     publication: null,
   });
 
-  assert.match(html, /Author<\/dt>[\s\S]*Burman, 1768/);
+  assert.match(html, /Taxon authority<\/dt>[\s\S]*Burman, 1768/);
   assert.match(html, /Citation<\/dt>[\s\S]*Not recorded/);
   assert.doesNotMatch(html, /Search in Google Scholar/);
 });
