@@ -288,6 +288,11 @@ export function renderTaxonMetadataHtml(metadata, { framed = true } = {}) {
   const citation = citationValue
     ? escapeHtml(citationValue)
     : '<span style="color:#9ca3af;font-style:italic;">Not recorded</span>';
+  const citationSearchLink = citationValue
+    ? `<div style="margin-top:4px;">
+        <a href="${escapeHtml(`https://scholar.google.com/scholar?q=${encodeURIComponent(citationValue)}`)}" target="_blank" rel="noopener noreferrer" aria-label="Search this citation in Google Scholar (opens in a new tab)" style="color:#2563eb;text-decoration:none;font-weight:600;">Search in Google Scholar <span aria-hidden="true">↗</span></a>
+      </div>`
+    : '';
 
   const validationParts = [];
   if (metadata.validatorName) {
@@ -318,7 +323,7 @@ export function renderTaxonMetadataHtml(metadata, { framed = true } = {}) {
       <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Author</dt>
       <dd style="margin:0 0 8px 116px;color:#374151;word-break:break-word;">${author}</dd>
       <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Citation</dt>
-      <dd style="margin:0 0 8px 116px;color:#374151;word-break:break-word;">${citation}</dd>
+      <dd style="margin:0 0 8px 116px;color:#374151;word-break:break-word;">${citation}${citationSearchLink}</dd>
       <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Validation</dt>
       <dd style="margin:0 0 ${ecologicalGroups.length ? '8px' : '2px'} 116px;color:#374151;">${validation}</dd>
       ${ecologicalGroupsRow}

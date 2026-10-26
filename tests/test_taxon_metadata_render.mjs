@@ -64,6 +64,13 @@ test('renders author and citation separately, then validation details', () => {
   assert.match(html, /Miller, 1754/);
   assert.match(html, /Citation/);
   assert.match(html, /Gajewski, K\. 1991\. Example citation\./);
+  assert.match(html, /Search in Google Scholar/);
+  assert.match(
+    html,
+    /href="https:\/\/scholar\.google\.com\/scholar\?q=Gajewski%2C%20K\.%201991\.%20Example%20citation\."/,
+  );
+  assert.match(html, /target="_blank"/);
+  assert.match(html, /rel="noopener noreferrer"/);
   assert.match(html, /Validation/);
   assert.match(html, /Test Validator, April 21, 2017/);
   assert.doesNotMatch(html, /Publication ID/);
@@ -106,6 +113,7 @@ test('shows a missing citation without relabeling the author as citation', () =>
 
   assert.match(html, /Author<\/dt>[\s\S]*Burman, 1768/);
   assert.match(html, /Citation<\/dt>[\s\S]*Not recorded/);
+  assert.doesNotMatch(html, /Search in Google Scholar/);
 });
 
 test('loads a single publication citation by publication id', async () => {
