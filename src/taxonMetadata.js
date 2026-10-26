@@ -2,6 +2,8 @@ let metadataIndex = null;
 let metadataIndexPromise = null;
 const publicationDetailsCache = new Map();
 const publicationDetailsPromiseCache = new Map();
+const taxonDetailsCache = new Map();
+const taxonDetailsPromiseCache = new Map();
 
 function escapeHtml(value) {
   if (value == null || value === '') return '';
@@ -23,11 +25,6 @@ function formatDateLabel(value) {
   });
 }
 
-function hasYear(text, year) {
-  if (!text || !year) return false;
-  return String(text).includes(String(year));
-}
-
 export function buildCitationDisplayValue(metadata) {
   if (!metadata) return null;
 
@@ -38,14 +35,16 @@ export function buildCitationDisplayValue(metadata) {
   if (metadata.publication) {
     return String(metadata.publication).trim() || null;
   }
+  return null;
+}
 
-  const author = metadata.author ? String(metadata.author).trim() : '';
-  const year = metadata.publicationYear ? String(metadata.publicationYear).trim() : '';
+function extractTaxonDetails(payload, taxonId) {
+  const rows = Array.isArray(payload?.data)
+    ? payload.data
+    : payload?.data?.result;
+  if (!Array.isArray(rows)) return null;
 
-  if (author && year) {
-    return hasYear(author, year) ? author : `${author}, ${year}`;
-  }
-  return author || year || null;
+  return rows.find((row) => Number(row?.taxonid) === Number(taxonId)) || null;
 }
 
 function extractPublicationDetails(payload) {
@@ -130,6 +129,42 @@ export async function fetchPublicationDetails(publicationId) {
   return publicationDetailsPromiseCache.get(numericId);
 }
 
+export async function fetchTaxonDetails(taxonId) {
+  const numericId = Number(taxonId);
+  if (!Number.isFinite(numericId)) {
+    return null;
+  }
+
+  if (taxonDetailsCache.has(numericId)) {
+    return taxonDetailsCache.get(numericId);
+  }
+
+  if (!taxonDetailsPromiseCache.has(numericId)) {
+    const promise = fetch(`https://api.neotomadb.org/v2.0/data/taxa?taxonid=${numericId}`, {
+      cache: 'default',
+      headers: { accept: 'application/json' },
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch taxon ${numericId} (HTTP ${response.status})`);
+        }
+        const payload = await response.json();
+        const details = extractTaxonDetails(payload, numericId);
+        taxonDetailsCache.set(numericId, details);
+        taxonDetailsPromiseCache.delete(numericId);
+        return details;
+      })
+      .catch((err) => {
+        taxonDetailsPromiseCache.delete(numericId);
+        throw err;
+      });
+
+    taxonDetailsPromiseCache.set(numericId, promise);
+  }
+
+  return taxonDetailsPromiseCache.get(numericId);
+}
+
 export async function fetchTaxonMetadata(taxonId) {
   const numericId = Number(taxonId);
   if (!Number.isFinite(numericId)) {
@@ -142,12 +177,30 @@ export async function fetchTaxonMetadata(taxonId) {
     throw new Error(`Taxon ${numericId} not found in local metadata index`);
   }
 
-  if (!metadata.citation && metadata.publicationid != null) {
+  // The taxon endpoint carries the publication text associated with this exact
+  // taxon, including legacy records whose publication ID is no longer
+  // resolvable through the publications endpoint.
+  try {
+    const taxonDetails = await fetchTaxonDetails(numericId);
+    if (taxonDetails) {
+      if (taxonDetails.author) metadata.author = taxonDetails.author;
+      if (taxonDetails.publicationid != null) metadata.publicationid = taxonDetails.publicationid;
+      if (taxonDetails.publication) metadata.publication = taxonDetails.publication;
+    }
+  } catch (err) {
+    console.warn(`Failed to fetch taxon details for ${numericId}:`, err);
+  }
+
+  // Prefer the normalized publication record when it resolves, but retain the
+  // taxon endpoint's publication text as the fallback when it does not.
+  if (metadata.publicationid != null) {
     try {
       const publicationDetails = await fetchPublicationDetails(metadata.publicationid);
       if (publicationDetails) {
-        metadata.citation ??= publicationDetails.citation;
-        metadata.publicationYear ??= publicationDetails.publicationYear;
+        if (publicationDetails.citation) metadata.citation = publicationDetails.citation;
+        if (publicationDetails.publicationYear) {
+          metadata.publicationYear = publicationDetails.publicationYear;
+        }
       }
     } catch (err) {
       console.warn(`Failed to fetch publication details for ${metadata.publicationid}:`, err);
@@ -159,6 +212,11 @@ export async function fetchTaxonMetadata(taxonId) {
 
 export function renderTaxonMetadataHtml(metadata, { framed = true } = {}) {
   if (!metadata) return '';
+
+  const authorValue = metadata.author ? String(metadata.author).trim() : '';
+  const author = authorValue
+    ? escapeHtml(authorValue)
+    : '<span style="color:#9ca3af;font-style:italic;">Not recorded</span>';
 
   const citationValue = buildCitationDisplayValue(metadata);
   const citation = citationValue
@@ -182,6 +240,8 @@ export function renderTaxonMetadataHtml(metadata, { framed = true } = {}) {
 
   return `
     <dl style="${surfaceStyle}font-size:12px;line-height:1.55;">
+      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:72px;margin:0 0 4px 0;">Author</dt>
+      <dd style="margin:0 0 8px 72px;color:#374151;word-break:break-word;">${author}</dd>
       <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:72px;margin:0 0 4px 0;">Citation</dt>
       <dd style="margin:0 0 8px 72px;color:#374151;word-break:break-word;">${citation}</dd>
       <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:72px;margin:0 0 4px 0;">Validation</dt>

@@ -5,7 +5,7 @@ import { createPopup } from './src/popup.js';
 import { highlightPath } from './src/highlight.js?v=20260815-toggle-highlight-1';
 import { enrichTreeWithPaths, reorderTreeForGrouping, computeLeafOrder } from './src/grouping.js';
 import { groupUncertainLeaves } from './src/groupUncertain.js';
-import { setupSearch } from './src/search.js?v=20260820-internal-subtree-2';
+import { setupSearch } from './src/search.js?v=20260827-name-matches-1';
 import { initSynonyms, getSynonymInfo, isSynonymsReady } from './src/synonyms.js';
 import { setHighlightedPath, clearHighlightedPath } from './src/viewSwitch.js?v=20260820-internal-subtree-2';
 import { setupHover } from './src/hover.js';

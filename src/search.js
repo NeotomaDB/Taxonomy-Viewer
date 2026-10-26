@@ -27,6 +27,8 @@ import { renderStewardTaxonDetail } from './stewardTaxonDetail.js';
 import { getURLState, pushURLState, updateURLState } from './urlhash.js';
 import { taxonomicAncestors } from './taxonomicPath.js?v=20260825-vpl-scientific-path-1';
 import { splitSearchQuery, unwrapQuotedSearchTerm } from './searchQuery.js';
+import { formatCompareResolutionStatus } from './comparePresentation.js?v=20260826-compare-ui-1';
+import { formatNameMatchHeading } from './searchPresentation.js?v=20260827-name-matches-1';
 import {
   buildTaxonAutocompleteCandidates,
   getTaxonAutocompleteSuggestions,
@@ -593,7 +595,7 @@ export function setupSearch({
     ` : '';
 
     panel.innerHTML = `
-      <div style="font-weight:600;margin-bottom:6px;">Search Results (${totalResults})</div>
+      <div style="font-weight:600;margin-bottom:6px;">${formatNameMatchHeading(totalResults)}</div>
       ${denseSearchNote}
       <div class="paired-group-search-results">${currentSection}${linkedSection}</div>
     `;
@@ -1062,40 +1064,36 @@ export function setupSearch({
 
       if (matches.length === 1) {
         const only = matches[0];
-        const path = taxonomicAncestors(only, { rootToLeaf: true }).map(n => n.data.name).join(' → ');
         return `
           <div class="cmp-resolve-card ${sideClass}">
-            <div class="cmp-resolve-label">${label}</div>
-            <div class="cmp-resolve-selected">${only.data.name}</div>
-            <div class="cmp-resolve-path">${path}</div>
+            <div class="cmp-resolve-label">${escapeHtml(label)}</div>
+            <div class="cmp-resolve-selected">${escapeHtml(only.data.name)}</div>
           </div>
         `;
       }
 
       return `
         <div class="cmp-resolve-card ${sideClass}">
-          <div class="cmp-resolve-label">${label}</div>
-          <div class="cmp-resolve-empty">${matches.length} matches found. Choose one exact taxon to compare.</div>
+          <div class="cmp-resolve-label">${escapeHtml(label)}</div>
           <div class="cmp-resolve-list">
-            ${matches.map((match, index) => {
-              const path = taxonomicAncestors(match, { rootToLeaf: true }).map(n => n.data.name).join(' → ');
-              return `
+            ${matches.map((match, index) => `
                 <button class="cmp-resolve-option" type="button" data-query-side="${label === q1Label ? 'q1' : 'q2'}" data-match-index="${index}">
-                  <span class="cmp-resolve-name">${match.data.name}</span>
-                  <span class="cmp-resolve-path">${path}</span>
+                  <span class="cmp-resolve-name">${escapeHtml(match.data.name)}</span>
                 </button>
-              `;
-            }).join('')}
+              `).join('')}
           </div>
         </div>
       `;
     }
+
+    const resolutionStatus = formatCompareResolutionStatus(q1Matches.length, q2Matches.length);
 
     panel.innerHTML = `
       <div class="cmp-wrapper">
         <div class="cmp-heading">Choose Exact Taxa to Compare</div>
         <div class="cmp-resolve-note">
           Comparison requires one specific taxon on each side. Refine any query with multiple matches before comparing.
+          ${resolutionStatus ? `<span class="cmp-resolve-status">${resolutionStatus}</span>` : ''}
         </div>
         <div class="cmp-resolve-grid">
           ${renderSide(q1Label, q1Matches, 'cmp-resolve-q1')}

@@ -3654,6 +3654,13 @@ body.taxonomy-busy .summary-search-btn:disabled {
   margin: -4px 0 10px;
 }
 
+.cmp-resolve-status {
+  display: block;
+  color: #374151;
+  font-weight: 650;
+  margin-top: 4px;
+}
+
 .cmp-resolve-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3668,12 +3675,10 @@ body.taxonomy-busy .summary-search-btn:disabled {
 
 .cmp-resolve-q1 {
   background: #eff6ff;
-  border: 1.5px solid #bfdbfe;
 }
 
 .cmp-resolve-q2 {
   background: #f5f3ff;
-  border: 1.5px solid #ddd6fe;
 }
 
 .cmp-resolve-label {
@@ -3683,8 +3688,7 @@ body.taxonomy-busy .summary-search-btn:disabled {
   margin-bottom: 6px;
 }
 
-.cmp-resolve-empty,
-.cmp-resolve-path {
+.cmp-resolve-empty {
   font-size: 11px;
   color: #6b7280;
   line-height: 1.45;
@@ -3706,25 +3710,29 @@ body.taxonomy-busy .summary-search-btn:disabled {
 }
 
 .cmp-resolve-option {
-  display: grid;
-  gap: 2px;
+  display: block;
   width: 100%;
-  border: 1px solid #e5e7eb;
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.82);
-  padding: 7px 8px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  padding: 6px 8px;
   font-family: "Figtree", sans-serif;
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.cmp-resolve-option:hover,
+.cmp-resolve-option:hover {
+  background: rgba(255, 255, 255, 0.72);
+}
+
 .cmp-resolve-option:focus {
-  border-color: #43a047;
-  background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.1);
   outline: none;
+}
+
+.cmp-resolve-option:focus-visible {
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 0 0 2px rgba(67, 160, 71, 0.3);
 }
 
 .cmp-resolve-name {
@@ -3798,10 +3806,11 @@ svg text.highlight-q2 {
   stroke-linejoin: round !important;
 }
 
-/* In comparison mode: hide intermediate ancestor labels to reduce clutter;
-   only the matched leaf labels (highlight-q1 / highlight-q2) remain visible */
+/* Keep the complete compared paths legible, including shared and divergent
+   ancestor labels. Terminal labels retain their blue/purple emphasis. */
 svg.compare-mode.search-active g.node.match-path text:not(.toggle):not(.highlight-q1):not(.highlight-q2) {
-  display: none !important;
+  display: block !important;
+  opacity: 1 !important;
 }
 
 /* Focus label styling */

@@ -60,7 +60,7 @@
             pointer-events: none;
         }
     </style>
-    <link rel="stylesheet" href="index.css?v=20260825-synonym-history-1">
+    <link rel="stylesheet" href="index.css?v=20260826-compare-ui-1">
 </head>
 
 <body class="app-loading" aria-busy="true">
@@ -514,7 +514,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/d3@7"
         onload="window.__resolveD3()" onerror="window.__rejectD3(new Error('Failed to load D3'))"></script>
     <script defer src="src/taxon-group-select.js"></script>
-    <script type="module" src="taxon_group_viz.js?v=20260820-internal-subtree-2"></script>
+    <script type="module" src="taxon_group_viz.js?v=20260827-name-matches-1"></script>
     <script type="module">
         import {
             getURLNavigationState,
@@ -1413,7 +1413,7 @@
             taxagroupid = null,
             focusNodeIds = [],
         }) {
-            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260820-internal-subtree-2');
+            const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260827-name-matches-1');
             const spacing = getFocusViewSpacing(rows);
             const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
             const denseSearch = !!currentQuery && rows.length > DENSE_SEARCH_RESULT_THRESHOLD;
@@ -2186,7 +2186,7 @@
                     const isFilteredSearchView = rows !== filteredRows;
                     const shouldUseSearchCollapsible = forceCollapsible || (FOCUS_VIEW_GROUPS.has(taxagroupid) && isFilteredSearchView);
                     if (shouldUseCollapsible || shouldUseSearchCollapsible) {
-                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260820-internal-subtree-2');
+                        const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260827-name-matches-1');
                         const currentQuery = document.getElementById('searchInput')?.value?.trim() || '';
                         const denseSearch = shouldUseSearchCollapsible && !!currentQuery && rows.length > DENSE_SEARCH_RESULT_THRESHOLD;
                         await renderCollapsibleTree({
@@ -2228,7 +2228,7 @@
             // Use collapsible tree for small datasets (< 50 nodes) OR forced groups
             if (shouldUseCollapsible) {
                 console.log('Using collapsible tree view');
-                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260820-internal-subtree-2');
+                const { renderCollapsibleTree } = await import('./src/collapsibleTree.js?v=20260827-name-matches-1');
                 await renderCollapsibleTree({
                     rows: filteredRows,
                     allRowsForSynonyms: allRowsForGroup,
