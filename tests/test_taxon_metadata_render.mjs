@@ -75,6 +75,28 @@ test('renders author and citation separately, then validation details', () => {
   assert.ok(html.indexOf('Citation') < html.indexOf('Validation'));
 });
 
+test('renders readable ecological groups when available', () => {
+  const html = renderTaxonMetadataHtml({
+    author: 'Burman, 1768',
+    citation: 'Example citation.',
+    ecologicalGroups: ['Aquatic Vascular Plants', 'Wetland Plants'],
+  });
+
+  assert.match(html, /Ecological groups/);
+  assert.match(html, /Aquatic Vascular Plants, Wetland Plants/);
+  assert.ok(html.indexOf('Validation') < html.indexOf('Ecological groups'));
+});
+
+test('omits the ecological-groups row when no assignment exists', () => {
+  const html = renderTaxonMetadataHtml({
+    author: 'Burman, 1768',
+    citation: 'Example citation.',
+    ecologicalGroups: [],
+  });
+
+  assert.doesNotMatch(html, /Ecological groups/);
+});
+
 test('shows a missing citation without relabeling the author as citation', () => {
   const html = renderTaxonMetadataHtml({
     author: 'Burman, 1768',
@@ -165,6 +187,7 @@ test('normalizes resolved publications and keeps taxon text for unresolved publi
             data: [{
               taxonid: 45805,
               author: 'Burman, 1768',
+              ecolgroup: 'AQVP',
               publicationid: 3708,
               publication: taxonPublication,
             }],
@@ -182,18 +205,43 @@ test('normalizes resolved publications and keeps taxon text for unresolved publi
       };
     }
 
+    if (requestUrl.includes('/data/dbtables/ecolgrouptypes')) {
+      return {
+        ok: true,
+        async json() {
+          return {
+            status: 'success',
+            data: [
+              { ecolgroupid: 'AQVP', ecolgroup: 'Aquatic Vascular Plants' },
+              { ecolgroupid: 'UNID', ecolgroup: 'Unidentified' },
+            ],
+          };
+        },
+      };
+    }
+
     if (requestUrl.endsWith('/data/taxa?taxonid=4572')) {
       return {
         ok: true,
         async json() {
           return {
             status: 'success',
-            data: [{
-              taxonid: 4572,
-              author: 'C. Presl, 1822',
-              publicationid: 303,
-              publication: 'Taxon endpoint publication text.',
-            }],
+            data: [
+              {
+                taxonid: 4572,
+                author: 'C. Presl, 1822',
+                ecolgroup: 'AQVP',
+                publicationid: 303,
+                publication: 'Taxon endpoint publication text.',
+              },
+              {
+                taxonid: 4572,
+                author: 'C. Presl, 1822',
+                ecolgroup: 'UNID',
+                publicationid: 303,
+                publication: 'Taxon endpoint publication text.',
+              },
+            ],
           };
         },
       };
@@ -225,11 +273,18 @@ test('normalizes resolved publications and keeps taxon text for unresolved publi
     assert.equal(metadata.publication, taxonPublication);
     assert.equal(metadata.citation, null);
     assert.equal(buildCitationDisplayValue(metadata), taxonPublication);
+    assert.deepEqual(metadata.ecologicalGroupIds, ['AQVP']);
+    assert.deepEqual(metadata.ecologicalGroups, ['Aquatic Vascular Plants']);
 
     const normalizedMetadata = await fetchTaxonMetadata(4572);
     assert.equal(normalizedMetadata.publication, 'Taxon endpoint publication text.');
     assert.equal(normalizedMetadata.citation, 'Flora Europaea. 1964. Normalized citation.');
     assert.equal(normalizedMetadata.publicationYear, '1964');
+    assert.deepEqual(normalizedMetadata.ecologicalGroupIds, ['AQVP', 'UNID']);
+    assert.deepEqual(normalizedMetadata.ecologicalGroups, [
+      'Aquatic Vascular Plants',
+      'Unidentified',
+    ]);
     assert.equal(
       buildCitationDisplayValue(normalizedMetadata),
       'Flora Europaea. 1964. Normalized citation.',
@@ -238,6 +293,7 @@ test('normalizes resolved publications and keeps taxon text for unresolved publi
       'data/taxon_metadata.json',
       'https://api.neotomadb.org/v2.0/data/taxa?taxonid=45805',
       'https://api.neotomadb.org/v2.0/data/publications/3708',
+      'https://api.neotomadb.org/v2.0/data/dbtables/ecolgrouptypes?count=false&limit=500&offset=0',
       'https://api.neotomadb.org/v2.0/data/taxa?taxonid=4572',
       'https://api.neotomadb.org/v2.0/data/publications/303',
     ]);

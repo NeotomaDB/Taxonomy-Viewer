@@ -4,6 +4,8 @@ const publicationDetailsCache = new Map();
 const publicationDetailsPromiseCache = new Map();
 const taxonDetailsCache = new Map();
 const taxonDetailsPromiseCache = new Map();
+let ecologicalGroupTypesCache = null;
+let ecologicalGroupTypesPromise = null;
 
 function escapeHtml(value) {
   if (value == null || value === '') return '';
@@ -44,7 +46,17 @@ function extractTaxonDetails(payload, taxonId) {
     : payload?.data?.result;
   if (!Array.isArray(rows)) return null;
 
-  return rows.find((row) => Number(row?.taxonid) === Number(taxonId)) || null;
+  const matchingRows = rows.filter((row) => Number(row?.taxonid) === Number(taxonId));
+  if (!matchingRows.length) return null;
+
+  return {
+    ...matchingRows[0],
+    ecologicalGroupIds: [...new Set(
+      matchingRows
+        .map((row) => String(row?.ecolgroup || '').trim())
+        .filter(Boolean),
+    )],
+  };
 }
 
 function extractPublicationDetails(payload) {
@@ -165,6 +177,45 @@ export async function fetchTaxonDetails(taxonId) {
   return taxonDetailsPromiseCache.get(numericId);
 }
 
+export async function fetchEcologicalGroupTypes() {
+  if (ecologicalGroupTypesCache) return ecologicalGroupTypesCache;
+  if (!ecologicalGroupTypesPromise) {
+    ecologicalGroupTypesPromise = fetch(
+      'https://api.neotomadb.org/v2.0/data/dbtables/ecolgrouptypes?count=false&limit=500&offset=0',
+      {
+        cache: 'default',
+        headers: { accept: 'application/json' },
+      },
+    )
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ecological group types (HTTP ${response.status})`);
+        }
+        const payload = await response.json();
+        const rows = Array.isArray(payload?.data) ? payload.data : [];
+        ecologicalGroupTypesCache = new Map(
+          rows
+            .map((row) => {
+              const id = String(row?.ecolgroupid || '').trim();
+              const label = String(row?.ecolgroup || '').trim();
+              return id && label ? [id, label] : null;
+            })
+            .filter(Boolean),
+        );
+        return ecologicalGroupTypesCache;
+      })
+      .catch((err) => {
+        ecologicalGroupTypesPromise = null;
+        throw err;
+      })
+      .finally(() => {
+        ecologicalGroupTypesPromise = null;
+      });
+  }
+
+  return ecologicalGroupTypesPromise;
+}
+
 export async function fetchTaxonMetadata(taxonId) {
   const numericId = Number(taxonId);
   if (!Number.isFinite(numericId)) {
@@ -186,6 +237,7 @@ export async function fetchTaxonMetadata(taxonId) {
       if (taxonDetails.author) metadata.author = taxonDetails.author;
       if (taxonDetails.publicationid != null) metadata.publicationid = taxonDetails.publicationid;
       if (taxonDetails.publication) metadata.publication = taxonDetails.publication;
+      metadata.ecologicalGroupIds = taxonDetails.ecologicalGroupIds || [];
     }
   } catch (err) {
     console.warn(`Failed to fetch taxon details for ${numericId}:`, err);
@@ -193,7 +245,7 @@ export async function fetchTaxonMetadata(taxonId) {
 
   // Prefer the normalized publication record when it resolves, but retain the
   // taxon endpoint's publication text as the fallback when it does not.
-  if (metadata.publicationid != null) {
+  const publicationTask = metadata.publicationid != null ? (async () => {
     try {
       const publicationDetails = await fetchPublicationDetails(metadata.publicationid);
       if (publicationDetails) {
@@ -205,7 +257,21 @@ export async function fetchTaxonMetadata(taxonId) {
     } catch (err) {
       console.warn(`Failed to fetch publication details for ${metadata.publicationid}:`, err);
     }
-  }
+  })() : Promise.resolve();
+
+  const ecologicalGroupsTask = metadata.ecologicalGroupIds?.length ? (async () => {
+    try {
+      const groupTypes = await fetchEcologicalGroupTypes();
+      metadata.ecologicalGroups = metadata.ecologicalGroupIds.map(
+        (groupId) => groupTypes.get(groupId) || groupId,
+      );
+    } catch (err) {
+      console.warn('Failed to fetch ecological group types:', err);
+      metadata.ecologicalGroups = [...metadata.ecologicalGroupIds];
+    }
+  })() : Promise.resolve();
+
+  await Promise.all([publicationTask, ecologicalGroupsTask]);
 
   return metadata;
 }
@@ -234,18 +300,28 @@ export function renderTaxonMetadataHtml(metadata, { framed = true } = {}) {
     ? validationParts.join(', ')
     : '<span style="color:#9ca3af;font-style:italic;">Not recorded</span>';
 
+  const ecologicalGroups = Array.isArray(metadata.ecologicalGroups)
+    ? metadata.ecologicalGroups.map((group) => String(group).trim()).filter(Boolean)
+    : [];
+  const ecologicalGroupsRow = ecologicalGroups.length
+    ? `
+      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Ecological groups</dt>
+      <dd style="margin:0 0 2px 116px;color:#374151;word-break:break-word;">${ecologicalGroups.map(escapeHtml).join(', ')}</dd>`
+    : '';
+
   const surfaceStyle = framed
     ? 'margin:12px 0 0 0;padding:10px 12px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;'
     : 'margin:9px 0 0 0;padding:0;';
 
   return `
     <dl style="${surfaceStyle}font-size:12px;line-height:1.55;">
-      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:72px;margin:0 0 4px 0;">Author</dt>
-      <dd style="margin:0 0 8px 72px;color:#374151;word-break:break-word;">${author}</dd>
-      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:72px;margin:0 0 4px 0;">Citation</dt>
-      <dd style="margin:0 0 8px 72px;color:#374151;word-break:break-word;">${citation}</dd>
-      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:72px;margin:0 0 4px 0;">Validation</dt>
-      <dd style="margin:0 0 2px 72px;color:#374151;">${validation}</dd>
+      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Author</dt>
+      <dd style="margin:0 0 8px 116px;color:#374151;word-break:break-word;">${author}</dd>
+      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Citation</dt>
+      <dd style="margin:0 0 8px 116px;color:#374151;word-break:break-word;">${citation}</dd>
+      <dt style="font-weight:600;color:#6b7280;float:left;clear:left;width:116px;margin:0 0 4px 0;">Validation</dt>
+      <dd style="margin:0 0 ${ecologicalGroups.length ? '8px' : '2px'} 116px;color:#374151;">${validation}</dd>
+      ${ecologicalGroupsRow}
     </dl>
   `;
 }
