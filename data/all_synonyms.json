@@ -8030,6 +8030,21 @@
     ]
   },
   {
+    "valid_id": 27851,
+    "valid_name": "δ13C",
+    "taxagroupid": "ISO",
+    "synonyms": [
+      {
+        "invalid_id": 47160,
+        "invalid_name": "δ13C",
+        "synonymtypeid": 1,
+        "synonymtype": "taxonomic, heterotypic, or subjective synonym",
+        "recdatecreated": "2026-10-20T22:30:20.000Z",
+        "recdatemodified": "2026-10-20T22:30:20.000Z"
+      }
+    ]
+  },
+  {
     "valid_id": 13588,
     "valid_name": "?Aluralagus virginiae",
     "taxagroupid": "MAM",
