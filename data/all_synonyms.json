@@ -7301,6 +7301,21 @@
     ]
   },
   {
+    "valid_id": 20386,
+    "valid_name": "Parasida mckittricki",
+    "taxagroupid": "INS",
+    "synonyms": [
+      {
+        "invalid_id": 69963,
+        "invalid_name": "Stenomorpha mckittricki",
+        "synonymtypeid": 2,
+        "synonymtype": "nomenclatural, homotypic, or objective synonym",
+        "recdatecreated": "2026-10-26T21:23:57.000Z",
+        "recdatemodified": "2026-10-26T21:23:57.000Z"
+      }
+    ]
+  },
+  {
     "valid_id": 21928,
     "valid_name": "Passandridae",
     "taxagroupid": "INS",
