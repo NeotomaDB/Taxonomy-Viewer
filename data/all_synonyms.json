@@ -5370,7 +5370,7 @@
     "synonyms": [
       {
         "invalid_id": 22382,
-        "invalid_name": "Ptinidae",
+        "invalid_name": "Ptininae",
         "synonymtypeid": 6,
         "synonymtype": "other (see notes)",
         "recdatecreated": "2014-05-19T15:56:40.000Z",
@@ -5886,6 +5886,21 @@
         "synonymtype": "other (see notes)",
         "recdatecreated": "2014-07-29T16:08:01.000Z",
         "recdatemodified": "2014-07-29T16:08:01.000Z"
+      }
+    ]
+  },
+  {
+    "valid_id": 20245,
+    "valid_name": "Colydiinae",
+    "taxagroupid": "INS",
+    "synonyms": [
+      {
+        "invalid_id": 70085,
+        "invalid_name": "Colydiidae",
+        "synonymtypeid": 3,
+        "synonymtype": "taxonomic, heterotypic, or subjective synonym: family merged into another family",
+        "recdatecreated": "2026-11-09T19:31:14.000Z",
+        "recdatemodified": "2026-11-09T19:31:14.000Z"
       }
     ]
   },
@@ -33348,21 +33363,6 @@
         "synonymtype": "taxonomic, heterotypic, or subjective synonym",
         "recdatecreated": "2013-09-30T14:03:02.000Z",
         "recdatemodified": "2013-09-30T14:03:02.000Z"
-      }
-    ]
-  },
-  {
-    "valid_id": 27343,
-    "valid_name": "Origanum",
-    "taxagroupid": "VPL",
-    "synonyms": [
-      {
-        "invalid_id": 32690,
-        "invalid_name": "Dictamnus",
-        "synonymtypeid": 2,
-        "synonymtype": "nomenclatural, homotypic, or objective synonym",
-        "recdatecreated": "2017-09-14T04:23:56.000Z",
-        "recdatemodified": "2017-09-14T04:23:56.000Z"
       }
     ]
   },
